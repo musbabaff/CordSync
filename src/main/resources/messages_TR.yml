@@ -1,0 +1,154 @@
+# ==========================================================
+# mLinker - Mesaj Dosyası
+# Minecraft ↔ Discord hesap eşleştirme sistemi
+# Geliştirici: musbabaff | GitHub: https://github.com/musbabaff
+# Renk kodları: &a &b &c &d &e &f &7 &8 &9 vb.
+# ==========================================================
+
+# Hesap Eşleştirme (Oyuncu Komutları)
+link:
+  header: "&8&l&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  title: "&e&l🔗 mLinker Hesap Eşleştirme"
+  already-linked: "&cDiscord hesabın zaten eşleştirilmiş! Yeni kod alamazsın."
+  code-active: "&6Zaten aktif bir eşleşme kodun var!"
+  code-new: "&7Discord hesabını eşleştirmek için aşağıdaki kodu kullan:"
+  code-expired: "&c⚠ Hesap eşleşme kodunun süresi doldu. Yeni bir kod almak için &e/mlink &cyaz."
+  copied-hover: "&b📋 Kodu panoya kopyalamak için tıkla"
+  copied-click: "&aKopyalandı!"
+  usage: "&7Bu kodu Discord kanalında &f/hesapesle <kod> &7şeklinde yaz."
+  code-generated: "&aYeni eşleşme kodun oluşturuldu!"
+  success: "&a✅ Discord hesabın başarıyla eşleştirildi!"
+  not-player: "&cBu komut sadece oyuncular tarafından kullanılabilir!"
+  not-found: "&cGeçersiz veya süresi dolmuş kod!"
+  player-offline: "&e⚠ Oyuncu şu anda çevrimdışı, eşleşme sıraya alındı."
+  already-active: "&6Zaten aktif bir kodun var, tekrar oluşturamazsın."
+  not-linked: "&cHenüz bir Discord hesabı eşleştirmemişsin!"
+  expired: "&c⚠ Bu kodun süresi dolmuş, lütfen yeniden oluştur."
+
+# Hesap Kaldırma
+unlink:
+  success: "&a✅ Hesap bağlantın başarıyla kaldırıldı!"
+  not-linked: "&cHerhangi bir hesap bağlantın bulunamadı."
+  discord-removed: "&7Minecraft ↔ Discord bağlantın kaldırıldı."
+  error: "&cBir hata oluştu, işlem tamamlanamadı."
+  notify-admin: "&7{player} adlı oyuncunun Discord bağlantısı kaldırıldı."
+  console-success: "🧾 {player} adlı oyuncunun Discord bağlantısı kaldırıldı."
+
+# Discord Slash Komutları
+discord:
+  code-missing-title: "❌ Kod belirtilmedi!"
+  code-missing-desc: "Lütfen `/hesapesle <kod>` şeklinde yazınız."
+  invalid-title: "❌ Geçersiz veya süresi dolmuş kod!"
+  invalid-desc: "Kodun süresi dolmuş veya hatalı olabilir."
+  already-linked-title: "❌ Bu Discord hesabı zaten bir Minecraft hesabına bağlı!"
+  already-linked-desc: "Yeni bir bağlantı kurmadan önce eski bağlantını kaldırmalısın."
+  player-already-linked-title: "❌ Bu Minecraft hesabı zaten bir Discord hesabıyla eşleştirilmiş!"
+  player-already-linked-desc: "Yeni bağlantı oluşturulamaz."
+  success-title: "✅ Eşleşme Başarılı!"
+  success-desc: "Minecraft hesabın başarıyla doğrulandı: **{player}**"
+  offline-title: "⚠️ Oyuncu Çevrimdışı!"
+  offline-desc: "Kod doğru fakat oyuncu şu anda çevrimdışı. Eşleşme sıraya alındı."
+  unlinked: "✅ Discord bağlantın başarıyla kaldırıldı!"
+  role-success: "✅ Discord rolü başarıyla verildi."
+  role-fail: "❌ Discord rolü atanamadı: {error}"
+  role-missing: "⚠ Discord rolü bulunamadı!"
+  guild-missing: "⚠ Discord sunucusu bulunamadı!"
+  bot-disabled: "🔕 Discord botu devre dışı, komut kullanılamıyor."
+  verified-console: "✅ Oyuncu {player} hesabını Discord ile eşleştirdi."
+  user-not-found: "⚠ Discord kullanıcısı bulunamadı: {id}"
+  role-remove-error: "❌ Rol kaldırma sırasında hata: {error}"
+  slash-description: "Minecraft hesabını Discord hesabınla eşleştir."
+  slash-option-description: "Minecraft'tan aldığın eşleşme kodu"
+  slash-registered: "✅ /hesapesle komutu Discord API’ye kaydedildi!"
+  slash-failed: "❌ Komut kaydı başarısız: {error}"
+  webhook-fail: "⚠ Log mesajı Discord kanalına gönderilemedi: {error}"
+  webhook-success: "✅ Log mesajı Discord kanalına gönderildi."
+  webhook-missing: "⚠ Log kanalı tanımlı değil, mesaj gönderilmedi."
+  luckperms-role-given: "✅ {player} adlı oyuncuya {role} LuckPerms rolü Discord'da verildi."
+  luckperms-role-removed: "✅ {player} adlı oyuncudan {role} LuckPerms rolü Discord'da kaldırıldı."
+  luckperms-not-found: "⚠ LuckPerms eklentisi bulunamadı, grup→rol eşlemesi atlanıyor."
+  log-linked: "🔗 **{player}** Minecraft hesabını Discord hesabıyla eşleştirdi."
+  log-unlinked: "🔓 **{player}** Minecraft-Discord hesap bağlantısını kaldırdı."
+  auto-message-sent: "✅ Oto mesaj hesapesle kanalına gönderildi."
+  auto-message-exists: "ℹ Oto mesaj zaten mevcut, tekrar gönderilmedi."
+
+# Ödül Sistemi (RewardManager)
+reward:
+  first-reward: "&a🎉 Tebrikler {player}! Discord hesabını eşleştirdiğin için ödül kazandın!"
+  first-reward-console: "&7{player} ilk eşleşme ödülünü kazandı."
+  interval-reward: "&a💎 Discord bağlantın aktif! Periyodik ödül kazandın."
+  interval-reward-console: "&7{player} periyodik ödülünü aldı."
+  disabled: "&e⚠ Ödül sistemi şu anda devre dışı."
+  already-received: "&7Bu ödülü zaten aldın!"
+  error: "&cÖdül verilirken bir hata oluştu!"
+
+# Ödül Log Sistemi (RewardLogManager)
+reward-log:
+  saved: "&7🎁 Ödül kaydı oluşturuldu: &a{type} &7→ &f{player}"
+  mysql-connected: "&a✅ Ödül log sistemi MySQL üzerinden çalışıyor."
+  sqlite-connected: "&a✅ Ödül log sistemi SQLite veritabanına bağlandı."
+  yaml-loaded: "&a✅ Ödül logları YAML dosyasından okunuyor."
+  disabled: "&e⚠ Ödül log sistemi devre dışı bırakılmış."
+  write-error: "&c❌ Ödül logu yazılamadı: {error}"
+  read-error: "&c❌ Ödül logu okunamadı: {error}"
+
+# Re-Verify (Akıllı Yeniden Doğrulama)
+reverify:
+  start: "&e🔄 Yeniden doğrulama denetimi başlatıldı..."
+  finished: "&a✅ Yeniden doğrulama tamamlandı. Toplam kontrol edilen hesap: {count}"
+  unlinked: "&c⚠ {player} adlı oyuncunun Discord bağlantısı kaldırıldı (rol veya üyelik bulunamadı)."
+  notified: "&e⚠ {player} adlı oyuncu yeniden doğrulama uyarısı aldı."
+  skipped: "&7{player} doğrulandı, işlem atlandı."
+  disabled: "&e🔕 Yeniden doğrulama sistemi devre dışı."
+  error: "&c❌ Yeniden doğrulama sırasında hata: {error}"
+
+# Genel Sistem Mesajları
+system:
+  reload: "&a✅ Yapılandırma dosyaları yeniden yüklendi!"
+  reload-detailed: "&aConfig.yml, messages.yml ve ödül sistemi başarıyla yenilendi!"
+  migration-start: "&eVeri taşıma işlemi başlatılıyor..."
+  migration-finish: "&a{count} kayıt başarıyla taşındı!"
+  migration-unsupported: "&cBu depolama türü veri taşımayı desteklemiyor."
+  storage-change: "&eDepolama türü değişti: &7{old} &f→ &a{new}"
+  error: "&cBir hata oluştu: &7{error}"
+  no-permission: "&cBu komutu kullanma iznine sahip değilsin!"
+  plugin-enabled: "&a✅ mLinker başarıyla etkinleştirildi!"
+  plugin-disabled: "&c🔴 mLinker devre dışı bırakıldı!"
+  api-reload: "&a✅ mLinker API yeniden yüklendi!"
+  update-available: "&e📦 Yeni mLinker sürümü mevcut: {version}"
+
+# Mesajlar Arası Ayırıcılar
+decorations:
+  line: "&8&l&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  small-line: "&8&m━━━━━━━━━━━━━━━━━━━━━"
+  prefix: "&7[&bmLinker&7] "
+  space: ""
+  endline: "&8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+# Dosya Oluşturma / Kaydetme Hataları
+storage:
+  file-create-error: "❌ {file} oluşturulamadı: {error}"
+  file-save-error: "❌ {file} kaydedilemedi: {error}"
+
+# Konsol Mesajları
+plugin.enabled: "✅ mLinker başarıyla etkinleştirildi!"
+plugin.disabled: "mLinker devre dışı bırakıldı."
+discord.bot-stopped: "🔴 Discord bot kapatıldı."
+rewards.system-stopped: "🎁 Ödül sistemi kapatıldı."
+rewards.log-stopped: "🧾 Ödül log sistemi kapatıldı."
+storage.closed: "💾 Veri bağlantısı kapatıldı."
+storage.mysql: "💾 Depolama yöntemi: MySQL"
+storage.sqlite: "💾 Depolama yöntemi: SQLite"
+storage.yaml: "💾 Depolama yöntemi: YAML"
+storage.migrate-success: "✅ {count} kayıt {old} → {new} sistemine taşındı."
+storage.migrate-empty: "ℹ Taşınacak kayıt bulunamadı ({type})"
+storage.migrate-unsupported: "❌ Bu depolama türü migration desteklemiyor."
+storage.backup-created: "📦 Eski YAML verisi yedeklendi: {file}"
+storage.migrate-fail: "❌ Veri taşıma hatası: {error}"
+discord.disabled: "🔕 Discord bağlantısı devre dışı bırakılmış."
+discord.no-token: "⚠ Discord bot tokeni tanımlanmamış! Bot başlatılmadı."
+discord.started: "🤖 Discord botu başarıyla başlatıldı."
+discord.failed: "❌ Discord botu başlatılamadı: {error}"
+storage.type-changed: "⚠ Depolama tipi değişti! ({old} → {new})"
+command.missing: "❌ Komut '{cmd}' plugin.yml içinde bulunamadı!"
+command.undefined: "⚠ Komut '{cmd}' plugin.yml içinde tanımlı değil, atlanıyor."

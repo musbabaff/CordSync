@@ -1,0 +1,173 @@
+# ======================================================
+#  mLinker - Gelişmiş Minecraft ↔ Discord Hesap Eşleştirme Sistemi
+#  Geliştirici: musbabaff
+#  GitHub: https://github.com/musbabaff
+# ======================================================
+
+# ======================================================
+#  [1] DİL VE YERELLEŞTİRME AYARLARI
+# ------------------------------------------------------
+#  Eklenti mesajlarının hangi dil dosyasından okunacağını belirler.
+#  'plugins/mLinker/locales/' klasöründe kendi dil dosyanızı oluşturabilirsiniz.
+#  Mevcut seçenekler: TR (messages_TR.yml), EN (messages_EN.yml) vb.
+# ======================================================
+language: TR
+
+# ======================================================
+#  [2] AKILLI YENİDEN DOĞRULAMA (Re-Verify System)
+# ------------------------------------------------------
+#  Oyuncuların Discord sunucusunda kalıp kalmadığını veya gerekli
+#  doğrulama rolünü taşıyıp taşımadığını arka planda düzenli olarak kontrol eder.
+#  Özellikle "Discord'a gir-çık" yaparak ödül kasanları engellemek için idealdir.
+#
+#  enabled: true/false -> Sistemi açar veya kapatır.
+#  interval-hours: Kaç saatte bir kontrol edileceğini belirler.
+#  action: Kontrol başarısız olursa (oyuncu sunucudan çıkmışsa) ne yapılacağını seçin:
+#          "unlink" -> Oyuncunun hesap bağlantısını koparır ve oyun içi/DC rollerini geri alır.
+#          "notify" -> Sadece log kanalına ve konsola uyarı gönderir, işlem yapmaz.
+#  log-channel-id: İşlemlerin raporlanacağı Discord kanal ID'si. (Boş bırakılırsa atlanır)
+# ======================================================
+reverify:
+  enabled: true
+  interval-hours: 6
+  action: "notify"
+  log-channel-id: ""
+
+# ======================================================
+#  [3] EŞLEŞTİRME KODU AYARLARI
+# ------------------------------------------------------
+#  Oyuncular oyun içinde /link veya /hesapbagla yazdığında üretilecek kodun yapısı.
+# ======================================================
+link:
+  # Oyuncuya verilecek rastgele güvenlik kodunun karakter uzunluğu (Önerilen: 6)
+  code-length: 6
+
+  # Üretilen kodun saniye cinsinden geçerlilik süresi.
+  # Örnek: 300 saniye = 5 dakika. Süre dolarsa oyuncu yeni kod almalıdır.
+  expire-seconds: 300
+
+# ======================================================
+#  [4] DISCORD BOT AYARLARI
+# ------------------------------------------------------
+#  Botun çalışması için gereken temel entegrasyon ayarları.
+#  DİKKAT: Botunuzun "Server Members Intent" ayarının Discord Developer Portal
+#  üzerinden açık olduğundan kesinlikle emin olun!
+# ======================================================
+discord:
+  # Discord özelliklerini tamamen açıp kapatır.
+  enabled: true
+
+  # Discord Developer Portal üzerinden aldığınız Bot Token'ı buraya girin.
+  bot-token: "BOT_TOKEN_BURAYA"
+
+  # Botun işlem yapacağı ana Discord sunucusunun (Guild) ID'si.
+  guild-id: "123456789012345678"
+
+  # Minecraft hesabını başarıyla eşleştirenlere Discord'da verilecek rolün ID'si.
+  role-id-verified: "123456789012345678"
+
+  # Botun oynuyor/durum mesajı.
+  status: "Minecraft ↔ Discord | /hesapbagla"
+
+  # LuckPerms Grup → Discord Rol Eşleme
+  # Hesap eşlendiğinde oyuncunun LuckPerms grubuna göre ek Discord rolleri verilir.
+  # Hesap kaldırıldığında bu roller de geri alınır.
+  # Format: luckperms_grup_adı: "discord_rol_id"
+  luckperms-roles:
+    enabled: true
+    mappings:
+      vip: "DISCORD_ROL_ID_BURAYA"
+      "vip+": "DISCORD_ROL_ID_BURAYA"
+      "mvip+": "DISCORD_ROL_ID_BURAYA"
+
+  # Hesap eşleme/kaldırma işlemlerinin loglanacağı Discord kanal ID'si.
+  # Boş bırakılırsa log gönderilmez.
+  log-channel-id: ""
+
+  # Oto Mesaj - Hesap eşleme kanalına plugin başladığında 1 kere bilgilendirme mesajı atar.
+  # Eğer kanalda botun mesajı zaten varsa tekrar atmaz.
+  auto-message:
+    enabled: true
+    channel-id: ""
+    embed-title: "🔗 Hesap Eşleştirme"
+    embed-description: "Minecraft hesabınızı Discord hesabınıza bağlamak için oyun içinde `/hesapesle` yazın ve aldığınız kodu bu kanalda `/hesapesle <kod>` şeklinde kullanın."
+    embed-color: "#00BFFF"
+
+# ======================================================
+#  [5] VERİ DEPOLAMA (VERİTABANI)
+# ------------------------------------------------------
+#  Oyuncu eşleşmelerinin ve verilerin nerede saklanacağını belirler.
+#  - YAML   -> Basit dosya kaydı. (Sadece çok küçük sunucular için önerilir)
+#  - SQLITE -> (TAVSİYE EDİLEN) Yerel, hızlı, kurulum gerektirmeyen veritabanı.
+#  - MYSQL  -> BungeeCord/Velocity gibi ağlar (Network) için merkezi veritabanı.
+# ======================================================
+storage:
+  type: "SQLITE"
+
+  # Eğer MYSQL seçiliyse doldurulması zorunlu alanlar:
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "mlinker_db"
+    username: "root"
+    password: "password"
+
+  # Sistemin çökmeleri önlemek için hatırladığı son depolama formatı. (Ellemeyin)
+  last-storage: "SQLITE"
+
+# ======================================================
+#  [6] ÖDÜL SİSTEMİ (RewardManager)
+# ------------------------------------------------------
+#  Oyuncuları Discord sunucunuza katılmaya teşvik etmek için ödül sistemi.
+#  Değişkenler: {player} -> Oyuncu Adı, {uuid} -> Oyuncu UUID
+#  Süre Biçimleri: 10m (dakika), 1h (saat), 1d (gün) vb.
+# ======================================================
+rewards:
+  # --- İLK EŞLEŞTİRME ÖDÜLÜ ---
+  # Oyuncu hesabını hayatında ilk defa bağladığında 1 kere verilir.
+  first-link:
+    enabled: true
+    message: "&a[mLinker] &eTebrikler! Discord hesabını bağladın ve başlangıç ödülünü kaptın!"
+    commands:
+      # Örnek: LuckPerms üzerinden 7 günlük geçici VIP verme komutu
+      - "lp user {player} parent addtemp vip 7d"
+      - "eco give {player} 5000"
+    items:
+      # Sadece eşya ismi ve miktarı:
+      - "DIAMOND:3"
+      # İsim, miktar ve lore barındıran gelişmiş eşya formatı:
+      - { material: "GOLD_INGOT", amount: 8, name: "&6Altın Hediye", lore: ["&7Discord Eşleme Ödülü"] }
+
+  # --- PERİYODİK (GÜNLÜK/SAATLİK) ÖDÜL ---
+  # Hesabı bağlı olan ve Discord'da bulunmaya devam edenlere düzenli olarak verilir.
+  interval:
+    enabled: true
+    every: "1d"   # 10m / 1h / 1d
+    message: "&a[mLinker] &eDiscord bağlantın aktif olduğu için günlük ödülün hesabına eklendi!"
+    commands:
+      - "eco give {player} 1000"
+    items: []
+
+# ======================================================
+#  [7] ÖDÜL LOG SİSTEMİ (Güvenlik ve Takip)
+# ------------------------------------------------------
+#  Hangi oyuncunun, ne zaman, hangi ödülü aldığını kayıt altına alır.
+#  Sunucu ekonomisini korumak ve olası açıkları takip etmek için önemlidir.
+# ======================================================
+reward-logs:
+  enabled: true
+  # Seçenekler: YAML, SQLITE, MYSQL
+  type: "SQLITE"
+
+  # Eğer yukarıda MYSQL seçiliyse verilerin yazılacağı özel tablo adı:
+  mysql-table: "mlinker_reward_logs"
+
+# ======================================================
+#  [8] EK BİLGİLER VE NOTLAR
+# ------------------------------------------------------
+#  - Veritabanı Dosyaları:
+#    YAML için   -> 'linked-accounts.yml' ve 'reward-logs.yml'
+#    SQLITE için -> 'mlinker.db'
+#  - Eklentiyi güncellemek için oyun içinden veya konsoldan '/mlinkerreload'
+#    komutunu kullanarak tüm ayarları, mesajları ve ödül sistemini anında yenileyebilirsiniz.
+# ======================================================
