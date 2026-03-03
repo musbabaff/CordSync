@@ -28,8 +28,9 @@ public class SQLiteStorage implements StorageProvider, Migratable {
 
     private void connect() {
         try {
-            File dbFile = new File(plugin.getDataFolder(), "vxlinker.db");
-            if (!dbFile.getParentFile().exists()) dbFile.getParentFile().mkdirs();
+            File dbFile = new File(plugin.getDataFolder(), "mlinker.db");
+            if (!dbFile.getParentFile().exists())
+                dbFile.getParentFile().mkdirs();
             connection = DriverManager.getConnection("jdbc:sqlite:" + dbFile.getAbsolutePath());
             plugin.getLogger().info("✅ SQLite bağlantısı kuruldu: " + dbFile.getName());
         } catch (SQLException e) {
@@ -38,8 +39,7 @@ public class SQLiteStorage implements StorageProvider, Migratable {
     }
 
     private void createTable() {
-        String sql =
-                "CREATE TABLE IF NOT EXISTS linked_accounts (" +
+        String sql = "CREATE TABLE IF NOT EXISTS linked_accounts (" +
                 " uuid TEXT PRIMARY KEY," +
                 " username TEXT NOT NULL," +
                 " discord_id TEXT NOT NULL UNIQUE" +
@@ -70,7 +70,8 @@ public class SQLiteStorage implements StorageProvider, Migratable {
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, uuid.toString());
             ResultSet rs = ps.executeQuery();
-            if (rs.next()) return rs.getString("discord_id");
+            if (rs.next())
+                return rs.getString("discord_id");
         } catch (SQLException e) {
             plugin.getLogger().severe("❌ Discord ID alınamadı: " + e.getMessage());
         }
@@ -83,7 +84,8 @@ public class SQLiteStorage implements StorageProvider, Migratable {
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, discordId);
             ResultSet rs = ps.executeQuery();
-            if (rs.next()) return UUID.fromString(rs.getString("uuid"));
+            if (rs.next())
+                return UUID.fromString(rs.getString("uuid"));
         } catch (SQLException e) {
             plugin.getLogger().severe("❌ UUID alınamadı: " + e.getMessage());
         }
@@ -160,7 +162,10 @@ public class SQLiteStorage implements StorageProvider, Migratable {
             connection.commit();
             connection.setAutoCommit(true);
         } catch (SQLException e) {
-            try { connection.rollback(); } catch (Exception ignored) {}
+            try {
+                connection.rollback();
+            } catch (Exception ignored) {
+            }
             plugin.getLogger().severe("❌ Kayıtlar içe aktarılamadı (SQLite): " + e.getMessage());
         }
     }

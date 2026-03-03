@@ -11,12 +11,11 @@ import org.json.simple.parser.JSONParser;
 
 import com.blockstock.mlinker.MLinker;
 
-
 public class UpdateChecker {
 
     private final MLinker plugin;
-    private final String repoOwner = "Velvexa";      
-    private final String repoName = "vxLinker";      
+    private final String repoOwner = "musbabaff";
+    private final String repoName = "mLinker";
     private final String githubAPI = "https://api.github.com/repos/%s/%s/releases/latest";
     private final String repoURL = "https://github.com/%s/%s";
 
@@ -24,14 +23,13 @@ public class UpdateChecker {
         this.plugin = plugin;
     }
 
- 
     public void checkForUpdates() {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
             try {
                 String apiUrl = String.format(githubAPI, repoOwner, repoName);
                 HttpURLConnection connection = (HttpURLConnection) new URL(apiUrl).openConnection();
                 connection.setRequestMethod("GET");
-                connection.setRequestProperty("User-Agent", "vxLinker-UpdateChecker");
+                connection.setRequestProperty("User-Agent", "mLinker-UpdateChecker");
                 connection.setConnectTimeout(5000);
                 connection.setReadTimeout(5000);
 
@@ -63,13 +61,13 @@ public class UpdateChecker {
 
                 if (isNewerVersion(latestVersion, currentVersion)) {
                     plugin.getLogger().info("§e───────────────────────────────────────");
-                    plugin.getLogger().info("§6vxLinker Güncelleme Denetimi");
+                    plugin.getLogger().info("§6mLinker Güncelleme Denetimi");
                     plugin.getLogger().info("§cYeni sürüm mevcut! §f(" + latestVersion + ")");
                     plugin.getLogger().info("§7Yüklü sürüm: §e" + currentVersion);
                     plugin.getLogger().info("§aİndir: " + repoLink);
                     plugin.getLogger().info("§e───────────────────────────────────────");
                 } else {
-                    plugin.getLogger().info("✅ vxLinker güncel (v" + currentVersion + ")");
+                    plugin.getLogger().info("✅ mLinker güncel (v" + currentVersion + ")");
                 }
 
             } catch (Exception e) {
@@ -77,7 +75,6 @@ public class UpdateChecker {
             }
         });
     }
-
 
     private boolean isNewerVersion(String latest, String current) {
         try {
@@ -90,8 +87,10 @@ public class UpdateChecker {
             for (int i = 0; i < Math.max(latestParts.length, currentParts.length); i++) {
                 int latestNum = (i < latestParts.length) ? Integer.parseInt(latestParts[i]) : 0;
                 int currentNum = (i < currentParts.length) ? Integer.parseInt(currentParts[i]) : 0;
-                if (latestNum > currentNum) return true;
-                if (latestNum < currentNum) return false;
+                if (latestNum > currentNum)
+                    return true;
+                if (latestNum < currentNum)
+                    return false;
             }
             return false;
         } catch (Exception e) {
