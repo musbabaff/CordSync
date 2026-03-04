@@ -60,12 +60,33 @@ public class UpdateChecker {
                 String repoLink = String.format(repoURL, repoOwner, repoName);
 
                 if (isNewerVersion(latestVersion, currentVersion)) {
-                    plugin.getLogger().info("Â§eâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€");
-                    plugin.getLogger().info("Â§6CordSync GÃ¼ncelleme Denetimi");
-                    plugin.getLogger().info("Â§cYeni sÃ¼rÃ¼m mevcut! Â§f(" + latestVersion + ")");
-                    plugin.getLogger().info("Â§7YÃ¼klÃ¼ sÃ¼rÃ¼m: Â§e" + currentVersion);
-                    plugin.getLogger().info("Â§aÄ°ndir: " + repoLink);
-                    plugin.getLogger().info("Â§eâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€");
+                    plugin.setUpdateAvailable(true);
+                    plugin.setLatestVersion(latestVersion);
+
+                    plugin.getLogger().info("§e----------------------------------------------------");
+                    plugin.getLogger().info("§6CordSync Update Checker");
+                    plugin.getLogger().info("§cA new version is available! §f(" + latestVersion + ")");
+                    plugin.getLogger().info("§7Current version: §e" + currentVersion);
+                    plugin.getLogger().info("§aDownload: " + repoLink);
+                    plugin.getLogger().info("§e----------------------------------------------------");
+
+                    // Notify any online operators instantly (useful after /csreload)
+                    Bukkit.getScheduler().runTask(plugin, () -> {
+                        for (org.bukkit.entity.Player p : Bukkit.getOnlinePlayers()) {
+                            if (p.isOp() || p.hasPermission("cordsync.admin")) {
+                                p.sendMessage(org.bukkit.ChatColor.translateAlternateColorCodes('&',
+                                        "&e----------------------------------------------------"));
+                                p.sendMessage(
+                                        org.bukkit.ChatColor.translateAlternateColorCodes('&', "&6CordSync Update"));
+                                p.sendMessage(org.bukkit.ChatColor.translateAlternateColorCodes('&',
+                                        "&cA new version is available! &f(" + latestVersion + ")"));
+                                p.sendMessage(org.bukkit.ChatColor.translateAlternateColorCodes('&',
+                                        "&aDownload: &e" + repoLink));
+                                p.sendMessage(org.bukkit.ChatColor.translateAlternateColorCodes('&',
+                                        "&e----------------------------------------------------"));
+                            }
+                        }
+                    });
                 } else {
                     plugin.getLogger().info("âœ… CordSync gÃ¼ncel (v" + currentVersion + ")");
                 }
@@ -98,5 +119,3 @@ public class UpdateChecker {
         }
     }
 }
-
-

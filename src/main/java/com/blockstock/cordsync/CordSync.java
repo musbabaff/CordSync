@@ -36,6 +36,30 @@ public class CordSync extends JavaPlugin {
     private RewardManager rewardManager;
     private RewardLogManager rewardLogManager;
     private ReverifyTask reverifyTask;
+    private final File migrationsDir;
+
+    private boolean updateAvailable = false;
+    private String latestVersion = "";
+
+    public CordSync() {
+        this.migrationsDir = new File(getDataFolder(), "migrations");
+    }
+
+    public boolean isUpdateAvailable() {
+        return updateAvailable;
+    }
+
+    public void setUpdateAvailable(boolean updateAvailable) {
+        this.updateAvailable = updateAvailable;
+    }
+
+    public String getLatestVersion() {
+        return latestVersion;
+    }
+
+    public void setLatestVersion(String latestVersion) {
+        this.latestVersion = latestVersion;
+    }
 
     @Override
     public void onEnable() {
@@ -101,6 +125,10 @@ public class CordSync extends JavaPlugin {
         // Register GUI listener
         com.blockstock.cordsync.gui.LinkGUI linkGUI = new com.blockstock.cordsync.gui.LinkGUI(this);
         Bukkit.getPluginManager().registerEvents(linkGUI, this);
+
+        // Register Update Notifier listener
+        Bukkit.getPluginManager().registerEvents(new com.blockstock.cordsync.listeners.UpdateNotifyListener(this),
+                this);
 
         // Register PlaceholderAPI
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
