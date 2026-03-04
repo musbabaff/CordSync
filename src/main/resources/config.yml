@@ -127,6 +127,22 @@ discord:
     format: "[{mcname}] {discordname}"
     reset-on-unlink: true
 
+  # ── Join/Quit Messages ──────────────────────────────────────────────
+  join-quit-messages:
+    enabled: true
+    channel-id: ""
+
+  # ── Reverse Sync (Discord -> LuckPerms) ─────────────────────────────
+  reverse-sync:
+    enabled: false
+    mappings:
+      # Discord Role ID: LuckPerms group name
+      "DISCORD_ROLE_ID_HERE": "booster"
+
+  # ── GUI Settings ────────────────────────────────────────────────────
+  gui:
+    enabled: true
+
 # ┌──────────────────────────────────────────────────────────────────────┐
 # │  SECURITY & ANTI-ABUSE                                               │
 # ├──────────────────────────────────────────────────────────────────────┤
@@ -259,21 +275,3 @@ console-bridge:
   channel-id: ""
   admin-role-id: ""
   blocked-commands: "stop,restart,reload"
-
-# Join/Quit Discord Messages
-discord:
-  join-quit-messages:
-    enabled: true
-    channel-id: ""
-
-  # Reverse Sync: Discord roles -> LuckPerms groups
-  reverse-sync:
-    enabled: false
-    mappings:
-      # Discord Role ID: LuckPerms group name
-      "DISCORD_ROLE_ID_HERE": "booster"
-      "DISCORD_ROLE_ID_HERE_2": "nitro"
-
-  # GUI settings
-  gui:
-    enabled: true
