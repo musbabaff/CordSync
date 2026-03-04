@@ -6,15 +6,15 @@
 
   <groupId>com.blockstock</groupId>
   <artifactId>CordSync</artifactId>
-  <version>1.0.1</version>
+  <version>1.2.0</version>
   <name>CordSync</name>
   <description>Discord ↔ Minecraft account linking, verification and reward system.</description>
   <url>https://github.com/musbabaff/CordSync</url>
 
   <licenses>
     <license>
-      <name>MIT</name>
-      <url>https://opensource.org/licenses/MIT</url>
+      <name>Custom EULA (All Rights Reserved)</name>
+      <url>https://github.com/musbabaff/CordSync/blob/main/LICENSE</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
@@ -52,6 +52,10 @@
     <repository>
       <id>luckperms-repo</id>
       <url>https://repo.luckperms.net/releases/</url>
+    </repository>
+    <repository>
+      <id>placeholderapi</id>
+      <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
     </repository>
   </repositories>
 
@@ -95,6 +99,18 @@
       <scope>provided</scope>
     </dependency>
 
+    <dependency>
+      <groupId>me.clip</groupId>
+      <artifactId>placeholderapi</artifactId>
+      <version>2.11.6</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>club.minnced</groupId>
+      <artifactId>discord-webhooks</artifactId>
+      <version>0.8.4</version>
+    </dependency>
   </dependencies>
 
   <build>

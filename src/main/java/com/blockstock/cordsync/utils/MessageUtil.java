@@ -1,10 +1,10 @@
 package com.blockstock.cordsync.utils;
 
 import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.bukkit.ChatColor;
@@ -62,7 +62,6 @@ public class MessageUtil {
     }
 
     private static void exportLegacyIfNeeded(CordSync plugin) {
-        // Backward compat: if old messages_TR.yml exists, don't overwrite locales
         File oldTR = new File(plugin.getDataFolder(), "messages_TR.yml");
         File oldEN = new File(plugin.getDataFolder(), "messages_EN.yml");
         if (oldTR.exists() || oldEN.exists()) {
@@ -88,6 +87,34 @@ public class MessageUtil {
         return colored;
     }
 
+    public static List<String> getList(String key) {
+        List<String> list = messages.getStringList(key);
+        if (list.isEmpty() && fallback != null) {
+            list = fallback.getStringList(key);
+        }
+        if (list.isEmpty()) {
+            return Collections.singletonList(ChatColor.RED + "[ERROR] Missing list key: " + key);
+        }
+
+        List<String> colored = new ArrayList<>();
+        for (String s : list) {
+            colored.add(ChatColor.translateAlternateColorCodes('&', s));
+        }
+        return colored;
+    }
+
+    public static List<String> getList(String key, Map<String, String> placeholders) {
+        List<String> list = getList(key);
+        List<String> formatted = new ArrayList<>();
+        for (String s : list) {
+            for (Map.Entry<String, String> entry : placeholders.entrySet()) {
+                s = s.replace("{" + entry.getKey() + "}", entry.getValue() == null ? "" : entry.getValue());
+            }
+            formatted.add(s);
+        }
+        return formatted;
+    }
+
     public static String getRaw(String key) {
         String value = messages.getString(key);
         if (value == null && fallback != null) {
@@ -98,25 +125,13 @@ public class MessageUtil {
 
     public static String format(String key, Map<String, ?> placeholders) {
         String msg = get(key);
-        if (placeholders != null) {
-            for (Map.Entry<String, ?> entry : placeholders.entrySet()) {
-                msg = msg.replace("{" + entry.getKey() + "}", String.valueOf(entry.getValue()));
+        for (Map.Entry<String, ?> entry : placeholders.entrySet()) {
+            if (entry.getValue() != null) {
+                msg = msg.replace("{" + entry.getKey() + "}", entry.getValue().toString());
             }
         }
         return msg;
     }
 
-    public static String getActiveLanguage() {
-        return activeLanguage;
-    }
-
-    public static String[] getSupportedLanguages() {
-        return SUPPORTED_LANGUAGES;
-    }
-
-    public static void reload(CordSync plugin) {
-        cache.clear();
-        load(plugin);
-        plugin.getLogger().info("\uD83D\uDD04 Language reloaded.");
-    }
+    public static void reload(CordSync plugin) { load(plugin); }
 }

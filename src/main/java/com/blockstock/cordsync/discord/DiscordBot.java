@@ -8,6 +8,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import com.blockstock.cordsync.CordSync;
 import com.blockstock.cordsync.commands.LinkVerifyCommand;
 import com.blockstock.cordsync.listeners.LoginVerifyListener;
+import com.blockstock.cordsync.listeners.ConsoleBridgeListener;
+import com.blockstock.cordsync.listeners.ReverseSyncListener;
 import com.blockstock.cordsync.utils.MessageUtil;
 
 import org.bukkit.Bukkit;
@@ -55,6 +57,8 @@ public class DiscordBot extends ListenerAdapter {
                     .setActivity(Activity.playing(status != null ? status : "CordSync"))
                     .addEventListeners(new LinkVerifyCommand(plugin))
                     .addEventListeners(new LoginVerifyListener(plugin))
+                    .addEventListeners(new ConsoleBridgeListener(plugin))
+                    .addEventListeners(new ReverseSyncListener(plugin))
                     .addEventListeners(this) // for chat bridge
                     .build();
 

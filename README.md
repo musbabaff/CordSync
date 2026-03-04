@@ -5,7 +5,7 @@
 ### Advanced Discord ↔ Minecraft Account Linking System
 
 [![Version](https://img.shields.io/github/v/release/musbabaff/CordSync?color=blue&label=version)](https://github.com/musbabaff/CordSync/releases)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-Custom%20EULA-red.svg)](LICENSE)
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.8--1.21+-brightgreen.svg)](https://papermc.io)
 [![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://adoptium.net/)
 [![Folia](https://img.shields.io/badge/Folia-Supported-purple.svg)](https://papermc.io/software/folia)
@@ -157,7 +157,7 @@ mvn clean package
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under a [Custom EULA (All Rights Reserved)](LICENSE). Source code is available for educational and personal use only.
 
 ---
 

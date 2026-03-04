@@ -1,21 +1,52 @@
-MIT License
-
+CordSync — Custom License (All Rights Reserved)
 Copyright (c) 2026 musbabaff / BlockStock
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+TERMS AND CONDITIONS
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. SOURCE CODE ACCESS
+   The source code of this plugin is made publicly available for educational
+   and personal use purposes only. Users may freely read, study, and learn
+   from the source code.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. PERSONAL USE
+   Users are permitted to compile and build the plugin from source for use
+   on their own personal Minecraft servers at no cost.
+
+3. PROHIBITED ACTIONS
+   The following actions are strictly prohibited without prior written
+   permission from the copyright holder:
+
+   a) Copying, redistributing, or republishing the source code, compiled
+      binaries (.jar files), or any substantial portion thereof.
+
+   b) Integrating, incorporating, or adapting the source code or any part
+      of it into other projects, plugins, or software.
+
+   c) Distributing the plugin (in source or compiled form) free of charge
+      on any platform, website, or file-sharing service.
+
+   d) Selling, reselling, sublicensing, or commercially distributing the
+      plugin or any derivative work on any platform, marketplace, or store.
+
+   e) Claiming authorship or ownership of the plugin or its code.
+
+4. OFFICIAL DISTRIBUTION
+   The only authorized distribution channel for the compiled, production-ready
+   version of this plugin is the official Spigot resource page. For support,
+   updates, and the latest compiled version, please visit the official page.
+
+5. CONTRIBUTIONS
+   By submitting a pull request or contribution, you agree to transfer all
+   rights of that contribution to the copyright holder under this license.
+
+6. WARRANTY DISCLAIMER
+   THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED. THE COPYRIGHT HOLDER SHALL NOT BE LIABLE FOR ANY CLAIM,
+   DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THIS SOFTWARE.
+
+7. ENFORCEMENT
+   Any violation of these terms may result in legal action. The copyright
+   holder reserves the right to enforce these terms to the fullest extent
+   permitted by law.
+
+For inquiries, contact: musbabaff (GitHub)

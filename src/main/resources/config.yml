@@ -81,7 +81,7 @@ discord:
   luckperms-roles:
     enabled: false
     mappings:
-      vip: "DISCORD_ROLE_ID_HERE"
+      "vip": "DISCORD_ROLE_ID_HERE"
       "vip+": "DISCORD_ROLE_ID_HERE"
       "mvip+": "DISCORD_ROLE_ID_HERE"
 
@@ -154,6 +154,9 @@ chat-bridge:
   minecraft-format: "&7[&bDiscord&7] &f{player}&7: &f{message}"
   # Options: ALL, LINKED_ONLY
   discord-to-mc: "ALL"
+  # Webhook URL for premium chat bridge (player skin as avatar!)
+  # Create a webhook in Discord channel settings → Integrations → Webhooks
+  webhook-url: ""
   mc-to-discord: "ALL"
   ignored-prefixes:
     - "/"
@@ -241,3 +244,27 @@ compatibility:
     enabled: false
     # Options: BUNGEECORD, VELOCITY
     type: "BUNGEECORD"
+# Console Bridge (Discord <-> Server Console)
+console-bridge:
+  enabled: false
+  channel-id: ""
+  admin-role-id: ""
+  blocked-commands: "stop,restart,reload"
+
+# Join/Quit Discord Messages
+discord:
+  join-quit-messages:
+    enabled: true
+    channel-id: ""
+
+  # Reverse Sync: Discord roles -> LuckPerms groups
+  reverse-sync:
+    enabled: false
+    mappings:
+      # Discord Role ID: LuckPerms group name
+      "DISCORD_ROLE_ID_HERE": "booster"
+      "DISCORD_ROLE_ID_HERE_2": "nitro"
+
+  # GUI settings
+  gui:
+    enabled: true

@@ -1,0 +1,4 @@
+- [CordSync Wiki](Home)
+- [Installation Guide](Installation)
+- [Configuration & Features](Configuration)
+- [Commands & Permissions](Commands-&-Permissions)

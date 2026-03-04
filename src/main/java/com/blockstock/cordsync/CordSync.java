@@ -91,6 +91,23 @@ public class CordSync extends JavaPlugin {
             getLogger().info("2FA Login system enabled.");
         }
 
+        // Register join/quit message listener
+        if (config.getBoolean("discord.join-quit-messages.enabled", false)) {
+            Bukkit.getPluginManager().registerEvents(
+                    new com.blockstock.cordsync.listeners.JoinQuitListener(this), this);
+            getLogger().info("Join/Quit messages enabled.");
+        }
+
+        // Register GUI listener
+        com.blockstock.cordsync.gui.LinkGUI linkGUI = new com.blockstock.cordsync.gui.LinkGUI(this);
+        Bukkit.getPluginManager().registerEvents(linkGUI, this);
+
+        // Register PlaceholderAPI
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new com.blockstock.cordsync.hooks.CordSyncPlaceholders(this).register();
+            getLogger().info("PlaceholderAPI integration enabled.");
+        }
+
         if (config.getBoolean("reverify.enabled", false)) {
             reverifyTask = new ReverifyTask(this);
             reverifyTask.start();
