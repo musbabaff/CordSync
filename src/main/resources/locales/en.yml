@@ -152,6 +152,7 @@ discord-embeds:
   rewards-chat-msg: "&8[&a&l✓&8] &fYour rewards are processed automatically! Keep your account linked to enjoy uninterrupted benefits."
 
 discord:
+  auto-message-exists: "✅ Auto-Message is already set up in this channel."
   code-missing-title: "❌ No Code Provided"
   code-missing-desc: "Please enter the 6-digit code generated from `/link` in Minecraft."
   invalid-title: "❌ Invalid or Expired Code"

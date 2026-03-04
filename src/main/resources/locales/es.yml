@@ -30,6 +30,7 @@ unlink:
   console-success: "&7{player} eliminó su vinculación."
 
 discord:
+  auto-message-exists: "✅ El mensaje automático ya está configurado en este canal."
   code-missing-title: "❌ Código no proporcionado"
   code-missing-desc: "Ingresa el código de 6 dígitos de `/link`."
   invalid-title: "❌ Código inválido o expirado"

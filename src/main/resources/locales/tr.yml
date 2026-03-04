@@ -103,6 +103,7 @@ gui:
   rewards-chat-msg: "&8[&a&l✓&8] &fTüm eşleme ödülleriniz sistem tarafından otomatik tanımlanmaktadır. Ayrıcalıklardan faydalanmak için bağlantınızı koparmayın!"
 
 discord:
+  auto-message-exists: "✅ Otomatik mesaj bu kanalda zaten ayarlanmış durumda."
   code-missing-title: "❌ Kod Eksik"
   code-missing-desc: "Lütfen oyunda `/hesapesle` yazarak oluşturduğunuz 6 haneli kodu giriniz."
   invalid-title: "❌ Geçersiz veya Süresi Dolmuş Kod"

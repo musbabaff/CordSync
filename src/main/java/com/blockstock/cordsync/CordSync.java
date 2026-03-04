@@ -294,23 +294,26 @@ public class CordSync extends JavaPlugin {
     }
 
     private void initializeDiscordBot(FileConfiguration config) {
-        // ═══ RAW CONFIG MEMORY DUMP (DEBUG) ═══
-        getLogger().info("═══════════ CONFIG DEBUG DUMP ═══════════");
-        getLogger().info("📁 Config file path: " + new java.io.File(getDataFolder(), "config.yml").getAbsolutePath());
-        getLogger().info("📁 Data folder exists: " + getDataFolder().exists());
-        getLogger().info("� Config file exists: " + new java.io.File(getDataFolder(), "config.yml").exists());
-        getLogger().info("� Root-level keys: " + config.getKeys(false));
-        getLogger().info("� discord section exists: " + config.contains("discord"));
-        getLogger().info("🔑 discord.enabled raw value: " + config.get("discord.enabled"));
-        getLogger().info("🔑 discord.bot-token raw value: " + (config.getString("discord.bot-token") != null
-                ? "SET (length=" + config.getString("discord.bot-token").length() + ")"
-                : "NULL"));
-        if (config.isConfigurationSection("discord")) {
-            getLogger().info("� discord section keys: " + config.getConfigurationSection("discord").getKeys(false));
-        } else {
-            getLogger().info("🔑 discord is NOT a configuration section!");
+        if (config.getBoolean("debug", false)) {
+            // ═══ RAW CONFIG MEMORY DUMP (DEBUG) ═══
+            getLogger().info("═══════════ CONFIG DEBUG DUMP ═══════════");
+            getLogger()
+                    .info("📁 Config file path: " + new java.io.File(getDataFolder(), "config.yml").getAbsolutePath());
+            getLogger().info("📁 Data folder exists: " + getDataFolder().exists());
+            getLogger().info(" Config file exists: " + new java.io.File(getDataFolder(), "config.yml").exists());
+            getLogger().info(" Root-level keys: " + config.getKeys(false));
+            getLogger().info(" discord section exists: " + config.contains("discord"));
+            getLogger().info("🔑 discord.enabled raw value: " + config.get("discord.enabled"));
+            getLogger().info("🔑 discord.bot-token raw value: " + (config.getString("discord.bot-token") != null
+                    ? "SET (length=" + config.getString("discord.bot-token").length() + ")"
+                    : "NULL"));
+            if (config.isConfigurationSection("discord")) {
+                getLogger().info(" discord section keys: " + config.getConfigurationSection("discord").getKeys(false));
+            } else {
+                getLogger().info("🔑 discord is NOT a configuration section!");
+            }
+            getLogger().info("══════════════════════════════════════════");
         }
-        getLogger().info("══════════════════════════════════════════");
 
         String token = config.getString("discord.bot-token");
         String status = config.getString("discord.status", "Minecraft ↔ Discord Linker");

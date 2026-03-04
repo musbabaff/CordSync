@@ -30,7 +30,7 @@ public class UpdateNotifyListener implements Listener {
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                         "&7Current version: &e" + plugin.getDescription().getVersion()));
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',
-                        "&aDownload: &ehttps://github.com/musbabaff/CordSync"));
+                        "&aDownload: &ehttps://www.spigotmc.org/resources/133118/"));
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',
                         "&e----------------------------------------------------"));
             }, 60L); // Delay by 3 seconds so it doesn't get buried in other login messages

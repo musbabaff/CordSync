@@ -35,7 +35,7 @@ public class UpdateChecker {
 
                 int responseCode = connection.getResponseCode();
                 if (responseCode != 200) {
-                    plugin.getLogger().warning("âš  GitHub API isteÄŸi baÅŸarÄ±sÄ±z! Kod: " + responseCode);
+                    plugin.getLogger().warning("⚠ GitHub API request failed! Code: " + responseCode);
                     return;
                 }
 
@@ -52,12 +52,12 @@ public class UpdateChecker {
 
                 String latestVersion = (String) json.get("tag_name");
                 if (latestVersion == null || latestVersion.isEmpty()) {
-                    plugin.getLogger().warning("âš  GitHub yanÄ±tÄ±nda geÃ§erli bir sÃ¼rÃ¼m etiketi bulunamadÄ±.");
+                    plugin.getLogger().warning("⚠ No valid version tag found in the GitHub response.");
                     return;
                 }
 
                 String currentVersion = plugin.getDescription().getVersion();
-                String repoLink = String.format(repoURL, repoOwner, repoName);
+                String repoLink = "https://www.spigotmc.org/resources/133118/";
 
                 if (isNewerVersion(latestVersion, currentVersion)) {
                     plugin.setUpdateAvailable(true);
@@ -88,11 +88,11 @@ public class UpdateChecker {
                         }
                     });
                 } else {
-                    plugin.getLogger().info("âœ… CordSync gÃ¼ncel (v" + currentVersion + ")");
+                    plugin.getLogger().info("✅ CordSync is up to date (v" + currentVersion + ")");
                 }
 
             } catch (Exception e) {
-                plugin.getLogger().warning("âŒ GÃ¼ncelleme kontrolÃ¼ baÅŸarÄ±sÄ±z: " + e.getMessage());
+                plugin.getLogger().warning("❌ Update check failed: " + e.getMessage());
             }
         });
     }
