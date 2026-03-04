@@ -55,6 +55,47 @@ gui:
     - ""
     - "&c► Click to unlink"
     
+  booster:
+    info-title: "🚀 Booster Info"
+    info-desc: "Information about server boost rewards"
+
+discord-embeds:
+  commands:
+    link-modal-title: "🔗 Link Your Account"
+    link-modal-label: "Linking Code"
+    link-modal-placeholder: "Enter the code from /link"
+    link-modal-error-empty: "Code cannot be empty"
+    
+  buttons:
+    link: "🔗 Link Account"
+    how-to: "📖 How to Link"
+    status: "📊 Account Status"
+    confirm: "✅ Confirm"
+    cancel: "❌ Cancel"
+    
+  ui:
+    status-title: "📊 Account Status"
+    status-linked-desc: "✅ Your account is **securely linked**!"
+    status-not-linked-desc: "❌ Your account is **not linked** to any Minecraft account."
+    status-field-mc: "🎮 Minecraft"
+    status-field-dc: "💬 Discord"
+    status-field-relink: "🔄 Relinks"
+    status-field-booster: "🚀 Booster"
+    status-field-status: "Status"
+    status-val-linked: "🟢 Linked"
+    status-val-not-linked: "🔴 Not Linked"
+    status-val-yes: "✅ Yes"
+    status-val-no: "❌ No"
+    
+    confirm-title: "🔐 Verification Required"
+    confirm-desc: "Are you sure you want to link with the Minecraft account **{player}**?"
+    confirm-expired: "❌ The confirmation request has expired!"
+    confirm-cancelled: "Account linking has been cancelled."
+    confirm-title-cancelled: "❌ Cancelled"
+    
+    success-title: "Account Linked ✅"
+    success-desc: "Successfully verified and linked with **{player}**!"
+    
   btn-rewards-name: "&6&l🎁 Your Rewards"
   btn-rewards-lore:
     - ""

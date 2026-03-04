@@ -71,14 +71,17 @@ public class LinkVerifyCommand extends ListenerAdapter {
                 return;
             }
 
-            TextInput codeInput = TextInput.create("cordsync_code", "Linking Code", TextInputStyle.SHORT)
-                    .setPlaceholder("Enter the code from /link")
+            TextInput codeInput = TextInput
+                    .create("cordsync_code", MessageUtil.getRaw("discord-embeds.commands.link-modal-label"),
+                            TextInputStyle.SHORT)
+                    .setPlaceholder(MessageUtil.getRaw("discord-embeds.commands.link-modal-placeholder"))
                     .setRequired(true)
                     .setMinLength(4)
                     .setMaxLength(10)
                     .build();
 
-            Modal modal = Modal.create("cordsync_link_form", "\uD83D\uDD17 Link Your Account")
+            Modal modal = Modal
+                    .create("cordsync_link_form", MessageUtil.getRaw("discord-embeds.commands.link-modal-title"))
                     .addComponents(ActionRow.of(codeInput))
                     .build();
 
@@ -104,8 +107,8 @@ public class LinkVerifyCommand extends ListenerAdapter {
             String details = plugin.getConfig().getString("discord.booster-message.button-details",
                     "Details not configured.");
             EmbedBuilder embed = new EmbedBuilder()
-                    .setTitle("\uD83C\uDF81 Booster Rewards")
-                    .setDescription(details)
+                    .setTitle(MessageUtil.getRaw("booster.info-title"))
+                    .setDescription(MessageUtil.getRaw("booster.info-desc") + "\n\n" + details)
                     .setColor(new Color(255, 115, 250))
                     .setFooter("CordSync");
             event.replyEmbeds(embed.build()).setEphemeral(true).queue();
@@ -140,8 +143,8 @@ public class LinkVerifyCommand extends ListenerAdapter {
             String confirmId = buttonId.replace("cancel", "confirm");
             pendingConfirmations.remove(confirmId);
             EmbedBuilder embed = new EmbedBuilder()
-                    .setTitle("\u274C Cancelled")
-                    .setDescription(MessageUtil.get("discord.confirm-cancelled"))
+                    .setTitle(MessageUtil.getRaw("discord-embeds.ui.confirm-title-cancelled"))
+                    .setDescription(MessageUtil.getRaw("discord-embeds.ui.confirm-cancelled"))
                     .setColor(Color.RED)
                     .setFooter("CordSync");
             event.replyEmbeds(embed.build()).setEphemeral(true).queue();
@@ -225,18 +228,18 @@ public class LinkVerifyCommand extends ListenerAdapter {
         pendingConfirmations.put(confirmId, new PendingLink(uuid, playerName, code, event.getUser().getId()));
 
         EmbedBuilder embed = new EmbedBuilder()
-                .setTitle("\uD83D\uDD10 Account Link Confirmation")
-                .setDescription(MessageUtil.format("discord.confirm-desc", Map.of("player", playerName)))
+                .setTitle(MessageUtil.getRaw("discord-embeds.ui.confirm-title"))
+                .setDescription(MessageUtil.getRaw("discord-embeds.ui.confirm-desc").replace("{player}", playerName))
                 .setColor(new Color(255, 165, 0))
-                .addField("\uD83C\uDFAE Minecraft", playerName, true)
-                .addField("\uD83D\uDCAC Discord", event.getUser().getName(), true)
-                .setFooter("CordSync \u2022 2FA Verification")
+                .addField(MessageUtil.getRaw("discord-embeds.ui.status-field-mc"), playerName, true)
+                .addField(MessageUtil.getRaw("discord-embeds.ui.status-field-dc"), event.getUser().getName(), true)
+                .setFooter("CordSync \u2022 2FA")
                 .setTimestamp(java.time.Instant.now());
 
         event.replyEmbeds(embed.build())
                 .addActionRow(
-                        Button.success(confirmId, "\u2705 Confirm"),
-                        Button.danger(cancelId, "\u274C Cancel"))
+                        Button.success(confirmId, MessageUtil.getRaw("discord-embeds.buttons.confirm")),
+                        Button.danger(cancelId, MessageUtil.getRaw("discord-embeds.buttons.cancel")))
                 .setEphemeral(true)
                 .queue();
 
@@ -256,9 +259,10 @@ public class LinkVerifyCommand extends ListenerAdapter {
 
         if (!storage.isDiscordLinked(discordId)) {
             EmbedBuilder embed = new EmbedBuilder()
-                    .setTitle("\uD83D\uDCCA Account Status")
-                    .setDescription("\u274C Your account is **not linked** to any Minecraft account.")
-                    .addField("Status", "\uD83D\uDD34 Not Linked", false)
+                    .setTitle(MessageUtil.getRaw("discord-embeds.ui.status-title"))
+                    .setDescription(MessageUtil.getRaw("discord-embeds.ui.status-not-linked-desc"))
+                    .addField(MessageUtil.getRaw("discord-embeds.ui.status-field-status"),
+                            MessageUtil.getRaw("discord-embeds.ui.status-val-not-linked"), false)
                     .setColor(Color.RED)
                     .setFooter("CordSync");
             event.replyEmbeds(embed.build()).setEphemeral(true).queue();
@@ -271,13 +275,19 @@ public class LinkVerifyCommand extends ListenerAdapter {
         int relinkCount = uuid != null ? storage.getRelinkCount(uuid) : 0;
 
         EmbedBuilder embed = new EmbedBuilder()
-                .setTitle("\uD83D\uDCCA Account Status")
-                .setDescription("\u2705 Your account is **linked**!")
-                .addField("\uD83C\uDFAE Minecraft", playerName != null ? playerName : "Unknown", true)
-                .addField("\uD83D\uDCAC Discord", event.getUser().getName(), true)
-                .addField("\uD83D\uDD04 Relink Count", String.valueOf(relinkCount), true)
-                .addField("\uD83D\uDE80 Booster", isBoosting ? "\u2705 Yes" : "\u274C No", true)
-                .addField("Status", "\uD83D\uDFE2 Linked", true)
+                .setTitle(MessageUtil.getRaw("discord-embeds.ui.status-title"))
+                .setDescription(MessageUtil.getRaw("discord-embeds.ui.status-linked-desc"))
+                .addField(MessageUtil.getRaw("discord-embeds.ui.status-field-mc"),
+                        playerName != null ? playerName : "Unknown", true)
+                .addField(MessageUtil.getRaw("discord-embeds.ui.status-field-dc"), event.getUser().getName(), true)
+                .addField(MessageUtil.getRaw("discord-embeds.ui.status-field-relink"), String.valueOf(relinkCount),
+                        true)
+                .addField(MessageUtil.getRaw("discord-embeds.ui.status-field-booster"),
+                        isBoosting ? MessageUtil.getRaw("discord-embeds.ui.status-val-yes")
+                                : MessageUtil.getRaw("discord-embeds.ui.status-val-no"),
+                        true)
+                .addField(MessageUtil.getRaw("discord-embeds.ui.status-field-status"),
+                        MessageUtil.getRaw("discord-embeds.ui.status-val-linked"), true)
                 .setColor(new Color(0, 200, 83))
                 .setFooter("CordSync")
                 .setTimestamp(java.time.Instant.now());
@@ -321,11 +331,12 @@ public class LinkVerifyCommand extends ListenerAdapter {
 
         // Success embed
         EmbedBuilder embed = new EmbedBuilder()
-                .setTitle("\u2705 " + MessageUtil.getRaw("discord.success-title"))
-                .setDescription(MessageUtil.format("discord.success-desc", Map.of("player", pending.playerName)))
+                .setTitle(MessageUtil.getRaw("discord-embeds.ui.success-title"))
+                .setDescription(
+                        MessageUtil.getRaw("discord-embeds.ui.success-desc").replace("{player}", pending.playerName))
                 .setColor(new Color(0, 200, 83))
-                .addField("\uD83C\uDFAE Minecraft", pending.playerName, true)
-                .addField("\uD83D\uDCAC Discord", event.getUser().getName(), true)
+                .addField(MessageUtil.getRaw("discord-embeds.ui.status-field-mc"), pending.playerName, true)
+                .addField(MessageUtil.getRaw("discord-embeds.ui.status-field-dc"), event.getUser().getName(), true)
                 .setFooter("CordSync \u2022 Account Linked \u2705")
                 .setTimestamp(java.time.Instant.now());
         event.replyEmbeds(embed.build()).setEphemeral(true).queue();

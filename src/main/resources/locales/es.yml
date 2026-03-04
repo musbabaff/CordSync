@@ -81,3 +81,40 @@ security:
 system:
   reload: "&8[&a&l✓&8] &aCordSync configuration and locales reloaded."
   reload-detailed: "&8[&a&l✓&8] &aCordSync reloaded in &f{time}ms&a."
+
+discord-embeds:
+  commands:
+    link-modal-title: "🔗 Vincula tu cuenta"
+    link-modal-label: "Código de enlace"
+    link-modal-placeholder: "Introduce el código del juego"
+    link-modal-error-empty: "El código no puede estar vacío"
+    
+  buttons:
+    link: "🔗 Vincular Cuenta"
+    how-to: "📖 Cómo vincular"
+    status: "📊 Estado de la Cuenta"
+    confirm: "✅ Confirmar"
+    cancel: "❌ Cancelar"
+    
+  ui:
+    status-title: "📊 Estado de la Cuenta"
+    status-linked-desc: "✅ ¡Tu cuenta está **vinculada de forma segura**!"
+    status-not-linked-desc: "❌ Tu cuenta **no está vinculada** a ninguna cuenta de Minecraft."
+    status-field-mc: "🎮 Minecraft"
+    status-field-dc: "💬 Discord"
+    status-field-relink: "🔄 Revinculaciones"
+    status-field-booster: "🚀 Mejorador"
+    status-field-status: "Estado"
+    status-val-linked: "🟢 Vinculada"
+    status-val-not-linked: "🔴 No Vinculada"
+    status-val-yes: "✅ Sí"
+    status-val-no: "❌ No"
+    
+    confirm-title: "🔐 Verificación Requerida"
+    confirm-desc: "¿Estás seguro de que deseas vincularte con la cuenta de Minecraft **{player}**?"
+    confirm-expired: "❌ ¡La solicitud de confirmación ha caducado!"
+    confirm-cancelled: "La vinculación de la cuenta ha sido cancelada."
+    confirm-title-cancelled: "❌ Cancelado"
+    
+    success-title: "Cuenta Vinculada ✅"
+    success-desc: "¡Verificado y vinculado con éxito a **{player}**!"

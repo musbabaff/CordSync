@@ -83,3 +83,40 @@ security:
 system:
   reload: "&8[&a&l✓&8] &aCordSync configuration and locales reloaded."
   reload-detailed: "&8[&a&l✓&8] &aCordSync reloaded in &f{time}ms&a."
+
+discord-embeds:
+  commands:
+    link-modal-title: "🔗 Verbinde deinen Account"
+    link-modal-label: "Verbindungscode"
+    link-modal-placeholder: "Gib den Code ein"
+    link-modal-error-empty: "Code darf nicht leer sein"
+    
+  buttons:
+    link: "🔗 Account Verbinden"
+    how-to: "📖 Wie man verbindet"
+    status: "📊 Account Status"
+    confirm: "✅ Bestätigen"
+    cancel: "❌ Abbrechen"
+    
+  ui:
+    status-title: "📊 Account Status"
+    status-linked-desc: "✅ Dein Account ist **sicher verbunden**!"
+    status-not-linked-desc: "❌ Dein Account ist **nicht verbunden**."
+    status-field-mc: "🎮 Minecraft"
+    status-field-dc: "💬 Discord"
+    status-field-relink: "🔄 Neu verbinden"
+    status-field-booster: "🚀 Booster"
+    status-field-status: "Status"
+    status-val-linked: "🟢 Verbunden"
+    status-val-not-linked: "🔴 Nicht Verbunden"
+    status-val-yes: "✅ Ja"
+    status-val-no: "❌ Nein"
+    
+    confirm-title: "🔐 Überprüfung erforderlich"
+    confirm-desc: "Möchtest du dich wirklich mit dem Minecraft-Account **{player}** verbinden?"
+    confirm-expired: "❌ Die Bestätigungsanfrage ist abgelaufen!"
+    confirm-cancelled: "Die Kontoverknüpfung wurde abgebrochen."
+    confirm-title-cancelled: "❌ Abgebrochen"
+    
+    success-title: "Account Verbunden ✅"
+    success-desc: "Erfolgreich mit **{player}** verifiziert und verbunden!"

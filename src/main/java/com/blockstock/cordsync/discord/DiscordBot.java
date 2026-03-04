@@ -379,9 +379,9 @@ public class DiscordBot extends ListenerAdapter {
             // Premium button layout with modal trigger, info, and status
             channel.sendMessageEmbeds(embed.build())
                     .addActionRow(
-                            Button.success("cordsync_link_modal", "\uD83D\uDD17 Link Account"),
-                            Button.primary("cordsync_howto_info", "\uD83D\uDCD6 How to Link"),
-                            Button.secondary("cordsync_status", "\uD83D\uDCCA Account Status"))
+                            Button.success("cordsync_link_modal", MessageUtil.getRaw("discord-embeds.buttons.link")),
+                            Button.primary("cordsync_howto_info", MessageUtil.getRaw("discord-embeds.buttons.how-to")),
+                            Button.secondary("cordsync_status", MessageUtil.getRaw("discord-embeds.buttons.status")))
                     .queue(
                             success -> plugin.getLogger().info(MessageUtil.get("discord.auto-message-sent")),
                             failure -> plugin.getLogger().warning("Auto message failed: " + failure.getMessage()));

@@ -81,3 +81,40 @@ security:
 system:
   reload: "&8[&a&l✓&8] &aCordSync configuration and locales reloaded."
   reload-detailed: "&8[&a&l✓&8] &aCordSync reloaded in &f{time}ms&a."
+
+discord-embeds:
+  commands:
+    link-modal-title: "🔗 Lier votre compte"
+    link-modal-label: "Code de liaison"
+    link-modal-placeholder: "Entrez le code"
+    link-modal-error-empty: "Le code ne peut pas être vide"
+    
+  buttons:
+    link: "🔗 Lier le Compte"
+    how-to: "📖 Comment lier"
+    status: "📊 Statut du Compte"
+    confirm: "✅ Confirmer"
+    cancel: "❌ Annuler"
+    
+  ui:
+    status-title: "📊 Statut du Compte"
+    status-linked-desc: "✅ Votre compte est **lié en toute sécurité**!"
+    status-not-linked-desc: "❌ Votre compte n'est **pas lié**."
+    status-field-mc: "🎮 Minecraft"
+    status-field-dc: "💬 Discord"
+    status-field-relink: "🔄 Reliaison"
+    status-field-booster: "🚀 Booster"
+    status-field-status: "Statut"
+    status-val-linked: "🟢 Lié"
+    status-val-not-linked: "🔴 Non Lié"
+    status-val-yes: "✅ Oui"
+    status-val-no: "❌ Non"
+    
+    confirm-title: "🔐 Vérification Requise"
+    confirm-desc: "Êtes-vous sûr de vouloir lier avec le compte Minecraft **{player}**?"
+    confirm-expired: "❌ La demande de confirmation a expiré!"
+    confirm-cancelled: "La liaison du compte a été annulée."
+    confirm-title-cancelled: "❌ Annulé"
+    
+    success-title: "Compte Lié ✅"
+    success-desc: "Vérifié et lié avec succès à **{player}**!"

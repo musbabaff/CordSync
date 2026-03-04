@@ -111,6 +111,46 @@ discord:
   already-linked-desc: "Bu Discord hesabı zaten bir Minecraft profiline bağlı! Başka bir hesap bağlamak istiyorsanız önce mevcut bağlantıyı koparmalısınız."
   player-already-linked-title: "❌ Minecraft Hesabı Zaten Bağlı"
   player-already-linked-desc: "Girdiğiniz koda ait olan Minecraft hesabı halihazırda başka bir Discord kullanıcısına bağlı."
+  booster:
+    info-title: "🚀 Sunucu Takviyesi (Booster)"
+    info-desc: "Sunucu takviye ödülleri hakkında bilgi"
+
+discord-embeds:
+  commands:
+    link-modal-title: "🔗 Hesabını Eşle"
+    link-modal-label: "Eşleme Kodu"
+    link-modal-placeholder: "Oyundan aldığınız eşleme kodunu girin"
+    link-modal-error-empty: "Kod boş bırakılamaz"
+    
+  buttons:
+    link: "🔗 Hesabını Eşle"
+    how-to: "📖 Nasıl Eşlenir?"
+    status: "📊 Hesap Durumu"
+    confirm: "✅ Onayla"
+    cancel: "❌ İptal Et"
+    
+  ui:
+    status-title: "📊 Hesap Durumu"
+    status-linked-desc: "✅ Hesabınız **güvenli bir şekilde eşlendi**!"
+    status-not-linked-desc: "❌ Hesabınız herhangi bir Minecraft hesabına **bağlı değil**."
+    status-field-mc: "🎮 Minecraft"
+    status-field-dc: "💬 Discord"
+    status-field-relink: "🔄 Yeniden Eşleme"
+    status-field-booster: "🚀 Sunucu Boost"
+    status-field-status: "Durum"
+    status-val-linked: "🟢 Eşlendi"
+    status-val-not-linked: "🔴 Eşlenmedi"
+    status-val-yes: "✅ Evet"
+    status-val-no: "❌ Hayır"
+    
+    confirm-title: "🔐 Doğrulama Gerekli"
+    confirm-desc: "**{player}** adlı Minecraft hesabıyla eşlemeyi onaylıyor musunuz?"
+    confirm-expired: "❌ Onay isteğinin süresi doldu!"
+    confirm-cancelled: "Hesap eşleme işlemi iptal edildi."
+    confirm-title-cancelled: "❌ İptal Edildi"
+    
+    success-title: "Hesap Eşlendi ✅"
+    success-desc: "**{player}** hesabıyla eşleme başarıyla tamamlandı!"
   success-title: "🎉 Hesap Eşlemesi Başarılı!"
   success-desc: "**{player}** adlı Minecraft hesabınız güvenli bir şekilde doğrulandı ve bağlandı. ✅\n\nSunucu içerisindeki ayrıcalıklarınızın ve ödüllerinizin tadını çıkarın!"
   confirm-desc: "Discord hesabınızı **{player}** isimli oyuncunun Minecraft profili ile bağlamak üzeresiniz.\n\n⚠️ **Bu işlem oyun içindeki veya Discord'daki bağlantıyı kes seçeneği ile geri alınabilir.**\n\nDevam etmek istediğinize emin misiniz?"
