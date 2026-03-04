@@ -1,0 +1,93 @@
+﻿# ╔══════════════════════════════════════════════════════════════╗
+# ║  CordSync — Türkçe Dil Dosyası                            ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# ── Eklenti Mesajları ─────────────────────────────────────────
+plugin:
+  enabled: "&a&l⚡ CordSync &r&abaşarıyla etkinleştirildi!"
+  disabled: "&c&l⚡ CordSync &r&cdevre dışı bırakıldı."
+  prefix: "&b&l⚡ CordSync &r&7» &f"
+
+# ── Dekorasyonlar ────────────────────────────────────────────
+decorations:
+  prefix: "&8[&b&l⚡&8] &f"
+  success-prefix: "&8[&a&l✓&8] &f"
+  error-prefix: "&8[&c&l✗&8] &f"
+  warning-prefix: "&8[&e&l⚠&8] &f"
+  info-prefix: "&8[&9&lℹ&8] &f"
+  separator: "&8&m                                                    "
+  header: "\n&b&l⚡ CordSync &8— &7Hesap Eşleme Sistemi\n&8&m                                                    "
+
+# ── Eşleme Sistemi ───────────────────────────────────────────
+link:
+  usage: "&8[&b&l⚡&8] &fEşleme kodu oluşturmak için &b/link &fkullanın."
+  code-generated: "&8[&a&l✓&8] &fEşleme kodunuz: &b&l{code} &7(Geçerlilik: &f{time}sn&7)"
+  code-already: "&8[&e&l⚠&8] &fZaten aktif bir kodunuz var: &b&l{code}"
+  success: "&8[&a&l✓&8] &a&lBaşarılı! &fHesabınız eşlendi! &7🎉"
+  already-linked: "&8[&c&l✗&8] &fHesabınız zaten bir Discord hesabıyla eşlenmiş."
+  not-online: "&8[&c&l✗&8] &fBu komutu kullanmak için çevrimiçi olmalısınız."
+
+# ── Eşlemeyi Kaldırma ────────────────────────────────────────
+unlink:
+  success: "&8[&a&l✓&8] &fDiscord eşlemeniz kaldırıldı."
+  not-linked: "&8[&c&l✗&8] &fHesabınız herhangi bir Discord hesabıyla eşlenmemiş."
+  error: "&8[&c&l✗&8] &fEşleme kaldırılırken bir hata oluştu."
+  console-success: "&7{player} hesap eşlemesini kaldırdı."
+
+# ── Discord Embed Mesajları ───────────────────────────────────
+discord:
+  code-missing-title: "❌ Kod Girilmedi"
+  code-missing-desc: "Lütfen Minecraft'taki `/link` komutundan aldığınız 6 haneli kodu girin."
+  invalid-title: "❌ Geçersiz veya Süresi Dolmuş Kod"
+  invalid-desc: "Girdiğiniz kod yanlış veya süresi dolmuş. `/link` ile yeni kod oluşturun."
+  already-linked-title: "❌ Zaten Eşlenmiş"
+  already-linked-desc: "Bu Discord hesabı zaten bir Minecraft hesabıyla eşlenmiş. Önce eşlemeyi kaldırın."
+  player-already-linked-title: "❌ Minecraft Hesabı Zaten Eşlenmiş"
+  player-already-linked-desc: "Bu Minecraft hesabı başka bir Discord hesabıyla eşlenmiş."
+  success-title: "Hesap Başarıyla Eşlendi!"
+  success-desc: "Minecraft hesabınız **{player}** doğrulandı ve eşlendi. ✅"
+  role-success: "✅ Discord rolü başarıyla verildi."
+  role-fail: "❌ Rol verme başarısız: {error}"
+  verified-console: "✅ Oyuncu {player} hesabını doğruladı."
+  slash-description: "Minecraft hesabınızı Discord ile eşleyin."
+  slash-option-description: "Minecraft'tan alınan eşleme kodu"
+  slash-registered: "✅ Slash komutu kaydedildi!"
+  confirm-desc: "Discord hesabınızı **{player}** isimli Minecraft hesabıyla eşlemek üzeresiniz.\n\n⚠️ **Bu işlem eşleme kaldırma ile geri alınabilir.**\n\nDevam etmek istiyor musunuz?"
+  confirm-expired: "❌ Onay süresi doldu! Lütfen tekrar deneyin."
+  confirm-cancelled: "Eşleme iptal edildi."
+  cooldown-title: "⏳ Bekleme Süresi Aktif"
+  cooldown-desc: "Tekrar eşleme yapmak için eşlemeyi kaldırdıktan sonra **{time}** beklemeniz gerekiyor."
+  relink-limit-title: "🚫 Eşleme Limiti Doldu"
+  relink-limit-desc: "Maksimum yeniden eşleme sayısına ({max}) ulaştınız. Bir yöneticiyle iletişime geçin."
+  booster-reward-given: "🚀 {player} boost ödülünü aldı."
+  started: "✅ Discord botu bağlandı."
+  bot-stopped: "Discord botu bağlantısı kesildi."
+  auto-message-sent: "✅ Otomatik mesaj eşleme kanalına gönderildi."
+  auto-message-exists: "ℹ Otomatik mesaj kanalda zaten mevcut."
+  log-linked: "🔗 **{player}** hesabını eşledi."
+  log-unlinked: "🔓 **{player}** eşlemesini kaldırdı."
+
+# ── Ödüller ───────────────────────────────────────────────────
+reward:
+  first-reward: "&8[&a&l✓&8] &a🎉 &fTebrikler &b{player}&f! &aİlk eşleme ödülünüzü &fkazandınız!"
+  interval-reward: "&8[&a&l✓&8] &f💎 Discord eşlemeniz aktif! &aGünlük ödül eklendi."
+
+# ── Depolama ──────────────────────────────────────────────────
+storage:
+  sqlite: "📦 SQLite depolama etkinleştirildi."
+  mysql: "📦 MySQL depolama etkinleştirildi."
+  yaml: "📦 YAML depolama etkinleştirildi."
+  closed: "📦 Veritabanı bağlantısı kapatıldı."
+
+# ── Sohbet Köprüsü ───────────────────────────────────────────
+chat:
+  minecraft-format: "&7[&b&lDiscord&7] &f{player}&7: &f{message}"
+  discord-format: "**[MC]** {player}: {message}"
+  no-permission: "&8[&c&l✗&8] &fÇapraz sohbet için izniniz yok."
+  not-linked: "&8[&c&l✗&8] &fSohbet köprüsünü kullanmak için hesabınızı eşlemelisiniz."
+
+# ── Güvenlik / 2FA ────────────────────────────────────────────
+security:
+  2fa-login-pending: "&c&l⚠ 2FA Doğrulama Gerekli\n\n&fDiscord DM'nize bir giriş isteği gönderildi.\n&7Sunucuya girmek için onaylayın.\n\n&8CordSync tarafından desteklenmektedir"
+  2fa-approved: "&8[&a&l✓&8] &fGiriş Discord 2FA ile onaylandı."
+  2fa-denied: "&8[&c&l✗&8] &fGiriş reddedildi. Bu siz değilseniz bir yöneticiyle iletişime geçin."

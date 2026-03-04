@@ -1,38 +1,43 @@
 ---
-description: Build, version bump, git push and GitHub tag creation for mLinker
+description: Build, version bump, git push, GitHub tag and release creation for CordSync
 ---
 
-# mLinker Deploy Workflow
+# CordSync Deploy Workflow
 
-Bu workflow her güncelleme sonrası sürümü artırır, derler, GitHub'a push eder ve tag oluşturur.
+This workflow bumps the version, builds, pushes to GitHub, and creates a release with changelog.
 
 // turbo-all
 
-## Adımlar
+## Steps
 
-1. Mevcut sürümü oku ve patch numarasını 1 artır (`pom.xml` ve `plugin.yml` dosyalarında)
+1. Read current version from `pom.xml` and increment the patch number in both `pom.xml` and `plugin.yml`
 
-2. Maven ile derle:
+2. Build with Maven:
 ```powershell
 & "C:\Program Files\JetBrains\IntelliJ IDEA 2025.3.1\plugins\maven\lib\maven3\bin\mvn.cmd" clean package -q
 ```
 
-3. Tüm dosyaları stage'le:
+3. Stage all files:
 ```powershell
 git add -A
 ```
 
-4. Commit at (sürüm numarası ile):
+4. Commit with version and changelog description (describe what was changed):
 ```powershell
-git commit -m "v{VERSION} release"
+git commit -m "v{VERSION} - {CHANGELOG_DESCRIPTION}"
 ```
 
-5. Git tag oluştur:
+5. Create git tag:
 ```powershell
 git tag v{VERSION}
 ```
 
-6. GitHub'a push et (commit + tag):
+6. Push to GitHub (commit + tag):
 ```powershell
 git push origin main --tags
+```
+
+7. Create GitHub Release with the JAR file attached and the changelog as body:
+```powershell
+gh release create v{VERSION} "target/CordSync-{VERSION}.jar" --title "CordSync v{VERSION}" --notes "{CHANGELOG_DESCRIPTION}"
 ```

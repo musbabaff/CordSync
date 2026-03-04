@@ -1,12 +1,12 @@
-name: mLinker
-main: com.blockstock.mlinker.MLinker
-version: 0.2.1-BETA
+name: CordSync
+main: com.blockstock.cordsync.CordSync
+version: 1.0.1
 author: musbabaff
 description: >
   Discord ↔ Minecraft account linking, verification and reward system.
   Fully modular structure with MySQL, SQLite, and YAML support.
 api-version: 1.19
-prefix: mLinker
+prefix: CordSync
 
 softdepend:
   - Vault
@@ -14,56 +14,60 @@ softdepend:
   - PlaceholderAPI
 
 commands:
-  hesapesle:
-    description: Discord hesabını Minecraft hesabınla eşleştirmeni sağlar.
-    usage: /hesapesle
-    aliases: [mlink, link, hesap]
-    permission: mlinker.use
+  link:
+    description: Link your Minecraft account with Discord.
+    usage: /link
+    aliases: [hesapesle, mlink, cslink]
+    permission: cordsync.use
 
-  hesapkaldir:
-    description: Discord eşleşmesini kaldırır.
-    usage: /hesapkaldir
-    aliases: [munlink, unlink, unlinkaccount, kaldir]
-    permission: mlinker.use
+  unlink:
+    description: Remove your Discord account link.
+    usage: /unlink
+    aliases: [hesapkaldir, munlink, csunlink]
+    permission: cordsync.use
 
-  mlinkerreload:
-    description: mLinker yapılandırma dosyalarını yeniden yükler.
-    usage: /mlinkerreload
-    aliases: [mreload, mrl]
-    permission: mlinker.admin
+  csreload:
+    description: Reload CordSync configuration files.
+    usage: /csreload
+    aliases: [cordsyncreload, csrl]
+    permission: cordsync.admin
 
-  mlinkerinfo:
-    description: mLinker durumu, sürüm bilgisi ve API detaylarını gösterir.
-    usage: /mlinkerinfo
-    aliases: [minfo, mver]
-    permission: mlinker.admin
+  csinfo:
+    description: Show CordSync status, version info and API details.
+    usage: /csinfo
+    aliases: [cordsyncinfo, csver]
+    permission: cordsync.admin
 
-  mreverify:
-    description: Akıllı yeniden doğrulama sistemini manuel olarak başlatır.
-    usage: /mreverify
+  csreverify:
+    description: Manually start the smart re-verification system.
+    usage: /csreverify
     aliases: [reverify, linkcheck]
-    permission: mlinker.admin
+    permission: cordsync.admin
 
 permissions:
-  mlinker.use:
-    description: Hesap eşleştirme ve kaldırma komutlarını kullanma izni.
+  cordsync.use:
+    description: Permission to use account linking and unlinking commands.
     default: true
 
-  mlinker.admin:
-    description: mLinker yöneticisi izinleri.
+  cordsync.admin:
+    description: CordSync administrator permissions.
     default: op
 
-  mlinker.rewards:
-    description: Ödül sistemine erişim izni.
+  cordsync.rewards:
+    description: Access to the reward system.
     default: op
 
-  mlinker.reverify:
-    description: Yeniden doğrulama sistemini manuel başlatma izni.
+  cordsync.reverify:
+    description: Permission to manually start re-verification.
     default: op
 
-  mlinker.api:
-    description: mLinkerAPI erişimi ve yönetimi.
+  cordsync.api:
+    description: CordSync API access and management.
     default: op
+
+  cordsync.chat:
+    description: Permission to use cross-chat messaging.
+    default: true
 
 load: POSTWORLD
 

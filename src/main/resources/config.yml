@@ -1,174 +1,243 @@
-# ======================================================
-#  mLinker - Gelişmiş Minecraft ↔ Discord Hesap Eşleştirme Sistemi
-#  Geliştirici: musbabaff
-#  GitHub: https://github.com/musbabaff
-# ======================================================
-
-# ======================================================
-#  [1] DİL VE YERELLEŞTİRME AYARLARI
-# ------------------------------------------------------
-#  Eklenti mesajlarının hangi dil dosyasından okunacağını belirler.
-#  'plugins/mLinker/locales/' klasöründe kendi dil dosyanızı oluşturabilirsiniz.
-#  Mevcut seçenekler: TR (messages_TR.yml), EN (messages_EN.yml) vb.
-# ======================================================
-language: TR
-
-# ======================================================
-#  [2] AKILLI YENİDEN DOĞRULAMA (Re-Verify System)
-# ------------------------------------------------------
-#  Oyuncuların Discord sunucusunda kalıp kalmadığını veya gerekli
-#  doğrulama rolünü taşıyıp taşımadığını arka planda düzenli olarak kontrol eder.
-#  Özellikle "Discord'a gir-çık" yaparak ödül kasanları engellemek için idealdir.
+# ╔══════════════════════════════════════════════════════════════════════╗
+# ║                                                                    ║
+# ║    ██████╗ ██████╗ ██████╗ ██████╗ ███████╗██╗   ██╗███╗   ██╗     ║
+# ║   ██╔════╝██╔═══██╗██╔══██╗██╔══██╗██╔════╝╚██╗ ██╔╝████╗  ██║    ║
+# ║   ██║     ██║   ██║██████╔╝██║  ██║███████╗ ╚████╔╝ ██╔██╗ ██║    ║
+# ║   ██║     ██║   ██║██╔══██╗██║  ██║╚════██║  ╚██╔╝  ██║╚██╗██║    ║
+# ║   ╚██████╗╚██████╔╝██║  ██║██████╔╝███████║   ██║   ██║ ╚████║    ║
+# ║    ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═══╝   ║
+# ║                                                                    ║
+# ║        Advanced Discord ↔ Minecraft Account Linking System         ║
+# ║                    Developer: musbabaff                            ║
+# ║             https://github.com/musbabaff/CordSync                 ║
+# ║                                                                    ║
+# ╚══════════════════════════════════════════════════════════════════════╝
 #
-#  enabled: true/false -> Sistemi açar veya kapatır.
-#  interval-hours: Kaç saatte bir kontrol edileceğini belirler.
-#  action: Kontrol başarısız olursa (oyuncu sunucudan çıkmışsa) ne yapılacağını seçin:
-#          "unlink" -> Oyuncunun hesap bağlantısını koparır ve oyun içi/DC rollerini geri alır.
-#          "notify" -> Sadece log kanalına ve konsola uyarı gönderir, işlem yapmaz.
-#  log-channel-id: İşlemlerin raporlanacağı Discord kanal ID'si. (Boş bırakılırsa atlanır)
-# ======================================================
+# Config version — DO NOT CHANGE
+# Used for automatic config migration
+config-version: 2
+
+# Your server name (used in Discord embeds and logs)
+server-name: "My Server"
+
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │  LANGUAGE & LOCALIZATION                                            │
+# ├──────────────────────────────────────────────────────────────────────┤
+# │  Supported: en, tr, de, es, fr                                     │
+# │  Custom languages: Create locales/xx.yml in plugin folder           │
+# │  Missing keys automatically fall back to English                    │
+# └──────────────────────────────────────────────────────────────────────┘
+language: en
+
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │  SMART RE-VERIFICATION                                              │
+# ├──────────────────────────────────────────────────────────────────────┤
+# │  Periodically checks if linked players are still in Discord         │
+# │  Prevents "join-quit-farm" abuse                                    │
+# └──────────────────────────────────────────────────────────────────────┘
 reverify:
   enabled: true
   interval-hours: 6
+  # Options: "unlink" (remove link) or "notify" (log only)
   action: "notify"
   log-channel-id: ""
 
-# ======================================================
-#  [3] EŞLEŞTİRME KODU AYARLARI
-# ------------------------------------------------------
-#  Oyuncular oyun içinde /link veya /hesapbagla yazdığında üretilecek kodun yapısı.
-# ======================================================
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │  LINK SETTINGS                                                      │
+# ├──────────────────────────────────────────────────────────────────────┤
+# │  Configure code generation and expiration                           │
+# └──────────────────────────────────────────────────────────────────────┘
 link:
-  # Oyuncuya verilecek rastgele güvenlik kodunun karakter uzunluğu (Önerilen: 6)
-  code-length: 6
-
-  # Üretilen kodun saniye cinsinden geçerlilik süresi.
-  # Örnek: 300 saniye = 5 dakika. Süre dolarsa oyuncu yeni kod almalıdır.
   expire-seconds: 300
+  code-length: 6
+  max-active-codes: 1
 
-# ======================================================
-#  [4] DISCORD BOT AYARLARI
-# ------------------------------------------------------
-#  Botun çalışması için gereken temel entegrasyon ayarları.
-#  DİKKAT: Botunuzun "Server Members Intent" ayarının Discord Developer Portal
-#  üzerinden açık olduğundan kesinlikle emin olun!
-# ======================================================
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │  DISCORD BOT                                                        │
+# ├──────────────────────────────────────────────────────────────────────┤
+# │  Main Discord integration settings                                  │
+# │  Required: bot-token, guild-id                                      │
+# └──────────────────────────────────────────────────────────────────────┘
 discord:
-  # Discord özelliklerini tamamen açıp kapatır.
-  enabled: true
+  enabled: false
+  bot-token: "BOT_TOKEN_HERE"
+  guild-id: ""
+  role-id-verified: ""
 
-  # Discord Developer Portal üzerinden aldığınız Bot Token'ı buraya girin.
-  bot-token: "BOT_TOKEN_BURAYA"
+  # ── Rotating Bot Status ──────────────────────────────────────────────
+  # Variables: {online}, {max}, {linked}
+  # Types: PLAYING, WATCHING, LISTENING
+  status:
+    rotate: true
+    interval: 15
+    messages:
+      - "PLAYING:⚡ {online}/{max} Players Online"
+      - "WATCHING:🔗 {linked} Accounts Linked"
+      - "PLAYING:⭐ CordSync | /link"
+      - "LISTENING:🎮 Minecraft Server"
 
-  # Botun işlem yapacağı ana Discord sunucusunun (Guild) ID'si.
-  guild-id: "123456789012345678"
-
-  # Minecraft hesabını başarıyla eşleştirenlere Discord'da verilecek rolün ID'si.
-  role-id-verified: "123456789012345678"
-
-  # Botun başlangıç durum mesajı (10 saniye sonra otomatik olarak oyuncu sayısı ile güncellenir).
-  # Format: "{online} Oyuncu Çevrimiçi | /hesapesle" şeklinde dinamik güncellenir.
-  status: "mLinker | /hesapesle"
-
-  # LuckPerms Grup → Discord Rol Eşleme
-  # Hesap eşlendiğinde oyuncunun LuckPerms grubuna göre ek Discord rolleri verilir.
-  # Hesap kaldırıldığında bu roller de geri alınır.
-  # Format: luckperms_grup_adı: "discord_rol_id"
+  # ── LuckPerms Role Sync ─────────────────────────────────────────────
+  # Maps LuckPerms groups to Discord roles
   luckperms-roles:
-    enabled: true
+    enabled: false
     mappings:
-      vip: "DISCORD_ROL_ID_BURAYA"
-      "vip+": "DISCORD_ROL_ID_BURAYA"
-      "mvip+": "DISCORD_ROL_ID_BURAYA"
+      vip: "DISCORD_ROLE_ID_HERE"
+      "vip+": "DISCORD_ROLE_ID_HERE"
+      "mvip+": "DISCORD_ROLE_ID_HERE"
 
-  # Hesap eşleme/kaldırma işlemlerinin loglanacağı Discord kanal ID'si.
-  # Boş bırakılırsa log gönderilmez.
+  # ── Log Channel ─────────────────────────────────────────────────────
+  # All events (link/unlink/join/leave) logged here
   log-channel-id: ""
 
-  # Oto Mesaj - Hesap eşleme kanalına plugin başladığında 1 kere bilgilendirme mesajı atar.
-  # Eğer kanalda botun mesajı zaten varsa tekrar atmaz.
+  # ── Auto Message ────────────────────────────────────────────────────
+  # Premium embed with interactive buttons sent on startup
   auto-message:
     enabled: true
     channel-id: ""
-    embed-title: "🔗 Hesap Eşleştirme"
-    embed-description: "Minecraft hesabınızı Discord hesabınıza bağlamak için oyun içinde `/hesapesle` yazın ve aldığınız kodu bu kanalda `/hesapesle <kod>` şeklinde kullanın."
+    embed-title: "🔗 Account Linking"
+    embed-description: "Link your Minecraft account with Discord to unlock exclusive features, rewards, and cross-platform integration!"
     embed-color: "#00BFFF"
+    embed-thumbnail: ""
+    embed-image: ""
+    button-details: "**📖 How to Link:**\n\n1️⃣ Type `/link` in Minecraft\n2️⃣ Copy the 6-digit code\n3️⃣ Click **🔗 Link Account** below\n4️⃣ Enter your code in the form\n5️⃣ Confirm the linking\n\n✅ **Done!** Your account is now linked."
 
-# ======================================================
-#  [5] VERİ DEPOLAMA (VERİTABANI)
-# ------------------------------------------------------
-#  Oyuncu eşleşmelerinin ve verilerin nerede saklanacağını belirler.
-#  - YAML   -> Basit dosya kaydı. (Sadece çok küçük sunucular için önerilir)
-#  - SQLITE -> (TAVSİYE EDİLEN) Yerel, hızlı, kurulum gerektirmeyen veritabanı.
-#  - MYSQL  -> BungeeCord/Velocity gibi ağlar (Network) için merkezi veritabanı.
-# ======================================================
+  # ── Booster Info Message ────────────────────────────────────────────
+  booster-message:
+    enabled: true
+    channel-id: ""
+    embed-title: "🚀 Server Booster Rewards"
+    embed-description: "Thank you for boosting! Link your account to claim exclusive in-game rewards."
+    embed-color: "#FF73FA"
+    embed-thumbnail: ""
+    button-details: "🎁 **Booster Rewards Include:**\n\n💰 **10,000 Coins** — Spend in the shop\n⭐ **30-Day Booster Role** — Exclusive perks\n💎 **1x Netherite Ingot** — Premium material\n🏷️ **[Booster] Tag** — Show off in chat\n\n*Rewards are granted automatically when you link your account.*"
+
+  # ── Nickname Sync ───────────────────────────────────────────────────
+  # Updates Discord nickname to match Minecraft username
+  nickname-sync:
+    enabled: false
+    format: "[{mcname}] {discordname}"
+    reset-on-unlink: true
+
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │  SECURITY & ANTI-ABUSE                                              │
+# ├──────────────────────────────────────────────────────────────────────┤
+# │  Comprehensive protection against link abuse and farming            │
+# └──────────────────────────────────────────────────────────────────────┘
+security:
+  # Cooldown after unlinking before re-linking
+  unlink-cooldown: "24h"
+  # Maximum number of re-link attempts (0 = unlimited)
+  max-relink-count: 3
+  # Only give first-link reward once per player
+  first-reward-once: true
+
+  # ── 2FA Login System ────────────────────────────────────────────────
+  # Two-Factor Authentication for server login
+  # When enabled, linked players must approve login via Discord DM
+  # Protects against unauthorized account access
+  2fa-login:
+    enabled: false
+    # Approved session duration in minutes (player won't need to re-approve)
+    session-duration: 60
+    # Censor IP addresses in Discord messages (shows first 2 octets only)
+    censor-ip: true
+
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │  CHAT BRIDGE (MC ↔ Discord)                                        │
+# ├──────────────────────────────────────────────────────────────────────┤
+# │  Bidirectional chat relay between Minecraft and Discord              │
+# └──────────────────────────────────────────────────────────────────────┘
+chat-bridge:
+  enabled: false
+  channel-id: ""
+  discord-format: "**{player}**: {message}"
+  minecraft-format: "&7[&bDiscord&7] &f{player}&7: &f{message}"
+  # Options: ALL, LINKED_ONLY
+  discord-to-mc: "ALL"
+  mc-to-discord: "ALL"
+  ignored-prefixes:
+    - "/"
+    - "!"
+    - "."
+
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │  CONFIGURABLE COMMANDS                                              │
+# ├──────────────────────────────────────────────────────────────────────┤
+# │  Customize Discord slash command name                                │
+# └──────────────────────────────────────────────────────────────────────┘
+commands:
+  discord-slash-command: "link"
+  discord-slash-description: "Link your Minecraft account with Discord."
+
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │  STORAGE                                                            │
+# ├──────────────────────────────────────────────────────────────────────┤
+# │  Backends: SQLITE (default), MYSQL, YAML                            │
+# └──────────────────────────────────────────────────────────────────────┘
 storage:
   type: "SQLITE"
-
-  # Eğer MYSQL seçiliyse doldurulması zorunlu alanlar:
   mysql:
     host: "localhost"
     port: 3306
-    database: "mlinker_db"
+    database: "cordsync_db"
     username: "root"
     password: "password"
-
-  # Sistemin çökmeleri önlemek için hatırladığı son depolama formatı. (Ellemeyin)
   last-storage: "SQLITE"
 
-# ======================================================
-#  [6] ÖDÜL SİSTEMİ (RewardManager)
-# ------------------------------------------------------
-#  Oyuncuları Discord sunucunuza katılmaya teşvik etmek için ödül sistemi.
-#  Değişkenler: {player} -> Oyuncu Adı, {uuid} -> Oyuncu UUID
-#  Süre Biçimleri: 10m (dakika), 1h (saat), 1d (gün) vb.
-# ======================================================
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │  REWARDS                                                            │
+# ├──────────────────────────────────────────────────────────────────────┤
+# │  Configurable reward system for linking, intervals, and boosters    │
+# └──────────────────────────────────────────────────────────────────────┘
 rewards:
-  # --- İLK EŞLEŞTİRME ÖDÜLÜ ---
-  # Oyuncu hesabını hayatında ilk defa bağladığında 1 kere verilir.
+  # ── First Link Reward ───────────────────────────────────────────────
   first-link:
     enabled: true
-    message: "&a[mLinker] &eTebrikler! Discord hesabını bağladın ve başlangıç ödülünü kaptın!"
+    message: "&a[CordSync] &e🎉 Congratulations! You earned your first linking reward!"
     commands:
-      # Örnek: LuckPerms üzerinden 7 günlük geçici VIP verme komutu
       - "lp user {player} parent addtemp vip 7d"
       - "eco give {player} 5000"
     items:
-      # Sadece eşya ismi ve miktarı:
       - "DIAMOND:3"
-      # İsim, miktar ve lore barındıran gelişmiş eşya formatı:
-      - { material: "GOLD_INGOT", amount: 8, name: "&6Altın Hediye", lore: ["&7Discord Eşleme Ödülü"] }
+      - { material: "GOLD_INGOT", amount: 8, name: "&6Golden Gift", lore: ["&7Discord Linking Reward"] }
 
-  # --- PERİYODİK (GÜNLÜK/SAATLİK) ÖDÜL ---
-  # Hesabı bağlı olan ve Discord'da bulunmaya devam edenlere düzenli olarak verilir.
+  # ── Interval Reward ─────────────────────────────────────────────────
   interval:
     enabled: true
-    every: "1d"   # 10m / 1h / 1d
-    message: "&a[mLinker] &eDiscord bağlantın aktif olduğu için günlük ödülün hesabına eklendi!"
+    every: "1d"
+    message: "&a[CordSync] &e💎 Your Discord link is active! Daily reward added!"
     commands:
       - "eco give {player} 1000"
     items: []
 
-# ======================================================
-#  [7] ÖDÜL LOG SİSTEMİ (Güvenlik ve Takip)
-# ------------------------------------------------------
-#  Hangi oyuncunun, ne zaman, hangi ödülü aldığını kayıt altına alır.
-#  Sunucu ekonomisini korumak ve olası açıkları takip etmek için önemlidir.
-# ======================================================
+  # ── Booster Reward ──────────────────────────────────────────────────
+  booster:
+    enabled: true
+    message: "&a[CordSync] &d🚀 Thanks for boosting! You earned a special booster reward!"
+    commands:
+      - "lp user {player} parent addtemp booster 30d"
+      - "eco give {player} 10000"
+    items:
+      - "NETHERITE_INGOT:1"
+
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │  REWARD LOGS                                                        │
+# └──────────────────────────────────────────────────────────────────────┘
 reward-logs:
   enabled: true
-  # Seçenekler: YAML, SQLITE, MYSQL
   type: "SQLITE"
+  mysql-table: "cordsync_reward_logs"
 
-  # Eğer yukarıda MYSQL seçiliyse verilerin yazılacağı özel tablo adı:
-  mysql-table: "mlinker_reward_logs"
-
-# ======================================================
-#  [8] EK BİLGİLER VE NOTLAR
-# ------------------------------------------------------
-#  - Veritabanı Dosyaları:
-#    YAML için   -> 'linked-accounts.yml' ve 'reward-logs.yml'
-#    SQLITE için -> 'mlinker.db'
-#  - Eklentiyi güncellemek için oyun içinden veya konsoldan '/mlinkerreload'
-#    komutunu kullanarak tüm ayarları, mesajları ve ödül sistemini anında yenileyebilirsiniz.
-# ======================================================
+# ┌──────────────────────────────────────────────────────────────────────┐
+# │  COMPATIBILITY                                                      │
+# ├──────────────────────────────────────────────────────────────────────┤
+# │  Multi-version, Folia, and Proxy support settings                   │
+# └──────────────────────────────────────────────────────────────────────┘
+compatibility:
+  # Folia support — uses regionalized scheduling when available
+  folia: auto
+  # Proxy mode — enable for BungeeCord/Velocity networks
+  proxy:
+    enabled: false
+    # Options: BUNGEECORD, VELOCITY
+    type: "BUNGEECORD"

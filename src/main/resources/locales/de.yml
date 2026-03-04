@@ -1,0 +1,76 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  CordSync — Deutsche Sprachdatei                           ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+plugin:
+  enabled: "&a&l⚡ CordSync &r&awurde erfolgreich aktiviert!"
+  disabled: "&c&l⚡ CordSync &r&cwurde deaktiviert."
+  prefix: "&b&l⚡ CordSync &r&7» &f"
+
+decorations:
+  prefix: "&8[&b&l⚡&8] &f"
+  success-prefix: "&8[&a&l✓&8] &f"
+  error-prefix: "&8[&c&l✗&8] &f"
+  warning-prefix: "&8[&e&l⚠&8] &f"
+  info-prefix: "&8[&9&lℹ&8] &f"
+  separator: "&8&m                                                    "
+  header: "\n&b&l⚡ CordSync &8— &7Kontoverknüpfung\n&8&m                                                    "
+
+link:
+  usage: "&8[&b&l⚡&8] &fVerwende &b/link &fum einen Verknüpfungscode zu erstellen."
+  code-generated: "&8[&a&l✓&8] &fDein Code: &b&l{code} &7(Gültig für &f{time}s&7)"
+  code-already: "&8[&e&l⚠&8] &fDu hast bereits einen aktiven Code: &b&l{code}"
+  success: "&8[&a&l✓&8] &a&lErfolgreich! &fDein Konto wurde verknüpft! &7🎉"
+  already-linked: "&8[&c&l✗&8] &fDein Konto ist bereits verknüpft."
+
+unlink:
+  success: "&8[&a&l✓&8] &fDeine Verknüpfung wurde entfernt."
+  not-linked: "&8[&c&l✗&8] &fDein Konto ist nicht verknüpft."
+  error: "&8[&c&l✗&8] &fFehler beim Entfernen der Verknüpfung."
+  console-success: "&7{player} hat die Verknüpfung entfernt."
+
+discord:
+  code-missing-title: "❌ Kein Code eingegeben"
+  code-missing-desc: "Bitte gib den 6-stelligen Code aus `/link` ein."
+  invalid-title: "❌ Ungültiger oder abgelaufener Code"
+  invalid-desc: "Der eingegebene Code ist falsch oder abgelaufen."
+  already-linked-title: "❌ Bereits verknüpft"
+  already-linked-desc: "Dieses Discord-Konto ist bereits verknüpft."
+  player-already-linked-title: "❌ Minecraft-Konto bereits verknüpft"
+  player-already-linked-desc: "Dieses Minecraft-Konto ist bereits mit einem anderen Discord-Konto verknüpft."
+  success-title: "Konto erfolgreich verknüpft!"
+  success-desc: "Dein Minecraft-Konto **{player}** wurde verifiziert. ✅"
+  confirm-desc: "Du bist dabei, dein Discord-Konto mit **{player}** zu verknüpfen.\n\n⚠️ **Diese Aktion kann rückgängig gemacht werden.**\n\nFortfahren?"
+  confirm-expired: "❌ Bestätigung abgelaufen!"
+  confirm-cancelled: "Verknüpfung abgebrochen."
+  cooldown-title: "⏳ Abklingzeit aktiv"
+  cooldown-desc: "Du musst **{time}** nach dem Trennen warten."
+  relink-limit-title: "🚫 Link-Limit erreicht"
+  relink-limit-desc: "Du hast dein Limit ({max}) erreicht."
+  started: "✅ Discord-Bot verbunden."
+  bot-stopped: "Discord-Bot getrennt."
+  auto-message-sent: "✅ Auto-Nachricht gesendet."
+  auto-message-exists: "ℹ Auto-Nachricht existiert bereits."
+  log-linked: "🔗 **{player}** hat sein Konto verknüpft."
+  log-unlinked: "🔓 **{player}** hat die Verknüpfung entfernt."
+
+reward:
+  first-reward: "&8[&a&l✓&8] &a🎉 &fGlückwunsch &b{player}&f! &aErste Verknüpfungsbelohnung &ferhalten!"
+  interval-reward: "&8[&a&l✓&8] &f💎 Deine Verknüpfung ist aktiv! &aTägliche Belohnung."
+
+storage:
+  sqlite: "📦 SQLite-Speicher aktiviert."
+  mysql: "📦 MySQL-Speicher aktiviert."
+  yaml: "📦 YAML-Speicher aktiviert."
+  closed: "📦 Verbindung geschlossen."
+
+chat:
+  minecraft-format: "&7[&b&lDiscord&7] &f{player}&7: &f{message}"
+  discord-format: "**[MC]** {player}: {message}"
+  no-permission: "&8[&c&l✗&8] &fKeine Berechtigung für Cross-Chat."
+  not-linked: "&8[&c&l✗&8] &fVerknüpfe dein Konto, um den Chat zu nutzen."
+
+security:
+  2fa-login-pending: "&c&l⚠ 2FA-Verifizierung erforderlich\n\n&fEine Anmeldeanfrage wurde an deine Discord-DM gesendet.\n&7Genehmige sie, um dem Server beizutreten.\n\n&8Powered by CordSync"
+  2fa-approved: "&8[&a&l✓&8] &fAnmeldung über Discord 2FA genehmigt."
+  2fa-denied: "&8[&c&l✗&8] &fAnmeldung verweigert."

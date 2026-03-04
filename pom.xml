@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.blockstock</groupId>
-  <artifactId>mLinker</artifactId>
-  <version>0.2.1-BETA</version>
-  <name>mLinker</name>
-  <description>Discord ↔ Minecraft hesap eşleme sistemi (1.16–1.21.11 uyumlu)</description>
-  <url>https://github.com/musbabaff/mLinker</url>
+  <artifactId>CordSync</artifactId>
+  <version>1.0.1</version>
+  <name>CordSync</name>
+  <description>Discord ↔ Minecraft account linking, verification and reward system.</description>
+  <url>https://github.com/musbabaff/CordSync</url>
 
   <licenses>
     <license>

@@ -1,0 +1,95 @@
+﻿# ╔══════════════════════════════════════════════════════════════╗
+# ║  CordSync — English Language File                          ║
+# ║  This is the default language. All keys must exist here.   ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# ── Plugin Messages ───────────────────────────────────────────
+plugin:
+  enabled: "&a&l⚡ CordSync &r&ahas been enabled successfully!"
+  disabled: "&c&l⚡ CordSync &r&chas been disabled."
+  prefix: "&b&l⚡ CordSync &r&7» &f"
+
+# ── Decorations ───────────────────────────────────────────────
+# Premium-quality prefix/suffix used in all messages
+decorations:
+  prefix: "&8[&b&l⚡&8] &f"
+  success-prefix: "&8[&a&l✓&8] &f"
+  error-prefix: "&8[&c&l✗&8] &f"
+  warning-prefix: "&8[&e&l⚠&8] &f"
+  info-prefix: "&8[&9&lℹ&8] &f"
+  separator: "&8&m                                                    "
+  header: "\n&b&l⚡ CordSync &8— &7Account Linking System\n&8&m                                                    "
+
+# ── Link System ───────────────────────────────────────────────
+link:
+  usage: "&8[&b&l⚡&8] &fUse &b/link &fto generate a linking code."
+  code-generated: "&8[&a&l✓&8] &fYour linking code: &b&l{code} &7(Expires in &f{time}s&7)"
+  code-already: "&8[&e&l⚠&8] &fYou already have an active code: &b&l{code}"
+  success: "&8[&a&l✓&8] &a&lSuccess! &fYour account has been linked! &7🎉"
+  already-linked: "&8[&c&l✗&8] &fYour account is already linked to a Discord account."
+  not-online: "&8[&c&l✗&8] &fYou must be online to use this command."
+
+# ── Unlink System ─────────────────────────────────────────────
+unlink:
+  success: "&8[&a&l✓&8] &fYour Discord link has been removed."
+  not-linked: "&8[&c&l✗&8] &fYour account is not linked to any Discord account."
+  error: "&8[&c&l✗&8] &fAn error occurred while removing your link."
+  console-success: "&7{player} has removed their account link."
+
+# ── Discord Embed Messages ────────────────────────────────────
+discord:
+  code-missing-title: "❌ No Code Provided"
+  code-missing-desc: "Please enter the 6-digit code from `/link` in Minecraft."
+  invalid-title: "❌ Invalid or Expired Code"
+  invalid-desc: "The code you entered is incorrect or has expired. Please generate a new one with `/link`."
+  already-linked-title: "❌ Already Linked"
+  already-linked-desc: "This Discord account is already linked to a Minecraft account. Use the unlink option first."
+  player-already-linked-title: "❌ Minecraft Account Already Linked"
+  player-already-linked-desc: "This Minecraft account is already linked to another Discord account."
+  success-title: "Account Linked Successfully!"
+  success-desc: "Your Minecraft account **{player}** has been verified and linked. ✅"
+  role-success: "✅ Discord role assigned successfully."
+  role-fail: "❌ Role assignment failed: {error}"
+  verified-console: "✅ Player {player} verified their account."
+  slash-description: "Link your Minecraft account with Discord."
+  slash-option-description: "The linking code from Minecraft"
+  slash-registered: "✅ Slash command registered!"
+  confirm-desc: "You're about to link your Discord account with **{player}**'s Minecraft account.\n\n⚠️ **This action can be reversed using the unlink option.**\n\nAre you sure you want to proceed?"
+  confirm-expired: "❌ Confirmation expired! Please try linking again."
+  confirm-cancelled: "Linking has been cancelled."
+  cooldown-title: "⏳ Cooldown Active"
+  cooldown-desc: "You need to wait **{time}** after unlinking before you can link again."
+  relink-limit-title: "🚫 Link Limit Reached"
+  relink-limit-desc: "You've reached the maximum number of re-links ({max}). Contact an administrator."
+  booster-reward-given: "🚀 {player} received their booster reward."
+  started: "✅ Discord bot connected."
+  bot-stopped: "Discord bot disconnected."
+  auto-message-sent: "✅ Auto-message sent to linking channel."
+  auto-message-exists: "ℹ Auto-message already exists in channel."
+  log-linked: "🔗 **{player}** linked their account."
+  log-unlinked: "🔓 **{player}** unlinked their account."
+
+# ── Rewards ───────────────────────────────────────────────────
+reward:
+  first-reward: "&8[&a&l✓&8] &a🎉 &fCongratulations &b{player}&f! You've earned your &afirst linking reward&f!"
+  interval-reward: "&8[&a&l✓&8] &f💎 Your Discord link is active! &aDaily reward added."
+
+# ── Storage ───────────────────────────────────────────────────
+storage:
+  sqlite: "📦 SQLite storage activated."
+  mysql: "📦 MySQL storage activated."
+  yaml: "📦 YAML storage activated."
+  closed: "📦 Database connection closed."
+
+# ── Chat Bridge ───────────────────────────────────────────────
+chat:
+  minecraft-format: "&7[&b&lDiscord&7] &f{player}&7: &f{message}"
+  discord-format: "**[MC]** {player}: {message}"
+  no-permission: "&8[&c&l✗&8] &fYou don't have permission to use cross-chat."
+  not-linked: "&8[&c&l✗&8] &fYou must link your account to use the chat bridge."
+
+# ── Security / 2FA ────────────────────────────────────────────
+security:
+  2fa-login-pending: "&c&l⚠ 2FA Verification Required\n\n&fA login request has been sent to your Discord DM.\n&7Please approve it to join the server.\n\n&8Powered by CordSync"
+  2fa-approved: "&8[&a&l✓&8] &fLogin approved via Discord 2FA."
+  2fa-denied: "&8[&c&l✗&8] &fLogin denied. If this wasn't you, contact an admin."

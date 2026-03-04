@@ -1,61 +1,170 @@
-# 🔗 mLinker
+<div align="center">
 
-**Minecraft ↔ Discord Hesap Eşleştirme ve Rol Senkronizasyon Eklentisi**
+# ⚡ CordSync
 
-[![Developer](https://img.shields.io/badge/Geliştirici-Musbabaff-blue?style=flat-square)](https://github.com/musbabaff)
-[![GitHub](https://img.shields.io/badge/GitHub-musbabaff-black?logo=github&style=flat-square)](https://github.com/musbabaff)
-[![Team](https://img.shields.io/badge/Takım-BlockStock-orange?style=flat-square)](#)
-[![Dependency](https://img.shields.io/badge/Bağımlılık-LuckPerms-lightgrey?style=flat-square)](https://luckperms.net/)
+### Advanced Discord ↔ Minecraft Account Linking System
 
-**mLinker**, Minecraft sunucunuzdaki oyuncuların Discord hesaplarını oyun içi hesaplarıyla eşleştirmelerini sağlayan gelişmiş bir köprü eklentisidir. **LuckPerms** entegrasyonu sayesinde, oyuncuların oyun içi yetki grupları (VIP, Rehber, vs.) anında Discord rollerine yansıtılır.
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/musbabaff/CordSync/releases)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.8--1.21+-brightgreen.svg)](https://papermc.io)
+[![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://adoptium.net/)
+[![Folia](https://img.shields.io/badge/Folia-Supported-purple.svg)](https://papermc.io/software/folia)
 
----
+**The most feature-rich Discord account linking plugin for Minecraft servers.**
 
-## ✨ Özellikler
-
-* **Kusursuz Eşleştirme:** Oyun içinden alınan basit bir kodla Discord üzerinden hızlı hesap doğrulama.
-* **LuckPerms Entegrasyonu:** Minecraft'ta bir oyuncunun grubu değiştiğinde (örneğin VIP satın aldığında), Discord sunucusundaki rolü anında güncellenir.
-* **Çift Yönlü Senkronizasyon:** İsteğe bağlı olarak Discord'da rolü alınan kişinin oyun içi yetkilerini düzenleyebilme altyapısı.
-* **Tamamen Özelleştirilebilir:** `config.yml` üzerinden tüm mesajları, dil seçeneklerini ve rol eşleştirmelerini kendi sunucunuza göre ayarlayabilirsiniz.
-* **Performans Dostu:** Sunucunuzu yormayacak şekilde asenkron veritabanı (SQLite/MySQL) işlemleri.
+[Features](#-features) • [Installation](#-installation) • [Configuration](#-configuration) • [Commands](#-commands) • [API](#-api) • [Wiki](https://github.com/musbabaff/CordSync/wiki)
 
 ---
 
-## 🛠️ Kurulum
+</div>
 
-1. `mLinker.jar` dosyasını indirin.
-2. Sunucunuzun `plugins` klasörünün içine atın.
-3. Sunucuyu yeniden başlatın (veya plugini aktif edin).
-4. `plugins/mLinker/config.yml` dosyasını açın.
-5. Discord Bot Token'ınızı ve sunucu ID'nizi ilgili yerlere yapıştırın.
-6. LuckPerms gruplarınız ile Discord rol ID'lerinizi eşleştirin.
-7. Oyun içinden `/mreload` komutunu kullanarak yapılandırmayı yenileyin. **İşlem tamam!**
+## 🌟 Features
+
+### 🔗 Smart Account Linking
+- **Modal-Based Linking** — Users click a button → fill a form → confirm with 2FA
+- **No slash commands needed** — Clean, button-driven experience
+- **2FA Login Protection** — IP verification + Discord approval on server join
+- **Anti-Abuse System** — Cooldowns, relink limits, and one-time rewards
+
+### 💬 Chat Bridge
+- **Bidirectional messaging** — MC ↔ Discord chat sync
+- **Configurable access** — ALL users or LINKED_ONLY
+- **Message sanitization** — Prevents @everyone/@here exploits
+
+### 🎮 Discord Integration
+- **Rotating bot status** — Dynamic status with player count, linked accounts
+- **Premium embeds** — Rich, styled log messages for all events
+- **Role sync** — LuckPerms group → Discord role mapping
+- **Nickname sync** — Automatically update Discord nicknames
+- **Booster rewards** — Special rewards for server boosters
+
+### 🛡️ Security
+- **2FA Login System** — Verify via Discord before entering the server
+- **IP verification** — Detect unknown IPs and require Discord confirmation
+- **Unlink cooldown** — Prevent reward farming
+- **Relink limits** — Maximum re-linking attempts
+- **First reward protection** — One-time only first-link rewards
+
+### 🎁 Reward System
+- **First-link rewards** — Commands + items on first link
+- **Periodic rewards** — Daily/hourly rewards for linked players
+- **Booster rewards** — Extra rewards for Discord boosters
+- **Reward logging** — Full audit trail
+
+### 🌍 Multi-Language Support
+- **5 built-in languages** — English, Turkish, German, Spanish, French
+- **Custom translations** — Create your own `locales/xx.yml`
+- **English fallback** — Missing keys automatically fall back to English
+
+### ⚡ Performance & Compatibility
+- **Folia support** — Compatible with Folia's regionalized threading
+- **Multi-version** — Works on Minecraft 1.8 through 1.21+
+- **Proxy support** — BungeeCord & Velocity compatible
+- **Multiple storage backends** — SQLite, MySQL, YAML
+- **Async operations** — No server lag from database/Discord calls
+
+### 🔧 Developer-Friendly
+- **Config auto-migration** — Updates configs without losing your settings
+- **Comprehensive API** — Hook into CordSync from your plugins
+- **Event system** — `PlayerLinkedEvent` / `PlayerUnlinkedEvent`
 
 ---
 
-## 💻 Komutlar ve Yetkiler
+## 📦 Installation
 
-| Komut | Açıklama | Yetki (Permission) |
-| :--- | :--- | :--- |
-| `/link` veya `/hesapbagla` | Discord hesabı eşleştirmek için gereken kodu verir. | *Varsayılan* |
-| `/unlink` | Eşleştirilmiş hesabı ayırır. | *Varsayılan* |
-| `/mreload` | Eklenti yapılandırmasını yeniden yükler. | `mlinker.admin` |
-| `/minfo <oyuncu>` | Oyuncunun bağlı olduğu Discord hesabını gösterir. | `mlinker.admin` |
+1. Download the latest release from [Releases](https://github.com/musbabaff/CordSync/releases)
+2. Place `CordSync-x.x.x.jar` in your server's `plugins/` folder
+3. Restart the server
+4. Edit `plugins/CordSync/config.yml` with your Discord bot token
+5. Reload with `/csreload`
+
+### Discord Bot Setup
+
+1. Go to [Discord Developer Portal](https://discord.com/developers/applications)
+2. Create a new application → Bot → Copy token
+3. Enable these **Privileged Gateway Intents**:
+   - Server Members Intent
+   - Message Content Intent
+4. Invite the bot with `applications.commands` + `bot` scopes
+5. Required bot permissions: `Manage Roles`, `Send Messages`, `Manage Nicknames`
 
 ---
 
-## ⚙️ Gereksinimler
+## ⚙️ Configuration
 
-* Java 17 veya üzeri
-* Spigot / Paper (1.16.x - 1.20.x arası tavsiye edilir)
-* [LuckPerms](https://luckperms.net/) eklentisi
+CordSync uses a modular configuration system:
+
+| File | Description |
+|------|-------------|
+| `config.yml` | Main configuration |
+| `locales/en.yml` | English messages (default) |
+| `locales/tr.yml` | Turkish messages |
+| `locales/de.yml` | German messages |
+| `locales/es.yml` | Spanish messages |
+| `locales/fr.yml` | French messages |
+
+> **Note:** CordSync automatically adds new config keys when you update — your existing settings are preserved!
 
 ---
 
-## 📞 İletişim & Destek
+## 💻 Commands
 
-Bir hata (bug) bulduysanız veya yeni bir özellik öneriniz varsa, benimle Discord üzerinden iletişime geçebilir veya GitHub üzerinden Issue açabilirsiniz.
+| Command | Permission | Description |
+|---------|-----------|-------------|
+| `/link` | `cordsync.use` | Generate a linking code |
+| `/unlink` | `cordsync.use` | Remove your Discord link |
+| `/csreload` | `cordsync.admin` | Reload configuration |
+| `/csinfo` | `cordsync.admin` | Show plugin info |
+| `/csreverify` | `cordsync.admin` | Run re-verification |
 
-**Geliştirici:** musbabaff | BlockStock.art  
-**Discord:** `musbabaff`  
-**GitHub:** [musbabaff](https://github.com/musbabaff)
+---
+
+## 🔌 API
+
+```java
+// Get the CordSync API
+CordSyncAPI api = CordSync.getInstance().getApi();
+
+// Check if a player is linked
+boolean linked = api.isLinked(playerUUID);
+
+// Get linked Discord ID
+String discordId = api.getDiscordId(playerUUID);
+```
+
+### Events
+```java
+@EventHandler
+public void onLink(PlayerLinkedEvent event) {
+    UUID uuid = event.getPlayerUUID();
+    String discordId = event.getDiscordId();
+}
+```
+
+---
+
+## 🏗️ Building from Source
+
+See [BUILDING.md](BUILDING.md) for detailed instructions.
+
+```bash
+git clone https://github.com/musbabaff/CordSync.git
+cd CordSync
+mvn clean package
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [musbabaff](https://github.com/musbabaff)**
+
+⭐ Star this project if you find it useful!
+
+</div>

@@ -1,0 +1,74 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  CordSync — Fichier de Langue Française                   ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+plugin:
+  enabled: "&a&l⚡ CordSync &r&aactivé avec succès !"
+  disabled: "&c&l⚡ CordSync &r&cdésactivé."
+  prefix: "&b&l⚡ CordSync &r&7» &f"
+
+decorations:
+  prefix: "&8[&b&l⚡&8] &f"
+  success-prefix: "&8[&a&l✓&8] &f"
+  error-prefix: "&8[&c&l✗&8] &f"
+  warning-prefix: "&8[&e&l⚠&8] &f"
+  info-prefix: "&8[&9&lℹ&8] &f"
+  separator: "&8&m                                                    "
+  header: "\n&b&l⚡ CordSync &8— &7Liaison de Comptes\n&8&m                                                    "
+
+link:
+  usage: "&8[&b&l⚡&8] &fUtilisez &b/link &fpour générer un code."
+  code-generated: "&8[&a&l✓&8] &fVotre code : &b&l{code} &7(Valide pendant &f{time}s&7)"
+  code-already: "&8[&e&l⚠&8] &fVous avez déjà un code actif : &b&l{code}"
+  success: "&8[&a&l✓&8] &a&lSuccès ! &fVotre compte a été lié ! &7🎉"
+  already-linked: "&8[&c&l✗&8] &fVotre compte est déjà lié."
+
+unlink:
+  success: "&8[&a&l✓&8] &fLiaison supprimée."
+  not-linked: "&8[&c&l✗&8] &fVotre compte n'est pas lié."
+  error: "&8[&c&l✗&8] &fErreur lors de la suppression."
+  console-success: "&7{player} a supprimé sa liaison."
+
+discord:
+  code-missing-title: "❌ Code non fourni"
+  code-missing-desc: "Veuillez entrer le code à 6 chiffres de `/link`."
+  invalid-title: "❌ Code invalide ou expiré"
+  invalid-desc: "Le code entré est incorrect ou a expiré."
+  already-linked-title: "❌ Déjà lié"
+  already-linked-desc: "Ce compte Discord est déjà lié."
+  success-title: "Compte lié avec succès !"
+  success-desc: "Votre compte Minecraft **{player}** a été vérifié. ✅"
+  confirm-desc: "Vous êtes sur le point de lier votre compte avec **{player}**.\n\nÊtes-vous sûr ?"
+  confirm-expired: "❌ Confirmation expirée !"
+  confirm-cancelled: "Liaison annulée."
+  cooldown-title: "⏳ Temps d'attente"
+  cooldown-desc: "Vous devez attendre **{time}** après la déconnexion."
+  relink-limit-title: "🚫 Limite atteinte"
+  relink-limit-desc: "Vous avez atteint votre limite ({max})."
+  started: "✅ Bot Discord connecté."
+  bot-stopped: "Bot déconnecté."
+  auto-message-sent: "✅ Auto-message envoyé."
+  auto-message-exists: "ℹ Auto-message déjà existant."
+  log-linked: "🔗 **{player}** a lié son compte."
+  log-unlinked: "🔓 **{player}** a supprimé sa liaison."
+
+reward:
+  first-reward: "&8[&a&l✓&8] &a🎉 &fFélicitations &b{player}&f ! &aPremière récompense &freçue !"
+  interval-reward: "&8[&a&l✓&8] &f💎 Votre liaison est active ! &aRécompense quotidienne."
+
+storage:
+  sqlite: "📦 Stockage SQLite activé."
+  mysql: "📦 Stockage MySQL activé."
+  yaml: "📦 Stockage YAML activé."
+  closed: "📦 Connexion fermée."
+
+chat:
+  minecraft-format: "&7[&b&lDiscord&7] &f{player}&7: &f{message}"
+  discord-format: "**[MC]** {player}: {message}"
+  no-permission: "&8[&c&l✗&8] &fPas de permission pour le chat croisé."
+  not-linked: "&8[&c&l✗&8] &fLiez votre compte pour utiliser le chat."
+
+security:
+  2fa-login-pending: "&c&l⚠ Vérification 2FA Requise\n\n&fUne demande a été envoyée à votre DM Discord.\n&7Approuvez-la pour rejoindre le serveur.\n\n&8Powered by CordSync"
+  2fa-approved: "&8[&a&l✓&8] &fConnexion approuvée via Discord 2FA."
+  2fa-denied: "&8[&c&l✗&8] &fConnexion refusée."
