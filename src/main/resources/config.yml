@@ -20,6 +20,15 @@ config-version: 2
 # Your server name (used in Discord embeds and logs)
 server-name: "My Server"
 
+# Enable debug logging in the console
+debug: false
+
+# Enables automatic update checks
+update-checker: true
+
+# Enables or disables metrics collection via BStats
+metrics: true
+
 # ┌──────────────────────────────────────────────────────────────────────┐
 # │  LANGUAGE & LOCALIZATION                                            │
 # ├──────────────────────────────────────────────────────────────────────┤

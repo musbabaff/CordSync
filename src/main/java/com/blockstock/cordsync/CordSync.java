@@ -114,15 +114,19 @@ public class CordSync extends JavaPlugin {
             getLogger().info("♻ Smart Re-Verification system enabled.");
         }
 
-        new UpdateChecker(this).checkForUpdates();
+        if (config.getBoolean("update-checker", true)) {
+            new UpdateChecker(this).checkForUpdates();
+        }
 
-        int pluginId = 29899; // bStats Plugin ID
-        org.bstats.bukkit.Metrics metrics = new org.bstats.bukkit.Metrics(this, pluginId);
+        if (config.getBoolean("metrics", true)) {
+            int pluginId = 29899; // bStats Plugin ID
+            org.bstats.bukkit.Metrics metrics = new org.bstats.bukkit.Metrics(this, pluginId);
 
-        // Custom bStats Chart: Track which storage method servers prefer
-        metrics.addCustomChart(new org.bstats.charts.SimplePie("storage_type", () -> {
-            return getConfig().getString("storage.type", "YAML").toUpperCase();
-        }));
+            // Custom bStats Chart: Track which storage method servers prefer
+            metrics.addCustomChart(new org.bstats.charts.SimplePie("storage_type", () -> {
+                return getConfig().getString("storage.type", "YAML").toUpperCase();
+            }));
+        }
 
         getLogger().info(MessageUtil.get("plugin.enabled"));
     }
@@ -286,6 +290,12 @@ public class CordSync extends JavaPlugin {
 
     public static CordSync getInstance() {
         return instance;
+    }
+
+    public void debug(String message) {
+        if (getConfig().getBoolean("debug", false)) {
+            getLogger().info("[DEBUG] " + message);
+        }
     }
 
     public LinkManager getLinkManager() {
