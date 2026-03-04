@@ -283,6 +283,19 @@ public class CordSync extends JavaPlugin {
             isEnabled = true;
         }
 
+        // Diagnostic debugging injected for user visibility:
+        if (token == null && !isEnabled) {
+            if (config.getKeys(false).isEmpty()) {
+                getLogger().severe("🚨 CRITICAL: Your config.yml is COMPLETELY EMPTY in server memory!");
+                getLogger().severe("🚨 1) You might have a YAML syntax error (e.g., using TABs instead of spaces).");
+                getLogger().severe("🚨 2) You might be editing the file in the wrong server folder.");
+            } else {
+                getLogger().severe("🚨 WARNING: 'discord.bot-token' could not be found inside config.yml.");
+                getLogger().severe(
+                        "🚨 WARNING: Please make sure you saved the file and there are no YAML space/indentation errors.");
+            }
+        }
+
         if (!isEnabled) {
             getLogger().info(MessageUtil.get("discord.disabled"));
             return;
