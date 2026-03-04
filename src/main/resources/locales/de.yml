@@ -49,6 +49,11 @@ discord:
   relink-limit-desc: "Du hast dein Limit ({max}) erreicht."
   started: "✅ Discord-Bot verbunden."
   bot-stopped: "Discord-Bot getrennt."
+  disabled: "Discord bot integration is disabled."
+  no-token: "Discord bot token is missing or invalid. Please configure it in config.yml."
+  failed: "❌ Failed to start Discord Bot: {error}"
+  console-bridge-title: "🖥️ Command Executed Successfully"
+  console-bridge-field: "👤 Executed By"
   auto-message-sent: "✅ Auto-Nachricht gesendet."
   auto-message-exists: "ℹ Auto-Nachricht existiert bereits."
   log-linked: "🔗 **{player}** hat sein Konto verknüpft."
@@ -74,3 +79,7 @@ security:
   2fa-login-pending: "&c&l⚠ 2FA-Verifizierung erforderlich\n\n&fEine Anmeldeanfrage wurde an deine Discord-DM gesendet.\n&7Genehmige sie, um dem Server beizutreten.\n\n&8Powered by CordSync"
   2fa-approved: "&8[&a&l✓&8] &fAnmeldung über Discord 2FA genehmigt."
   2fa-denied: "&8[&c&l✗&8] &fAnmeldung verweigert."
+
+system:
+  reload: "&8[&a&l✓&8] &aCordSync configuration and locales reloaded."
+  reload-detailed: "&8[&a&l✓&8] &aCordSync reloaded in &f{time}ms&a."

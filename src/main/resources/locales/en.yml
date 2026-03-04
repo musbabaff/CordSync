@@ -126,8 +126,11 @@ discord:
   console-bridge-title: "🖥️ Command Executed Successfully"
   console-bridge-field: "👤 Executed By"
 
+  disabled: "Discord bot integration is disabled."
+  no-token: "Discord bot token is missing or invalid. Please configure it in config.yml."
   started: "✅ CordSync Discord Bot connected and operational."
   bot-stopped: "CordSync Discord Bot disconnected."
+  failed: "❌ Failed to start Discord Bot: {error}"
   auto-message-sent: "✅ Interactive Auto-message deployed to the linking channel."
   log-linked: "🔗 **{player}** just securely linked their account."
   log-unlinked: "🔓 **{player}** removed their account link."
@@ -159,3 +162,7 @@ security:
   2fa-login-pending: "&c&l⚠ 2FA Verification Required\n\n&fA secure login request has been sent to your Discord DM.\n&7Please approve it to establish a connection to the server.\n\n&8Protected by CordSync"
   2fa-approved: "&8[&a&l✓&8] &fSecure login approved via Discord 2FA."
   2fa-denied: "&8[&c&l✗&8] &fLogin attempt explicitly denied. If this wasn't you, alert an administrator immediately."
+
+system:
+  reload: "&8[&a&l✓&8] &aCordSync configuration and locales reloaded."
+  reload-detailed: "&8[&a&l✓&8] &aCordSync reloaded in &f{time}ms&a."
