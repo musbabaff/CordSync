@@ -270,7 +270,8 @@ public class CordSync extends JavaPlugin {
         String token = config.getString("discord.bot-token");
         String status = config.getString("discord.status", "Minecraft â†” Discord Linker");
 
-        if (token == null || token.isEmpty() || token.equalsIgnoreCase("BOT_TOKEN_BURAYA")) {
+        if (token == null || token.isEmpty() || token.equalsIgnoreCase("BOT_TOKEN_BURAYA")
+                || token.equalsIgnoreCase("BOT_TOKEN_HERE")) {
             getLogger().warning(MessageUtil.get("discord.no-token"));
             return;
         }

@@ -59,7 +59,7 @@ link:
 # │  Required: bot-token, guild-id                                      │
 # └──────────────────────────────────────────────────────────────────────┘
 discord:
-  enabled: false
+  enabled: true
   bot-token: "BOT_TOKEN_HERE"
   guild-id: ""
   role-id-verified: ""

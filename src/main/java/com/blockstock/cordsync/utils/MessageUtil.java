@@ -48,6 +48,28 @@ public class MessageUtil {
 
         messages = YamlConfiguration.loadConfiguration(langFile);
 
+        // Auto-update missing keys from default resource
+        boolean updated = false;
+        java.io.InputStream defaultStream = plugin.getResource("locales/" + lang + ".yml");
+        if (defaultStream != null) {
+            YamlConfiguration defaultLang = YamlConfiguration.loadConfiguration(
+                    new java.io.InputStreamReader(defaultStream, java.nio.charset.StandardCharsets.UTF_8));
+            for (String key : defaultLang.getKeys(true)) {
+                if (!defaultLang.isConfigurationSection(key) && !messages.contains(key)) {
+                    messages.set(key, defaultLang.get(key));
+                    updated = true;
+                }
+            }
+            if (updated) {
+                try {
+                    messages.save(langFile);
+                    plugin.getLogger().info("🔧 Added missing keys to " + lang + ".yml automatically.");
+                } catch (java.io.IOException e) {
+                    plugin.getLogger().severe("❌ Failed to save auto-updated " + lang + ".yml: " + e.getMessage());
+                }
+            }
+        }
+
         // Load English as fallback for missing keys
         File fallbackFile = new File(plugin.getDataFolder(), "locales/en.yml");
         if (fallbackFile.exists()) {
