@@ -266,20 +266,23 @@ public class CordSync extends JavaPlugin {
     }
 
     private void initializeDiscordBot(FileConfiguration config) {
-        // Anti-Format-Breaking Check: Did the user strip the indentation spaces?
-        if (!config.contains("discord.bot-token") && config.contains("bot-token")) {
-            getLogger().severe("──────────────────────────────────────────────────");
-            getLogger().severe("🚨 CRITICAL YAZILIM/BİÇİM HATASI (YAML FORMAT ERROR) 🚨");
-            getLogger().severe("🚨 'bot-token' ve 'enabled' ayarlarının başındaki BOŞLUKLARI silmişsiniz!");
-            getLogger().severe("🚨 Bu ayarların discord'un 'içinde' sayılması için başlarında 2 adet boşluk olmalı.");
-            getLogger().severe("🚨 Lütfen config.yml dosyanızı şu şekilde DÜZELTİN:");
-            getLogger().severe("discord:");
-            getLogger().severe("  enabled: true");
-            getLogger().severe("  bot-token: \"SİZİN_TOKENİNİZ\"");
-            getLogger().severe("🚨 Boşlukları (SPACE tuşu ile) ekleyip kaydedin ve /csreload yazın.");
-            getLogger().severe("──────────────────────────────────────────────────");
-            return;
+        // ═══ RAW CONFIG MEMORY DUMP (DEBUG) ═══
+        getLogger().info("═══════════ CONFIG DEBUG DUMP ═══════════");
+        getLogger().info("📁 Config file path: " + new java.io.File(getDataFolder(), "config.yml").getAbsolutePath());
+        getLogger().info("📁 Data folder exists: " + getDataFolder().exists());
+        getLogger().info("� Config file exists: " + new java.io.File(getDataFolder(), "config.yml").exists());
+        getLogger().info("� Root-level keys: " + config.getKeys(false));
+        getLogger().info("� discord section exists: " + config.contains("discord"));
+        getLogger().info("🔑 discord.enabled raw value: " + config.get("discord.enabled"));
+        getLogger().info("🔑 discord.bot-token raw value: " + (config.getString("discord.bot-token") != null
+                ? "SET (length=" + config.getString("discord.bot-token").length() + ")"
+                : "NULL"));
+        if (config.isConfigurationSection("discord")) {
+            getLogger().info("� discord section keys: " + config.getConfigurationSection("discord").getKeys(false));
+        } else {
+            getLogger().info("🔑 discord is NOT a configuration section!");
         }
+        getLogger().info("══════════════════════════════════════════");
 
         String token = config.getString("discord.bot-token");
         String status = config.getString("discord.status", "Minecraft ↔ Discord Linker");
@@ -296,19 +299,6 @@ public class CordSync extends JavaPlugin {
             config.set("discord.enabled", true);
             saveConfig();
             isEnabled = true;
-        }
-
-        // Diagnostic debugging injected for user visibility:
-        if (token == null && !isEnabled) {
-            if (config.getKeys(false).isEmpty()) {
-                getLogger().severe("🚨 CRITICAL: Your config.yml is COMPLETELY EMPTY in server memory!");
-                getLogger().severe("🚨 1) You might have a YAML syntax error (e.g., using TABs instead of spaces).");
-                getLogger().severe("🚨 2) You might be editing the file in the wrong server folder.");
-            } else {
-                getLogger().severe("🚨 WARNING: 'discord.bot-token' could not be found inside config.yml.");
-                getLogger().severe(
-                        "🚨 WARNING: Please make sure you saved the file and there are no YAML space/indentation errors.");
-            }
         }
 
         if (!isEnabled) {
