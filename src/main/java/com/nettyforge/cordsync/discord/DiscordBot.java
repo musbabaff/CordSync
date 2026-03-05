@@ -38,6 +38,7 @@ public class DiscordBot extends ListenerAdapter {
     private final CordSync plugin;
     private JDA jda;
     private BukkitTask statusTask;
+    private ConsoleBridgeListener consoleBridgeListener;
 
     @SuppressWarnings("null")
     public DiscordBot(CordSync plugin, String token, String status) {
@@ -50,12 +51,14 @@ public class DiscordBot extends ListenerAdapter {
                     GatewayIntent.GUILD_MESSAGE_REACTIONS,
                     GatewayIntent.DIRECT_MESSAGES);
 
+            consoleBridgeListener = new ConsoleBridgeListener(plugin);
+
             jda = JDABuilder.createDefault(token != null ? token : "")
                     .enableIntents(java.util.Collections.unmodifiableCollection(intents))
                     .setMemberCachePolicy(MemberCachePolicy.ALL)
                     .setActivity(Activity.playing(status != null ? status : "CordSync"))
                     .addEventListeners(new LinkVerifyCommand(plugin))
-                    .addEventListeners(new ConsoleBridgeListener(plugin))
+                    .addEventListeners(consoleBridgeListener)
                     .addEventListeners(new ReverseSyncListener(plugin))
                     .addEventListeners(this) // for chat bridge
                     .build();
@@ -83,6 +86,11 @@ public class DiscordBot extends ListenerAdapter {
 
             plugin.getLogger().info(MessageUtil.get("discord.started"));
 
+            if (plugin.getConfig().getBoolean("console-bridge.enabled", false)) {
+                consoleBridgeListener.startCapture();
+                plugin.getLogger().info("🖥️ Console Bridge active!");
+            }
+
             // Auto messages
             sendAutoMessage();
             sendBoosterInfoMessage();
@@ -100,6 +108,9 @@ public class DiscordBot extends ListenerAdapter {
     }
 
     public void shutdown() {
+        if (consoleBridgeListener != null) {
+            consoleBridgeListener.stop();
+        }
         if (statusTask != null) {
             statusTask.cancel();
             statusTask = null;
