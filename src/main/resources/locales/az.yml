@@ -1,0 +1,228 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  CordSync — Azerbaijani Language File                      ║
+# ║  Translated completely from the v1.4.0 master resource.    ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+plugin:
+  enabled: "&a&l⚡ CordSync &r&auğurla aktiv edildi!"
+  disabled: "&c&l⚡ CordSync &r&cdeaktiv edildi."
+  prefix: "&b&l⚡ CordSync &r&7» &f"
+
+decorations:
+  prefix: "&8[&b&l⚡&8] &f"
+  success-prefix: "&8[&a&l✓&8] &f"
+  error-prefix: "&8[&c&l✗&8] &f"
+  warning-prefix: "&8[&e&l⚠&8] &f"
+  info-prefix: "&8[&9&lℹ&8] &f"
+  separator: "&8&m                                                    "
+  header: "\n&b&l⚡ CordSync &8— &7Hesab Əlaqələndirmə Sistemi\n&8&m                                                    "
+
+link:
+  usage: "&8[&b&l⚡&8] &fƏlaqə kodu yaratmaq üçün &b/link &fyazın."
+  header: "&8&m                                                    "
+  title: "&b&l⚡ Əlaqə Kodu!"
+  code-new: "&7Lütfən &bDiscord&7 serverimizə gedin, &f/link&7 yazın və bu kodu daxil edin:"
+  code-active: "&7Sizin artıq aktiv kodunuz var. Discord-da bu kodu daxil edin:"
+  copied-hover: "&aKopyalamaq üçün kliklə!"
+  code-generated: "&8[&a&l✓&8] &fSizin kodunuz: &b&l{code} &7(&f{time}sn &7içində bitəcək)"
+  code-already: "&8[&e&l⚠&8] &fSizin artıq aktiv kodunuz var: &b&l{code}"
+  success: "&8[&a&l✓&8] &a&lUğurlu! &fHesabınız əlaqələndirildi! &7🎉"
+  already-linked: "&8[&c&l✗&8] &fHesabınız artıq Discord hesabına bağlıdır."
+  not-online: "&8[&c&l✗&8] &fBu əmri istifadə etmək üçün serverdə olmalısınız."
+
+unlink:
+  success: "&8[&a&l✓&8] &fDiscord əlaqəniz silindi."
+  not-linked: "&8[&c&l✗&8] &fHesabınız heç bir Discord hesabına bağlı deyil."
+  error: "&8[&c&l✗&8] &fƏlaqə silinərkən xəta baş verdi."
+  console-success: "&7{player} hesab əlaqəsini sildi."
+
+gui:
+  title: "&b&l⚡ CordSync &8— &7Hesab İdarəedici"
+  head-name: "&b&l{player}"
+  status-linked: "&7Status: &a&l✓ Bağlıdır"
+  status-not-linked: "&7Status: &c&l✗ Bağlı deyil"
+  discord-id: "&7Discord ID: &f{id}"
+  version-footer: "&8CordSync v{version}"
+  
+  btn-status-name: "&a&l✓ Hesab Bağlıdır"
+  btn-status-lore:
+    - ""
+    - "&7Hesabınız güvənlə bağlıdır!"
+    - "&7Bütün premium mükafatları alırsınız."
+    - ""
+    - "&a► Çatda detallara baxmaq üçün kliklə"
+    
+  btn-unlink-name: "&c&lƏlaqəni Kəs"
+  btn-unlink-lore:
+    - ""
+    - "&7Discord əlaqənizi silin."
+    - "&c⚠ Qazandığınız mükafatları itirəcəksiniz!"
+    - ""
+    - "&c► Silmək üçün klikləyin"
+    
+  booster:
+    info-title: "🚀 Booster Məlumatı"
+    info-desc: "Server boost mükafatları haqqında məlumat"
+
+discord-embeds:
+  commands:
+    link-modal-title: "🔗 Hesabınızı Əlaqələndirin"
+    link-modal-label: "Əlaqə Kodu"
+    link-modal-placeholder: "Oyundan aldığınız kodu daxil edin"
+    link-modal-error-empty: "Kod boş ola bilməz"
+    
+  buttons:
+    link: "🔗 Hesabı Bağla"
+    how-to: "📖 Necə Bağlanır"
+    status: "📊 Hesab Statusu"
+    confirm: "✅ Təsdiqlə"
+    cancel: "❌ Ləğv Et"
+    view-rewards: "🎁 Mükafatlara Bax"
+    
+  auto-message:
+    field-title: "✨ Necə İşləyir"
+    field-desc: "• 🎮 **Addım 1:** Oyunda `/link` yazın\n• 🖱️ **Addım 2:** Aşağıdakı butona klikləyin\n• 🔑 **Addım 3:** Kodunuzu daxil edin\n• ✅ **Addım 4:** Təsdiqləyin!"
+    footer: "CordSync • Hesab Əlaqələndirmə"
+    
+  booster-message:
+    footer: "CordSync • Booster Mükafatları"
+    
+  ui:
+    status-title: "📊 Hesab Statusu"
+    status-linked-desc: "✅ Hesabınız **güvənlə bağlıdır**!"
+    status-not-linked-desc: "❌ Hesabınız **heç bir Minecraft hesabına bağlı deyil**."
+    status-field-mc: "🎮 Minecraft"
+    status-field-dc: "💬 Discord"
+    status-field-relink: "🔄 Yenidən Bağlama"
+    status-field-booster: "🚀 Booster"
+    status-field-status: "Status"
+    status-val-linked: "🟢 Bağlıdır"
+    status-val-not-linked: "🔴 Bağlı Deyil"
+    status-val-yes: "✅ Bəli"
+    status-val-no: "❌ Xeyr"
+    
+    confirm-title: "🔐 Təsdiq Tələb Olunur"
+    confirm-desc: "Bunu **{player}** Minecraft hesabı ilə əlaqələndirmək istədiyinizə əminsiniz?"
+    confirm-expired: "❌ Təsdiq istəyinin vaxtı bitdi!"
+    confirm-cancelled: "Hesab əlaqələndirmə ləğv edildi."
+    confirm-title-cancelled: "❌ Ləğv Edildi"
+    
+    success-title: "Hesab Bağlandı ✅"
+    success-desc: "**{player}** ilə uğurla təsdiqləndi və əlaqələndirildi!"
+    
+  btn-rewards-name: "&6&l🎁 Sizin Mükafatlarınız"
+  btn-rewards-lore:
+    - ""
+    - "&7Aktiv mükafatlarınıza baxın."
+    - "&7Gündəlik mükafatlar avtomatik verilir."
+    - ""
+    - "&e► Detallar üçün kliklə"
+    
+  btn-link-name: "&a&l🔗 Hesab Bağla"
+  btn-link-lore:
+    - ""
+    - "&7Təhlükəsiz bir əlaqə kodu yaradın"
+    - "&7və Discord serverimizdə istifadə edin."
+    - ""
+    - "&a► Kod yaratmaq üçün kliklə"
+    
+  btn-info-name: "&e&l📖 Necə Bağlanır"
+  btn-info-lore:
+    - ""
+    - "&71. Hesab Bağla butonuna kliklə"
+    - "&72. 6 rəqəmli kodu kopyala"
+    - "&73. Discord kanalımıza get"
+    - "&74. Hesabı Bağla butonuna kliklə"
+    - "&75. Kodunu daxil et & təsdiqlə!"
+    - ""
+    - "&eBu qədər sadədir!"
+    
+  btn-preview-name: "&6&l🎁 Mükafat Önizləməsi"
+  btn-preview-lore:
+    - ""
+    - "&7Aşağıdakıları açmaq üçün hesabınızı bağlayın:"
+    - "&a  • Eksklüziv VIP Discord Rolu"
+    - "&a  • 5,000 Oyun İçi Pul"
+    - "&a  • 3 Almaz Bloku"
+    - "&a  • Gündəlik giriş mükafatları"
+    - ""
+    - "&eİndi bağlayın və qazanın!"
+
+  status-chat-msg:
+    - "&8&m                                    "
+    - "&b&l⚡ CordSync &8— &7Hesab Statusu"
+    - "&8&m                                    "
+    - " &7Status: &a&l✓ Güvənlə bağlıdır"
+    - " &7Discord: &f{id}"
+    - "&8&m                                    "
+  rewards-chat-msg: "&8[&a&l✓&8] &fMükafatlarınız avtomatik olaraq verildi! Faydalardan istifadə etmək üçün əlaqəni kəsməyin."
+
+discord:
+  auto-message-exists: "✅ Avto-Mesaj artıq bu kanalda qurulub."
+  code-missing-title: "❌ Kod Daxil Edilmədi"
+  code-missing-desc: "Lütfən Minecraft-da `/link` yazaraq aldığınız 6 rəqəmli kodu daxil edin."
+  invalid-title: "❌ Keçərsiz və ya Vaxtı Bitmiş Kod"
+  invalid-desc: "Daxil etdiyiniz kod səhvdir və ya vaxtı bitib. Lütfən oyuna girin və `/link` ilə yeni kod yaradın."
+  already-linked-title: "❌ Hesab Artıq Bağlıdır"
+  already-linked-desc: "Bu Discord hesabı artıq bir Minecraft profilinə bağlıdır."
+  player-already-linked-title: "❌ Minecraft Hesabı Artıq Bağlıdır"
+  player-already-linked-desc: "Bu koda aid olan Minecraft hesabı başqa bir Discord istifadəçisinə bağlıdır."
+  success-title: "🎉 Hesab Uğurla Əlaqələndirildi!"
+  success-desc: "Minecraft hesabınız **{player}** güvənlə təsdiqləndi və bağlandı. ✅\n\nPremium mükafatlarınızın keyfini çıxarın!"
+  confirm-desc: "Siz Discord hesabınızı **{player}** adlı Minecraft hesabı ilə bağlamaq üzrəsiniz.\n\n⚠️ **Bu əməliyyat oyunda geri alına bilər.**\n\nDavam etmək istədiyinizə əminsiniz?"
+  confirm-expired: "❌ Təsdiq vaxtı bitdi! Lütfən yenidən cəhd edin."
+  confirm-cancelled: "Əlaqələndirmə prosesi ləğv edildi."
+  cooldown-title: "⏳ Gözləmə Müddəti"
+  cooldown-desc: "Yaxın zamanda əlaqəni kəsdiniz. Yenidən bağlamazdan əvvəl lütfən **{time}** gözləyin."
+  relink-limit-title: "🚫 Limitə Çatıldı"
+  relink-limit-desc: "Siz maksimum yenidən bağlama limitinə ({max}) çatdınız."
+  
+  console-bridge-no-permission: "❌ Konsol komandalarını icra etmək üçün lazımi inzibatçı rolunuz yoxdur."
+  console-bridge-blocked: "🚫 Bu komanda təhlükəsizlik səbəbiylə bloklanıb."
+  console-bridge-title: "🖥️ Komanda Uğurla İcra Edildi"
+  console-bridge-field: "👤 İcra Edən"
+
+  disabled: "Discord bot inteqrasiyası deaktiv edilib."
+  no-token: "Discord bot tokeni yoxdur. Lütfən config.yml faylında quraşdırın."
+  started: "✅ CordSync Discord Bot bağlandı və fəaliyyət göstərir."
+  bot-stopped: "CordSync Discord Bot ayrıldı."
+  failed: "❌ Discord Botu başlamaq olmadı: {error}"
+  auto-message-sent: "✅ İnteraktiv avto-mesaj kanala göndərildi."
+  log-linked: "🔗 **{player}** hesabını güvənlə bağladı."
+  log-unlinked: "🔓 **{player}** hesabının əlaqəsini sildi."
+  unlinked: "✅ Core Discord rolu uğurla silindi."
+  role-remove-error: "❌ Rol silinərkən xəta: {error}"
+  role-fail: "❌ Rol silinmədi: {error}"
+  luckperms-role-removed: "✅ Sinxronizasiya edilən rol {role} {player} profilindən silindi."
+
+join-quit:
+  join-author: "⬆️ {role}{player} serverə qoşuldu"
+  quit-author: "⬇️ {role}{player} serverdən çıxdı"
+  field-player: "👤 Oyunçu"
+  field-discord: "💬 Discord"
+  field-online: "👥 İndi Onlayn"
+
+reward:
+  first-reward: "&8[&a&l✓&8] &a🎉 &fTəbriklər &b{player}&f! &aİlk hesab bağlama mükafatınız&f verildi!"
+  interval-reward: "&8[&a&l✓&8] &f💎 Discord əlaqəniz aktivdir! &aGündəlik sadiqlik mükafatı əlavə edildi."
+
+storage:
+  sqlite: "📦 SQLite çox sürətli yaddaş aktiv edildi."
+  mysql: "📦 MySQL uzaq baza əlaqəsi quruldu."
+  yaml: "📦 YAML yaddaş aktiv edildi."
+  closed: "📦 Güvənli baza əlaqəsi bağlandı."
+
+chat:
+  minecraft-format: "&7[&b&lDiscord&7] &e{player}&7: &f{message}"
+  discord-format: "**[MC]** {player}: {message}"
+  no-permission: "&8[&c&l✗&8] &fSizin çat mesajı göndərmək üçün yetkiniz yoxdur."
+  not-linked: "&8[&c&l✗&8] &fÇat sistemindən istifadə etmək üçün hesabınızı bağlamalısınız."
+
+security:
+  2fa-login-pending: "&c&l⚠ 2FA Təsdiq Tələb Olunur\n\n&fSizin Discord DM-nizə güvənli giriş istəyi göndərildi.\n&7Serverə qoşulmaq üçün lütfən onu təsdiqləyin.\n\n&8CordSync tərəfindən qorunur"
+  2fa-approved: "&8[&a&l✓&8] &fGüvənli giriş Discord 2FA ilə təsdiqləndi."
+  2fa-denied: "&8[&c&l✗&8] &fGiriş cəhdi rədd edildi! Əgər bu siz deyilirsinizsə, administratora bildirin."
+
+system:
+  reload: "&8[&a&l✓&8] &aCordSync konfiqurasiya və dilləri yeniləndi."
+  reload-detailed: "&8[&a&l✓&8] &aCordSync &f{time}ms&a içində yeniləndi."

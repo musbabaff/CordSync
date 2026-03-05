@@ -71,8 +71,20 @@ public class CordSync extends JavaPlugin {
         this.latestVersion = latestVersion;
     }
 
+    // Change SLF4J/JDK logging level for JDA explicitly to prevent WebSocketClient
+    // spam
+    private void suppressJDALogs() {
+        try {
+            java.util.logging.Logger jdaLogger = java.util.logging.Logger.getLogger("net.dv8tion");
+            jdaLogger.setLevel(java.util.logging.Level.WARNING);
+        } catch (Exception ignored) {
+        }
+    }
+
     @Override
     public void onEnable() {
+        instance = this;
+        suppressJDALogs();
         instance = this;
 
         // Konsola havalÄ± ASCII logomuzu yazdÄ±ran metot

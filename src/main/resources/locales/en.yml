@@ -77,6 +77,7 @@ discord-embeds:
     status: "📊 Account Status"
     confirm: "✅ Confirm"
     cancel: "❌ Cancel"
+    view-rewards: "🎁 View Rewards"
     
   auto-message:
     field-title: "✨ How It Works"
@@ -189,6 +190,10 @@ discord:
   auto-message-sent: "✅ Interactive Auto-message deployed to the linking channel."
   log-linked: "🔗 **{player}** just securely linked their account."
   log-unlinked: "🔓 **{player}** removed their account link."
+  unlinked: "✅ Core Discord role has been removed successfully."
+  role-remove-error: "❌ Error while removing role: {error}"
+  role-fail: "❌ Failed to remove role: {error}"
+  luckperms-role-removed: "✅ Removed synced role {role} from {player}."
 
 join-quit:
   join-author: "⬆️ {role}{player} joined the server"

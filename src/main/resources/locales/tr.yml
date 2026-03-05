@@ -60,6 +60,56 @@ gui:
     - ""
     - "&c► Bağlantıyı kesmek için tıkla"
     
+  booster:
+    info-title: "🚀 Sunucu Takviyesi (Booster)"
+    info-desc: "Sunucu takviye ödülleri hakkında bilgi"
+
+discord-embeds:
+  commands:
+    link-modal-title: "🔗 Hesabını Eşle"
+    link-modal-label: "Eşleme Kodu"
+    link-modal-placeholder: "Oyundan aldığınız eşleme kodunu girin"
+    link-modal-error-empty: "Kod boş bırakılamaz"
+    
+  buttons:
+    link: "🔗 Hesabını Eşle"
+    how-to: "📖 Nasıl Eşlenir?"
+    status: "📊 Hesap Durumu"
+    confirm: "✅ Onayla"
+    cancel: "❌ İptal Et"
+    view-rewards: "🎁 Ödülleri Göster"
+    
+  auto-message:
+    field-title: "✨ Nasıl Çalışır?"
+    field-desc: "• 🎮 **Adım 1:** Oyunda `/link` yazın\n• 🖱️ **Adım 2:** Aşağıdaki butona tıklayın\n• 🔑 **Adım 3:** Kodunuzu girin\n• ✅ **Adım 4:** Onaylayın!"
+    footer: "CordSync • Hesap Bağlama Sistemi"
+    
+  booster-message:
+    footer: "CordSync • Booster Ödülleri"
+    
+  ui:
+    status-title: "📊 Hesap Durumu"
+    status-linked-desc: "✅ Hesabınız **güvenli bir şekilde eşlendi**!"
+    status-not-linked-desc: "❌ Hesabınız herhangi bir Minecraft hesabına **bağlı değil**."
+    status-field-mc: "🎮 Minecraft"
+    status-field-dc: "💬 Discord"
+    status-field-relink: "🔄 Yeniden Eşleme"
+    status-field-booster: "🚀 Sunucu Boost"
+    status-field-status: "Durum"
+    status-val-linked: "🟢 Eşlendi"
+    status-val-not-linked: "🔴 Eşlenmedi"
+    status-val-yes: "✅ Evet"
+    status-val-no: "❌ Hayır"
+    
+    confirm-title: "🔐 Doğrulama Gerekli"
+    confirm-desc: "**{player}** adlı Minecraft hesabıyla eşlemeyi onaylıyor musunuz?"
+    confirm-expired: "❌ Onay isteğinin süresi doldu!"
+    confirm-cancelled: "Hesap eşleme işlemi iptal edildi."
+    confirm-title-cancelled: "❌ İptal Edildi"
+    
+    success-title: "Hesap Eşlendi ✅"
+    success-desc: "**{player}** hesabıyla eşleme başarıyla tamamlandı!"
+    
   btn-rewards-name: "&6&l🎁 Özel Ödülleriniz"
   btn-rewards-lore:
     - ""
@@ -117,59 +167,16 @@ discord:
   already-linked-desc: "Bu Discord hesabı zaten bir Minecraft profiline bağlı! Başka bir hesap bağlamak istiyorsanız önce mevcut bağlantıyı koparmalısınız."
   player-already-linked-title: "❌ Minecraft Hesabı Zaten Bağlı"
   player-already-linked-desc: "Girdiğiniz koda ait olan Minecraft hesabı halihazırda başka bir Discord kullanıcısına bağlı."
-  booster:
-    info-title: "🚀 Sunucu Takviyesi (Booster)"
-    info-desc: "Sunucu takviye ödülleri hakkında bilgi"
-
-discord-embeds:
-  commands:
-    link-modal-title: "🔗 Hesabını Eşle"
-    link-modal-label: "Eşleme Kodu"
-    link-modal-placeholder: "Oyundan aldığınız eşleme kodunu girin"
-    link-modal-error-empty: "Kod boş bırakılamaz"
-    
-  buttons:
-    link: "🔗 Hesabını Eşle"
-    how-to: "📖 Nasıl Eşlenir?"
-    status: "📊 Hesap Durumu"
-    confirm: "✅ Onayla"
-    cancel: "❌ İptal Et"
-    
-  auto-message:
-    field-title: "✨ Nasıl Çalışır?"
-    field-desc: "• 🎮 **Adım 1:** Oyunda `/link` yazın\n• 🖱️ **Adım 2:** Aşağıdaki butona tıklayın\n• 🔑 **Adım 3:** Kodunuzu girin\n• ✅ **Adım 4:** Onaylayın!"
-    footer: "CordSync • Hesap Bağlama Sistemi"
-    
-  booster-message:
-    footer: "CordSync • Booster Ödülleri"
-    
-  ui:
-    status-title: "📊 Hesap Durumu"
-    status-linked-desc: "✅ Hesabınız **güvenli bir şekilde eşlendi**!"
-    status-not-linked-desc: "❌ Hesabınız herhangi bir Minecraft hesabına **bağlı değil**."
-    status-field-mc: "🎮 Minecraft"
-    status-field-dc: "💬 Discord"
-    status-field-relink: "🔄 Yeniden Eşleme"
-    status-field-booster: "🚀 Sunucu Boost"
-    status-field-status: "Durum"
-    status-val-linked: "🟢 Eşlendi"
-    status-val-not-linked: "🔴 Eşlenmedi"
-    status-val-yes: "✅ Evet"
-    status-val-no: "❌ Hayır"
-    
-    confirm-title: "🔐 Doğrulama Gerekli"
-    confirm-desc: "**{player}** adlı Minecraft hesabıyla eşlemeyi onaylıyor musunuz?"
-    confirm-expired: "❌ Onay isteğinin süresi doldu!"
-    confirm-cancelled: "Hesap eşleme işlemi iptal edildi."
-    confirm-title-cancelled: "❌ İptal Edildi"
-    
-    success-title: "Hesap Eşlendi ✅"
-    success-desc: "**{player}** hesabıyla eşleme başarıyla tamamlandı!"
   success-title: "🎉 Hesap Eşlemesi Başarılı!"
   success-desc: "**{player}** adlı Minecraft hesabınız güvenli bir şekilde doğrulandı ve bağlandı. ✅\n\nSunucu içerisindeki ayrıcalıklarınızın ve ödüllerinizin tadını çıkarın!"
   confirm-desc: "Discord hesabınızı **{player}** isimli oyuncunun Minecraft profili ile bağlamak üzeresiniz.\n\n⚠️ **Bu işlem oyun içindeki veya Discord'daki bağlantıyı kes seçeneği ile geri alınabilir.**\n\nDevam etmek istediğinize emin misiniz?"
   confirm-expired: "❌ Onay süresi doldu! Lütfen eşleme işlemini tekrar başlatın."
   confirm-cancelled: "Eşleme işlemi iptal edildi."
+  cooldown-title: "⏳ Yeniden Eşleme Beklemesi"
+  cooldown-desc: "Yakın zamanda hesabınızın bağlantısını kopardınız. Lütfen tekrar eşlemek için **{time}** bekleyin."
+  relink-limit-title: "🚫 Eşleme Sınırı Aşıldı"
+  relink-limit-desc: "Maksimum hesap eşleme sayısına ulaştınız ({max}). Bu bir hata ise lütfen yetkililere bildirin."
+  
   console-bridge-no-permission: "❌ Konsol komutlarını çalıştırmak için gerekli yetkili rolüne sahip değilsiniz."
   console-bridge-blocked: "🚫 Bu hassas komut güvenlik nedeniyle engellenmiştir."
   console-bridge-title: "🖥️ Komut Başarıyla Çalıştırıldı"
@@ -183,6 +190,10 @@ discord-embeds:
   auto-message-sent: "✅ Etkileşimli Otomatik Mesaj başarıyla kanala gönderildi."
   log-linked: "🔗 **{player}** hesabını güvenli bir şekilde bağladı."
   log-unlinked: "🔓 **{player}** hesabının bağını kopardı."
+  unlinked: "✅ Ana Discord rolü başarıyla kaldırıldı."
+  role-remove-error: "❌ Rol kaldırılırken hata oluştu: {error}"
+  role-fail: "❌ Rol kaldırma başarısız: {error}"
+  luckperms-role-removed: "✅ Senkronize edilen rol ({role}) {player} üzerinden alındı."
 
 join-quit:
   join-author: "⬆️ {role}{player} sunucuya katıldı"
@@ -195,6 +206,12 @@ reward:
   first-reward: "&8[&a&l✓&8] &a🎉 &fTebrikler &b{player}&f! &aİlk eşleme premium ödülün &fhesabına tanımlandı!"
   interval-reward: "&8[&a&l✓&8] &f💎 Discord bağlantın aktif! &aGünlük sadakat ödülün verildi."
 
+storage:
+  sqlite: "📦 SQLite ultra hızlı depolama aktif."
+  mysql: "📦 MySQL uzak veritabanı bağlantısı kuruldu."
+  yaml: "📦 Flat-file YAML depolama aktif."
+  closed: "📦 Güvenli veritabanı bağlantısı kapatıldı."
+
 chat:
   minecraft-format: "&7[&b&lDiscord&7] &e{player}&7: &f{message}"
   discord-format: "**[MC]** {player}: {message}"
@@ -205,12 +222,6 @@ security:
   2fa-login-pending: "&c&l⚠ 2 Adımlı Doğrulama Gerekiyor\n\n&fDiscord DM kutunuza güvenli bir giriş isteği gönderildi.\n&7Sunucuya bağlanmak için lütfen girişinizi onaylayın.\n\n&8CordSync tarafından korunmaktadır."
   2fa-approved: "&8[&a&l✓&8] &fDiscord 2FA üzerinden güvenli girişiniz onaylandı."
   2fa-denied: "&8[&c&l✗&8] &fGiriş denemesi reddedildi! Bu siz değilseniz acilen bir yetkiliyle iletişime geçin."
-
-storage:
-  sqlite: "📦 SQLite ultra hızlı depolama aktif."
-  mysql: "📦 MySQL uzak veritabanı bağlantısı kuruldu."
-  yaml: "📦 Flat-file YAML depolama aktif."
-  closed: "📦 Güvenli veritabanı bağlantısı kapatıldı."
 
 system:
   reload: "&8[&a&l✓&8] &aCordSync konfigürasyonu ve dil dosyaları yenilendi."

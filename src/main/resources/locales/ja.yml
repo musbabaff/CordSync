@@ -1,0 +1,228 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  CordSync — Japanese Language File                         ║
+# ║  Translated completely from the v1.4.0 master resource.    ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+plugin:
+  enabled: "&a&l⚡ CordSync &r&aが正常に有効化されました！"
+  disabled: "&c&l⚡ CordSync &r&cが無効化されました。"
+  prefix: "&b&l⚡ CordSync &r&7» &f"
+
+decorations:
+  prefix: "&8[&b&l⚡&8] &f"
+  success-prefix: "&8[&a&l✓&8] &f"
+  error-prefix: "&8[&c&l✗&8] &f"
+  warning-prefix: "&8[&e&l⚠&8] &f"
+  info-prefix: "&8[&9&lℹ&8] &f"
+  separator: "&8&m                                                    "
+  header: "\n&b&l⚡ CordSync &8— &7アカウント連携システム\n&8&m                                                    "
+
+link:
+  usage: "&8[&b&l⚡&8] &f連携コードを生成するには &b/link &fを使用してください。"
+  header: "&8&m                                                    "
+  title: "&b&l⚡ 連携コード！"
+  code-new: "&7&bDiscord&7サーバーにて &f/link&7と入力し、以下のコードを入力してください:"
+  code-active: "&7すでに有効なコードがあります。Discordで以下のコードを入力してください:"
+  copied-hover: "&aクリックしてコピー！"
+  code-generated: "&8[&a&l✓&8] &fあなたのコード: &b&l{code} &7(&f{time}秒&7で期限切れになります)"
+  code-already: "&8[&e&l⚠&8] &fすでに有効なコードがあります: &b&l{code}"
+  success: "&8[&a&l✓&8] &a&l成功！ &fアカウントが連携されました！ &7🎉"
+  already-linked: "&8[&c&l✗&8] &fあなたのアカウントはすでにDiscordアカウントと連携されています。"
+  not-online: "&8[&c&l✗&8] &fこのコマンドを使用するにはオンラインである必要があります。"
+
+unlink:
+  success: "&8[&a&l✓&8] &fDiscordのアカウント連携を解除しました。"
+  not-linked: "&8[&c&l✗&8] &fアカウントはDiscordと連携されていません。"
+  error: "&8[&c&l✗&8] &f連携の解除中にエラーが発生しました。"
+  console-success: "&7{player}がアカウントの連携を解除しました。"
+
+gui:
+  title: "&b&l⚡ CordSync &8— &7アカウント管理"
+  head-name: "&b&l{player}"
+  status-linked: "&7ステータス: &a&l✓ 連携済み"
+  status-not-linked: "&7ステータス: &c&l✗ 未連携"
+  discord-id: "&7Discord ID: &f{id}"
+  version-footer: "&8CordSync v{version}"
+  
+  btn-status-name: "&a&l✓ アカウント連携済み"
+  btn-status-lore:
+    - ""
+    - "&7アカウントは連携されています！"
+    - "&7すべての報酬を受け取ることができます。"
+    - ""
+    - "&a► クリックしてチャットで詳細を表示"
+    
+  btn-unlink-name: "&c&l連携の解除"
+  btn-unlink-lore:
+    - ""
+    - "&7Discordの連携を解除します。"
+    - "&c⚠ 連携による報酬をすべて失います！"
+    - ""
+    - "&c► クリックして連携を解除"
+    
+  booster:
+    info-title: "🚀 ブースター情報"
+    info-desc: "サーバーブースト報酬に関する情報"
+
+discord-embeds:
+  commands:
+    link-modal-title: "🔗 アカウントの連携"
+    link-modal-label: "連携コード"
+    link-modal-placeholder: "/link で取得したコードを入力してください"
+    link-modal-error-empty: "コードは空にできません"
+    
+  buttons:
+    link: "🔗 アカウントを連携"
+    how-to: "📖 連携方法"
+    status: "📊 アカウントステータス"
+    confirm: "✅ 確認"
+    cancel: "❌ キャンセル"
+    view-rewards: "🎁 報酬の確認"
+    
+  auto-message:
+    field-title: "✨ 連携の仕組み"
+    field-desc: "• 🎮 **ステップ 1:** Minecraftで `/link` と入力\n• 🖱️ **ステップ 2:** 下のボタンをクリック\n• 🔑 **ステップ 3:** コードを入力\n• ✅ **ステップ 4:** 確認！"
+    footer: "CordSync • アカウント連携システム"
+    
+  booster-message:
+    footer: "CordSync • ブースター報酬"
+    
+  ui:
+    status-title: "📊 アカウントステータス"
+    status-linked-desc: "✅ アカウントは**安全に連携**されています！"
+    status-not-linked-desc: "❌ アカウントはMinecraftアカウントとは**未連携**です。"
+    status-field-mc: "🎮 Minecraft"
+    status-field-dc: "💬 Discord"
+    status-field-relink: "🔄 再連携回数"
+    status-field-booster: "🚀 ブースター"
+    status-field-status: "ステータス"
+    status-val-linked: "🟢 連携済み"
+    status-val-not-linked: "🔴 未連携"
+    status-val-yes: "✅ はい"
+    status-val-no: "❌ いいえ"
+    
+    confirm-title: "🔐 確認が必要です"
+    confirm-desc: "Minecraftアカウント **{player}** と連携してもよろしいですか？"
+    confirm-expired: "❌ 確認リクエストの期限が切れました！"
+    confirm-cancelled: "アカウントの連携はキャンセルされました。"
+    confirm-title-cancelled: "❌ キャンセル"
+    
+    success-title: "アカウント連携完了 ✅"
+    success-desc: "**{player}** としてのアカウント認証・連携が完了しました！"
+    
+  btn-rewards-name: "&6&l🎁 あなたの報酬"
+  btn-rewards-lore:
+    - ""
+    - "&7連携ボーナスの確認。"
+    - "&7デイリー報酬は自動で配布されます。"
+    - ""
+    - "&e► クリックで詳細"
+    
+  btn-link-name: "&a&l🔗 アカウントを連携"
+  btn-link-lore:
+    - ""
+    - "&7安全な連携コードを生成し、"
+    - "&7Discordサーバー上に入力します。"
+    - ""
+    - "&a► クリックしてコードを生成"
+    
+  btn-info-name: "&e&l📖 連携方法について"
+  btn-info-lore:
+    - ""
+    - "&71. 「🔗 アカウントを連携」をクリック"
+    - "&72. 6桁の安全なコードをコピー"
+    - "&73. 私達のDiscord上のチャンネルにアクセス"
+    - "&74. 「🛡️ アカウントを連携」ボタンをクリック"
+    - "&75. コードを入力して確認！"
+    - ""
+    - "&e手順はたったこれだけです！"
+    
+  btn-preview-name: "&6&l🎁 報酬プレビュー"
+  btn-preview-lore:
+    - ""
+    - "&7アカウントを連携すると以下がアンロックされます:"
+    - "&a  • 限定VIP Discord ロール"
+    - "&a  • 5,000 インゲームコイン"
+    - "&a  • 3つのダイヤモンドブロック"
+    - "&a  • ログインボーナス"
+    - ""
+    - "&e今すぐ連携してギフトを受け取ろう！"
+
+  status-chat-msg:
+    - "&8&m                                    "
+    - "&b&l⚡ CordSync &8— &7ステータス"
+    - "&8&m                                    "
+    - " &7状態: &a&l✓ 連携されています"
+    - " &7Discord: &f{id}"
+    - "&8&m                                    "
+  rewards-chat-msg: "&8[&a&l✓&8] &f報酬はシステムから自動で付与されます！連携状態を維持してお楽しみください。"
+
+discord:
+  auto-message-exists: "✅ 自動メッセージはすでにこのチャンネルに設定されています。"
+  code-missing-title: "❌ コードが入力されていません"
+  code-missing-desc: "Minecraftの `/link` から発行された6桁のコードを入力してください。"
+  invalid-title: "❌ 無効または期限切れのコード"
+  invalid-desc: "入力したコードが正しくないか、期限が切れています。サーバーに戻り、 `/link` で再生成してください。"
+  already-linked-title: "❌ すでに連携されています"
+  already-linked-desc: "このDiscordアカウントはすでにMinecraftプロフィールと連携されています。別のアカウントを連携したい場合は、連携を解除してください。"
+  player-already-linked-title: "❌ Minecraft アカウント連携済み"
+  player-already-linked-desc: "入力されたコードに関連するMinecraftアカウントはすでに別のDiscordユーザーと連携されています。"
+  success-title: "🎉 アカウントの連携が成功しました！"
+  success-desc: "あなたのMinecraftアカウント **{player}** の認証と連携が安全に完了しました。 ✅\n\nプレミアム報酬とサーバーの特典をお楽しみください！"
+  confirm-desc: "DiscordアカウントをMinecraftアカウント **{player}** と連携しようとしています。\n\n⚠️ **この操作はゲーム内またはDiscordでの解除機能で取り消すことができます。**\n\n本当に続行しますか？"
+  confirm-expired: "❌ 確認の有効期限が切れました！もう一度連携を行ってください。"
+  confirm-cancelled: "連携処理はキャンセルされました。"
+  cooldown-title: "⏳ クールダウン中"
+  cooldown-desc: "最近連携を解除したため、報酬の悪用を防ぐために **{time}** 待ってから再度連携してください。"
+  relink-limit-title: "🚫 連携上限に達しました"
+  relink-limit-desc: "再連携の最大回数({max})に達しました。問題であると思われる場合は管理者までご連絡ください。"
+  
+  console-bridge-no-permission: "❌ コンソールコマンドを実行するための管理者ロールを持っていません。"
+  console-bridge-blocked: "🚫 このコマンドはセキュリティ上の理由からブロックされています。"
+  console-bridge-title: "🖥️ コマンドが正常に実行されました"
+  console-bridge-field: "👤 実行者"
+
+  disabled: "Discord ボット の連携は無効化されています。"
+  no-token: "Discord ボット トークンが存在しないか無効です。config.ymlで設定してください。"
+  started: "✅ CordSync Discord ボット が接続され、動作しています。"
+  bot-stopped: "CordSync Discord ボット が切断されました。"
+  failed: "❌ Discord ボット の起動に失敗しました: {error}"
+  auto-message-sent: "✅ インタラクティブな自動メッセージが連携チャンネルに送信されました。"
+  log-linked: "🔗 **{player}** がアカウントを連携しました。"
+  log-unlinked: "🔓 **{player}** がアカウントの連携を解除しました。"
+  unlinked: "✅ Core Discord ロール が正常に削除されました。"
+  role-remove-error: "❌ ロールの削除中にエラーが発生しました: {error}"
+  role-fail: "❌ ロールの削除に失敗しました: {error}"
+  luckperms-role-removed: "✅ プレイヤー {player} から同期ロール {role} を削除しました。"
+
+join-quit:
+  join-author: "⬆️ {role}{player} がサーバーに参加しました"
+  quit-author: "⬇️ {role}{player} がサーバーから退出しました"
+  field-player: "👤 プレイヤー"
+  field-discord: "💬 Discord"
+  field-online: "👥 現在のオンライン"
+
+reward:
+  first-reward: "&8[&a&l✓&8] &a🎉 &fおめでとうございます、&b{player}&f！ &a初回連携プレミアム報酬&fが送られました！"
+  interval-reward: "&8[&a&l✓&8] &f💎 Discordの連携が継続しています！ &aデイリーログイン報酬が追加されました。"
+
+storage:
+  sqlite: "📦 超高速 SQLite ストレージが有効化されました。"
+  mysql: "📦 リモート MySQL データベース接続が確立されました。"
+  yaml: "📦 Flat-file YAML ストレージが有効化されました。"
+  closed: "📦 データベース接続が安全に終了しました。"
+
+chat:
+  minecraft-format: "&7[&b&lDiscord&7] &e{player}&7: &f{message}"
+  discord-format: "**[MC]** {player}: {message}"
+  no-permission: "&8[&c&l✗&8] &fクロスチャットにアクセスするための権限を持っていません。"
+  not-linked: "&8[&c&l✗&8] &fチャット機能を利用するにはアカウントを連携する必要があります。"
+
+security:
+  2fa-login-pending: "&c&l⚠ 2FA認証が必要です\n\n&fあなたのDiscordのダイレクトメッセージに安全なログイン要求が送信されました。\n&7サーバーへの接続を確立するためにそれを承認してください。\n\n&8CordSync によって保護されています"
+  2fa-approved: "&8[&a&l✓&8] &fDiscord 2FA を通じたログインが承認されました。"
+  2fa-denied: "&8[&c&l✗&8] &fログインは明確に拒否されました。あなた自身でない場合は管理者に警告してください。"
+
+system:
+  reload: "&8[&a&l✓&8] &aCordSyncの設定と翻訳ファイルが再読み込みされました。"
+  reload-detailed: "&8[&a&l✓&8] &aCordSyncは &f{time}ms&a で再読み込みされました。"

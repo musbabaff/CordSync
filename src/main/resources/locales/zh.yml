@@ -1,0 +1,228 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  CordSync — Chinese Language File                          ║
+# ║  Translated completely from the v1.4.0 master resource.    ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+plugin:
+  enabled: "&a&l⚡ CordSync &r&a已成功启用！"
+  disabled: "&c&l⚡ CordSync &r&c已被禁用。"
+  prefix: "&b&l⚡ CordSync &r&7» &f"
+
+decorations:
+  prefix: "&8[&b&l⚡&8] &f"
+  success-prefix: "&8[&a&l✓&8] &f"
+  error-prefix: "&8[&c&l✗&8] &f"
+  warning-prefix: "&8[&e&l⚠&8] &f"
+  info-prefix: "&8[&9&lℹ&8] &f"
+  separator: "&8&m                                                    "
+  header: "\n&b&l⚡ CordSync &8— &7账号绑定系统\n&8&m                                                    "
+
+link:
+  usage: "&8[&b&l⚡&8] &f使用 &b/link &f来生成绑定代码。"
+  header: "&8&m                                                    "
+  title: "&b&l⚡ 绑定代码！"
+  code-new: "&7请前往我们的 &bDiscord&7 服务器，输入 &f/link&7，然后输入以下代码："
+  code-active: "&7您已经有一个有效的代码。在 Discord 中输入以下代码："
+  copied-hover: "&a点击复制！"
+  code-generated: "&8[&a&l✓&8] &f您的绑定代码：&b&l{code} &7（将在 &f{time}秒&7 后过期）"
+  code-already: "&8[&e&l⚠&8] &f您已经有一个有效的代码：&b&l{code}"
+  success: "&8[&a&l✓&8] &a&l成功！&f您的账号已绑定！&7🎉"
+  already-linked: "&8[&c&l✗&8] &f您的账号已与 Discord 账号绑定。"
+  not-online: "&8[&c&l✗&8] &f您必须在线才能使用此命令。"
+
+unlink:
+  success: "&8[&a&l✓&8] &f您的 Discord 绑定已被解除。"
+  not-linked: "&8[&c&l✗&8] &f您的账号未绑定任何 Discord 账号。"
+  error: "&8[&c&l✗&8] &f解除绑定时发生错误。"
+  console-success: "&7{player} 已解除其账号绑定。"
+
+gui:
+  title: "&b&l⚡ CordSync &8— &7账号管理器"
+  head-name: "&b&l{player}"
+  status-linked: "&7状态：&a&l✓ 已绑定"
+  status-not-linked: "&7状态：&c&l✗ 未绑定"
+  discord-id: "&7Discord ID：&f{id}"
+  version-footer: "&8CordSync v{version}"
+  
+  btn-status-name: "&a&l✓ 账号已绑定"
+  btn-status-lore:
+    - ""
+    - "&7您的账号已绑定！"
+    - "&7您可以获得所有标准和高级奖励。"
+    - ""
+    - "&a► 点击查看详情"
+    
+  btn-unlink-name: "&c&l解除绑定"
+  btn-unlink-lore:
+    - ""
+    - "&7解除您的 Discord 绑定。"
+    - "&c⚠ 您将失去绑定的奖励！"
+    - ""
+    - "&c► 点击解除绑定"
+    
+  booster:
+    info-title: "🚀 加速状态信息"
+    info-desc: "有关服务器加速奖励的信息"
+
+discord-embeds:
+  commands:
+    link-modal-title: "🔗 绑定您的账号"
+    link-modal-label: "绑定代码"
+    link-modal-placeholder: "输入从 /link 获得的代码"
+    link-modal-error-empty: "代码不能为空"
+    
+  buttons:
+    link: "🔗 绑定账号"
+    how-to: "📖 如何绑定"
+    status: "📊 账号状态"
+    confirm: "✅ 确认"
+    cancel: "❌ 取消"
+    view-rewards: "🎁 查看奖励"
+    
+  auto-message:
+    field-title: "✨ 操作步骤"
+    field-desc: "• 🎮 **第 1 步：**在 Minecraft 中输入 `/link`\n• 🖱️ **第 2 步：**点击下方的按钮\n• 🔑 **第 3 步：**输入您的代码\n• ✅ **第 4 步：**确认！"
+    footer: "CordSync • 账号绑定系统"
+    
+  booster-message:
+    footer: "CordSync • 助力奖励"
+    
+  ui:
+    status-title: "📊 账号状态"
+    status-linked-desc: "✅ 您的账号已经**安全绑定**！"
+    status-not-linked-desc: "❌ 您的账号**尚未绑定**任何 Minecraft 账号。"
+    status-field-mc: "🎮 Minecraft 账号"
+    status-field-dc: "💬 Discord 账号"
+    status-field-relink: "🔄 重新绑定"
+    status-field-booster: "🚀 加速状态"
+    status-field-status: "绑定状态"
+    status-val-linked: "🟢 已绑定"
+    status-val-not-linked: "🔴 未绑定"
+    status-val-yes: "✅ 是"
+    status-val-no: "❌ 否"
+    
+    confirm-title: "🔐 需要确认"
+    confirm-desc: "您确定要绑定到 Minecraft 账号 **{player}** 吗？"
+    confirm-expired: "❌ 确认请求已过期！"
+    confirm-cancelled: "账号绑定已取消。"
+    confirm-title-cancelled: "❌ 已取消"
+    
+    success-title: "账号绑定成功 ✅"
+    success-desc: "已成功验证并绑定到 **{player}**！"
+    
+  btn-rewards-name: "&6&l🎁 您的奖励"
+  btn-rewards-lore:
+    - ""
+    - "&7查看您的绑定奖励。"
+    - "&7每日奖励会自动发放。"
+    - ""
+    - "&e► 点击查看详情"
+    
+  btn-link-name: "&a&l🔗 绑定账号"
+  btn-link-lore:
+    - ""
+    - "&7生成一个安全的绑定代码"
+    - "&7并在我们的 Discord 服务器上使用它。"
+    - ""
+    - "&a► 点击生成代码"
+    
+  btn-info-name: "&e&l📖 如何绑定"
+  btn-info-lore:
+    - ""
+    - "&71. 点击 &a🔗 绑定账号"
+    - "&72. 复制 6 位安全代码"
+    - "&73. 前往我们的 Discord 频道"
+    - "&74. 点击 &b绑定账号&7 按钮"
+    - "&75. 输入代码并确认！"
+    - ""
+    - "&e就是这么简单！"
+    
+  btn-preview-name: "&6&l🎁 奖励预览"
+  btn-preview-lore:
+    - ""
+    - "&7绑定账号即可立即解锁："
+    - "&a  • 专属的 VIP Discord 角色"
+    - "&a  • 5,000 游戏金币"
+    - "&a  • 3 个钻石块"
+    - "&a  • 每日登录奖励"
+    - ""
+    - "&e立即绑定以领取您的礼物！"
+
+  status-chat-msg:
+    - "&8&m                                    "
+    - "&b&l⚡ CordSync &8— &7账号状态"
+    - "&8&m                                    "
+    - " &7状态：&a&l✓ 安全已绑定"
+    - " &7Discord：&f{id}"
+    - "&8&m                                    "
+  rewards-chat-msg: "&8[&a&l✓&8] &f您的奖励会自动处理！请保持账号绑定以享受不间断的福利。"
+
+discord:
+  auto-message-exists: "✅ 此频道已经设置了自动消息。"
+  code-missing-title: "❌ 未提供代码"
+  code-missing-desc: "请输入在 Minecraft 中使用 `/link` 生成的 6 位代码。"
+  invalid-title: "❌ 无效或已过期的代码"
+  invalid-desc: "您输入的代码不正确或已过期。请登录服务器并使用 `/link` 重新生成一个。"
+  already-linked-title: "❌ 账号已绑定"
+  already-linked-desc: "此 Discord 账号已经绑定到一个 Minecraft 账号。如果您想绑定其他账号，请先解除绑定。"
+  player-already-linked-title: "❌ Minecraft 账号已绑定"
+  player-already-linked-desc: "与此代码关联的 Minecraft 账号已绑定到其他 Discord 用户。"
+  success-title: "🎉 账号绑定成功！"
+  success-desc: "您的 Minecraft 账号 **{player}** 已经安全完成验证和绑定。 ✅\n\n享受您的专属奖励和服务器特权吧！"
+  confirm-desc: "您即将把您的 Discord 账号与 **{player}** 的 Minecraft 账号绑定。\n\n⚠️ **您可以在游戏中或在 Discord 上解除绑定以撤销此操作。**\n\n您确定要继续吗？"
+  confirm-expired: "❌ 确认请求已过期！请尝试重新绑定。"
+  confirm-cancelled: "绑定过程已取消。"
+  cooldown-title: "⏳ 冷却时间激活"
+  cooldown-desc: "您最近解除了账号绑定。请等待 **{time}** 后再重新绑定，以防止奖励滥用。"
+  relink-limit-title: "🚫 已达到重新绑定次数上限"
+  relink-limit-desc: "您已达到允许的最大重新绑定次数 ({max})。如果您认为这是一个错误，请联系管理员。"
+  
+  console-bridge-no-permission: "❌ 您没有执行控制台命令所需的管理员角色。"
+  console-bridge-blocked: "🚫 出于安全原因，此高度敏感的命令已被阻止。"
+  console-bridge-title: "🖥️ 命令执行成功"
+  console-bridge-field: "👤 执行者"
+
+  disabled: "Discord 机器人集成已被禁用。"
+  no-token: "Discord 机器人令牌缺失或无效。请在 config.yml 中配置它。"
+  started: "✅ CordSync Discord 机器人已连接并运行正常。"
+  bot-stopped: "CordSync Discord 机器人已断开连接。"
+  failed: "❌ 无法启动 Discord 机器人：{error}"
+  auto-message-sent: "✅ 交互式自动消息已部署到绑定频道。"
+  log-linked: "🔗 **{player}** 安全绑定了他们的账号。"
+  log-unlinked: "🔓 **{player}** 解除了他们的账号绑定。"
+  unlinked: "✅ 核心 Discord 角色已成功移除。"
+  role-remove-error: "❌ 移除角色时出错：{error}"
+  role-fail: "❌ 无法移除角色：{error}"
+  luckperms-role-removed: "✅ 移除玩家 {player} 同步的角色 {role}。"
+
+join-quit:
+  join-author: "⬆️ {role}{player} 加入了服务器"
+  quit-author: "⬇️ {role}{player} 离开了服务器"
+  field-player: "👤 玩家"
+  field-discord: "💬 Discord"
+  field-online: "👥 当前在线人数"
+
+reward:
+  first-reward: "&8[&a&l✓&8] &a🎉 &f恭喜 &b{player}&f！您已收到&a首次绑定高级奖励&f！"
+  interval-reward: "&8[&a&l✓&8] &f💎 您的 Discord 绑定仍然有效！已发放&a每日忠诚奖励。"
+
+storage:
+  sqlite: "📦 超高速 SQLite 存储已激活。"
+  mysql: "📦 已建立远程 MySQL 数据库连接。"
+  yaml: "📦 YAML 平面文件存储已激活。"
+  closed: "📦 已安全断开数据库连接。"
+
+chat:
+  minecraft-format: "&7[&b&lDiscord&7] &e{player}&7: &f{message}"
+  discord-format: "**[MC]** {player}: {message}"
+  no-permission: "&8[&c&l✗&8] &f您没有足够的权限访问跨平台聊天。"
+  not-linked: "&8[&c&l✗&8] &f您必须安全地绑定您的帐户才能使用聊天桥梁。"
+
+security:
+  2fa-login-pending: "&c&l⚠ 2FA 需要身份验证\n\n&f已向您的 Discord 账号发送安全的登录请求。\n&7请验证批准以建立与服务器的连接。\n\n&8由 CordSync 保护"
+  2fa-approved: "&8[&a&l✓&8] &f通过 Discord 2FA 的安全登录已被批准。"
+  2fa-denied: "&8[&c&l✗&8] &f登录尝试被明确拒绝。如果这不是您的操作，请立即警告管理员。"
+
+system:
+  reload: "&8[&a&l✓&8] &aCordSync 配置已重新加载。"
+  reload-detailed: "&8[&a&l✓&8] &aCordSync 重新加载完毕，耗时 &f{time}ms&a。"

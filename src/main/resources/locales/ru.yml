@@ -1,0 +1,227 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  CordSync — Russia/Russian Language File                   ║
+# ║  Translated completely from the v1.4.0 master resource.    ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+plugin:
+  enabled: "&a&l⚡ CordSync &r&aуспешно активирован!"
+  disabled: "&c&l⚡ CordSync &r&cотключен."
+  prefix: "&b&l⚡ CordSync &r&7» &f"
+
+decorations:
+  prefix: "&8[&b&l⚡&8] &f"
+  success-prefix: "&8[&a&l✓&8] &f"
+  error-prefix: "&8[&c&l✗&8] &f"
+  warning-prefix: "&8[&e&l⚠&8] &f"
+  info-prefix: "&8[&9&lℹ&8] &f"
+  separator: "&8&m                                                    "
+  header: "\n&b&l⚡ CordSync &8— &7Система Привязки\n&8&m                                                    "
+
+link:
+  usage: "&8[&b&l⚡&8] &fИспользуйте &b/link &fдля создания кода привязки."
+  header: "&8&m                                                    "
+  title: "&b&l⚡ Код привязки!"
+  code-new: "&7Пожалуйста, зайдите на &bDiscord&7 сервер и введите код:"
+  code-active: "&7У вас уже есть код. Введите его в Discord:"
+  copied-hover: "&aНажмите, чтобы скопировать!"
+  code-generated: "&8[&a&l✓&8] &fВаш код: &b&l{code} &7(Истекает через &f{time}с&7)"
+  code-already: "&8[&e&l⚠&8] &fУ вас уже активирован код: &b&l{code}"
+  success: "&8[&a&l✓&8] &a&lУспех! &fВаш аккаунт привязан! &7🎉"
+  already-linked: "&8[&c&l✗&8] &fВаш аккаунт уже привязан к Discord."
+  not-online: "&8[&c&l✗&8] &fВы должны быть в сети."
+
+unlink:
+  success: "&8[&a&l✓&8] &fПривязка Discord удалена."
+  not-linked: "&8[&c&l✗&8] &fВаш аккаунт не привязан к Discord."
+  error: "&8[&c&l✗&8] &fПроизошла ошибка при отвязывании."
+  console-success: "&7{player} удалил(а) привязку аккаунта."
+
+gui:
+  title: "&b&l⚡ CordSync &8— &7Менеджер"
+  head-name: "&b&l{player}"
+  status-linked: "&7Статус: &a&l✓ Привязан"
+  status-not-linked: "&7Статус: &c&l✗ Не привязан"
+  discord-id: "&7Discord ID: &f{id}"
+  version-footer: "&8CordSync v{version}"
+  
+  btn-status-name: "&a&l✓ Аккаунт Привязан"
+  btn-status-lore:
+    - ""
+    - "&7Ваш аккаунт надежно привязан!"
+    - "&7Вы получаете все награды."
+    - ""
+    - "&a► Нажмите, чтобы посмотреть статус"
+    
+  btn-unlink-name: "&c&lОтвязать аккаунт"
+  btn-unlink-lore:
+    - ""
+    - "&7Удалить привязку Discord."
+    - "&c⚠ Вы потеряете связанные награды!"
+    - ""
+    - "&c► Нажмите для отвязки"
+    
+  booster:
+    info-title: "🚀 Бустер Инфо"
+    info-desc: "Информация о наградах"
+
+discord-embeds:
+  commands:
+    link-modal-title: "🔗 Привяжите Аккаунт"
+    link-modal-label: "Код Привязки"
+    link-modal-placeholder: "Введите код из игры (/link)"
+    link-modal-error-empty: "Поле не может быть пустым"
+    
+  buttons:
+    link: "🔗 Привязать"
+    how-to: "📖 Как Привязать"
+    status: "📊 Статус"
+    confirm: "✅ Подтвердить"
+    cancel: "❌ Отмена"
+    view-rewards: "🎁 Награды"
+    
+  auto-message:
+    field-title: "✨ Как это работает"
+    field-desc: "• 🎮 **Шаг 1:** Введите `/link`\n• 🖱️ **Шаг 2:** Нажмите на кнопку\n• 🔑 **Шаг 3:** Введите код\n• ✅ **Шаг 4:** Готово!"
+    footer: "CordSync • Надежная защита"
+    
+  booster-message:
+    footer: "CordSync • Бустер Награды"
+    
+  ui:
+    status-title: "📊 Статус Аккаунта"
+    status-linked-desc: "✅ Аккаунт **защищен и привязан**!"
+    status-not-linked-desc: "❌ Ваш аккаунт **не привязан**."
+    status-field-mc: "🎮 Игрок"
+    status-field-dc: "💬 Пользователь"
+    status-field-relink: "🔄 Повторы"
+    status-field-booster: "🚀 Бустер"
+    status-field-status: "Статус"
+    status-val-linked: "🟢 Привязан"
+    status-val-not-linked: "🔴 Не привязан"
+    status-val-yes: "✅ Да"
+    status-val-no: "❌ Нет"
+    
+    confirm-title: "🔐 Требуется подтверждение"
+    confirm-desc: "Вы уверены, что хотите привязать профиль игрока **{player}**?"
+    confirm-expired: "❌ Время вышло!"
+    confirm-cancelled: "Привязка отклонена."
+    confirm-title-cancelled: "❌ Отклонено"
+    
+    success-title: "Успех ✅"
+    success-desc: "Связан с профилем **{player}**!"
+    
+  btn-rewards-name: "&6&l🎁 Ваши Награды"
+  btn-rewards-lore:
+    - ""
+    - "&7Просмотр ежедневных наград."
+    - "&7Выдаются автоматически."
+    - ""
+    - "&e► Детали"
+    
+  btn-link-name: "&a&l🔗 Код привязки"
+  btn-link-lore:
+    - ""
+    - "&7Сгенерировать безопасный"
+    - "&7код привязки сервера."
+    - ""
+    - "&a► Нажмите, чтобы создать"
+    
+  btn-info-name: "&e&l📖 Руководство"
+  btn-info-lore:
+    - ""
+    - "&71. Нажмите Привязать"
+    - "&72. Скопируйте код 6ти знаков"
+    - "&73. Зайдите к нам в Discord"
+    - "&74. Подтвердите процесс!"
+    - ""
+    - "&eЭто очень просто!"
+    
+  btn-preview-name: "&6&l🎁 Просмотр Призов"
+  btn-preview-lore:
+    - ""
+    - "&7Привяжите профиль и получите:"
+    - "&a  • Роль в Discord"
+    - "&a  • Монеты: 5,000 "
+    - "&a  • Алмазные блоки (3x)"
+    - "&a  • Ежедневки каждый день!"
+    - ""
+    - "&eПользуйтесь!"
+
+  status-chat-msg:
+    - "&8&m                                    "
+    - "&b&l⚡ CordSync &8— &7Проверка"
+    - "&8&m                                    "
+    - " &7Статус: &a&l✓ Связано плотно"
+    - " &7Discord: &f{id}"
+    - "&8&m                                    "
+  rewards-chat-msg: "&8[&a&l✓&8] &fОставайтесь с нами на долгом сроке, и все награды Ваши."
+
+discord:
+  auto-message-exists: "✅ Сообщение уже здесь."
+  code-missing-title: "❌ Отсутствует Код"
+  code-missing-desc: "Пожалуйста, введите код от бота."
+  invalid-title: "❌ Ошибка срока годности"
+  invalid-desc: "Код не так введён или сгорел. Делайте новый через `/link`."
+  already-linked-title: "❌ Discord привязан"
+  already-linked-desc: "Вам не нужны 2 Minecraft аккаунта на одну сеть."
+  player-already-linked-title: "❌ Игрок привязан"
+  player-already-linked-desc: "Игрок уже занят в Discord базе."
+  success-title: "🎉 Синхронизация!"
+  success-desc: "Агент **{player}** вошел в строй. ✅\n\nМожете пользоваться ботом"
+  confirm-desc: "Подтвердите личность **{player}**.\n\n⚠️ **Это можно отвязать в настройках.**\n\nДа или нет?"
+  confirm-expired: "❌ Перезапросите запрос."
+  confirm-cancelled: "Отказ пользователя."
+  cooldown-title: "⏳ Таймаут"
+  cooldown-desc: "Вы часто меняете профили. Подождите **{time}**."
+  relink-limit-title: "🚫 Лимит блокировки"
+  relink-limit-desc: "Вы достигли абсолютного ограничения повторов ({max})."
+  
+  console-bridge-no-permission: "❌ У Вас нет прав на консоль."
+  console-bridge-blocked: "🚫 Запрос запрещён брандмауэром."
+  console-bridge-title: "🖥️ Команда ушла в Minecraft"
+  console-bridge-field: "👤 Исполнитель"
+
+  disabled: "Discord Выключен."
+  no-token: "Токен недействителен."
+  started: "✅ Бот проснулся! Связь установлена."
+  bot-stopped: "Бот отлючен от сети."
+  failed: "❌ Авария старта: {error}"
+  auto-message-sent: "✅ Письмо оставлено в чате канала."
+  log-linked: "🔗 **{player}** стал частью сообщества."
+  log-unlinked: "🔓 **{player}** отошел в тень."
+  unlinked: "✅ Core роль снята безвозвратно."
+  role-remove-error: "❌ Ошибка ролей: {error}"
+  role-fail: "❌ Сбой синхронизации: {error}"
+  luckperms-role-removed: "✅ Права сняты: группа {role} у {player}."
+
+join-quit:
+  join-author: "⬆️ {role}{player} зашел в локацию"
+  quit-author: "⬇️ {role}{player} покинул этот мир"
+  field-player: "👤 Игровой Ник"
+  field-discord: "💬 Аккаунт DC"
+  field-online: "👥 Игроков всего"
+
+reward:
+  first-reward: "&8[&a&l✓&8] &a🎉 &fПоздравляем &b{player}&f! Твой &aбонус&f выдан!"
+  interval-reward: "&8[&a&l✓&8] &f💎 Ты верен серверу. +1 за преданность."
+
+storage:
+  sqlite: "📦 База SQLite развёрнута."
+  mysql: "📦 Подключено к MySQL по порту."
+  yaml: "📦 YAML система файлов инициализирована."
+  closed: "📦 База данных закончила процессы."
+
+chat:
+  minecraft-format: "&7[&b&lDC&7] &e{player}&7: &f{message}"
+  discord-format: "**[MC]** {player}: {message}"
+  no-permission: "&8[&c&l✗&8] &fВы не можете писать в меж-серверный чат."
+  not-linked: "&8[&c&l✗&8] &fБез привязки чат обрублен."
+
+security:
+  2fa-login-pending: "&c&l⚠ Запрос 2FA Запущен\n\n&fГляньте переписку с Дискорд ботом.\n&7Доступ закрыт до Вашего согласия.\n\n&8CordSync Защита Ядра."
+  2fa-approved: "&8[&a&l✓&8] &fЩит снят. Добро пожаловать."
+  2fa-denied: "&8[&c&l✗&8] &fВ доступе отказано! Возможно, аккаунт украден!"
+
+system:
+  reload: "&8[&a&l✓&8] &aКонфиги и словари обновлены."
+  reload-detailed: "&8[&a&l✓&8] &aСистема поднята за &f{time}ms&a."

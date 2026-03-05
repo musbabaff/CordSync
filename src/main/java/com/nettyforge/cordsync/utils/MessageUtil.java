@@ -19,7 +19,7 @@ public class MessageUtil {
     private static FileConfiguration messages;
     private static FileConfiguration fallback;
 
-    private static final String[] SUPPORTED_LANGUAGES = { "en", "tr", "de", "es", "fr" };
+    private static final String[] SUPPORTED_LANGUAGES = { "en", "tr", "de", "es", "fr", "ru", "pl", "az", "zh", "ja" };
 
     public static void load(CordSync plugin) {
         String lang = plugin.getConfig().getString("language", "en").toLowerCase();

@@ -48,12 +48,12 @@ public class ReverifyTask implements Runnable {
             String verifiedRoleId = plugin.getConfig().getString("discord.role-id-verified");
 
             if (guildId == null || guildId.isEmpty()) {
-                plugin.getLogger().warning("âŒ Discord sunucu IDâ€™si bulunamadÄ±, doÄŸrulama atlandÄ±.");
+                plugin.getLogger().warning("⚠ Discord guild ID not found, verification check skipped.");
                 return;
             }
 
             if (plugin.getDiscordBot() == null || plugin.getDiscordBot().getJda() == null) {
-                plugin.getLogger().warning("âŒ Discord bot aktif deÄŸil, doÄŸrulama kontrolÃ¼ yapÄ±lmadÄ±.");
+                plugin.getLogger().warning("⚠ Discord bot is inactive, verification check skipped.");
                 return;
             }
 
@@ -93,9 +93,9 @@ public class ReverifyTask implements Runnable {
             }
 
             plugin.getLogger()
-                    .info("â™» ReVerify tamamlandÄ± â†’ Kontrol edilen: " + checked + ", kaldÄ±rÄ±lan: " + unlinked);
+                    .info("♻ ReVerify complete -> Checked: " + checked + ", Unlinked: " + unlinked);
         } catch (Exception e) {
-            plugin.getLogger().severe("âŒ ReVerify hatasÄ±: " + e.getMessage());
+            plugin.getLogger().severe("❌ ReVerify error: " + e.getMessage());
         }
     }
 
@@ -103,7 +103,7 @@ public class ReverifyTask implements Runnable {
         try {
             runReverifyCheck();
         } catch (Exception e) {
-            plugin.getLogger().severe("âŒ Manuel yeniden doÄŸrulama hatasÄ±: " + e.getMessage());
+            plugin.getLogger().severe("❌ Manual ReVerify error: " + e.getMessage());
         }
     }
 }

@@ -1,10 +1,11 @@
 # ╔══════════════════════════════════════════════════════════════╗
-# ║  CordSync — Archivo de Idioma Español                     ║
+# ║  CordSync — Spanish Language File                          ║
+# ║  Translated completely from the v1.4.0 master resource.    ║
 # ╚══════════════════════════════════════════════════════════════╝
 
 plugin:
-  enabled: "&a&l⚡ CordSync &r&a¡activado exitosamente!"
-  disabled: "&c&l⚡ CordSync &r&cdesactivado."
+  enabled: "&a&l⚡ CordSync &r&aha sido activado correctamente!"
+  disabled: "&c&l⚡ CordSync &r&cha sido desactivado."
   prefix: "&b&l⚡ CordSync &r&7» &f"
 
 decorations:
@@ -14,121 +15,214 @@ decorations:
   warning-prefix: "&8[&e&l⚠&8] &f"
   info-prefix: "&8[&9&lℹ&8] &f"
   separator: "&8&m                                                    "
-  header: "\n&b&l⚡ CordSync &8— &7Vinculación de Cuentas\n&8&m                                                    "
+  header: "\n&b&l⚡ CordSync &8— &7Sistema de Vinculación de Cuentas\n&8&m                                                    "
 
 link:
-  usage: "&8[&b&l⚡&8] &fUsa &b/link &fpara generar un código."
+  usage: "&8[&b&l⚡&8] &fUsa &b/link&f para generar un código."
   header: "&8&m                                                    "
   title: "&b&l⚡ ¡Código de Vinculación!"
-  code-new: "&7Por favor, ve a nuestro servidor de &bDiscord&7, escribe &f/link&7 y pon el código abajo:"
-  code-active: "&7Ya tienes un código activo. Ingresa el código en Discord:"
+  code-new: "&7Ve a nuestro servidor de &bDiscord&7, usa &f/link&7 e ingresa este código:"
+  code-active: "&7Ya tienes un código activo. Ingrésalo en Discord:"
   copied-hover: "&a¡Haz clic para copiar!"
-  code-generated: "&8[&a&l✓&8] &fTu código: &b&l{code} &7(Válido por &f{time}s&7)"
-  code-already: "&8[&e&l⚠&8] &fYa tienes un código activo: &b&l{code}"
-  success: "&8[&a&l✓&8] &a&l¡Éxito! &f¡Tu cuenta fue vinculada! &7🎉"
-  already-linked: "&8[&c&l✗&8] &fTu cuenta ya está vinculada."
+  code-generated: "&8[&a&l✓&8] &fTu código: &b&l{code} &7(Expira en &f{time}s&7)"
+  code-already: "&8[&e&l⚠&8] &fYa tienes un código: &b&l{code}"
+  success: "&8[&a&l✓&8] &a&l¡Éxito! &f¡Tu cuenta ha sido vinculada! &7🎉"
+  already-linked: "&8[&c&l✗&8] &fTu cuenta ya está vinculada a Discord."
+  not-online: "&8[&c&l✗&8] &fDebes estar en línea para este comando."
 
 unlink:
-  success: "&8[&a&l✓&8] &fVinculación eliminada."
-  not-linked: "&8[&c&l✗&8] &fTu cuenta no está vinculada."
-  error: "&8[&c&l✗&8] &fError al eliminar la vinculación."
-  console-success: "&7{player} eliminó su vinculación."
+  success: "&8[&a&l✓&8] &fTu vinculación de Discord ha sido removida."
+  not-linked: "&8[&c&l✗&8] &fNo estás vinculado a ninguna cuenta."
+  error: "&8[&c&l✗&8] &fHubo un error al desenlazar."
+  console-success: "&7{player} ha removido su vinculación."
 
-discord:
-  auto-message-exists: "✅ El mensaje automático ya está configurado en este canal."
-  code-missing-title: "❌ Código no proporcionado"
-  code-missing-desc: "Ingresa el código de 6 dígitos de `/link`."
-  invalid-title: "❌ Código inválido o expirado"
-  invalid-desc: "El código ingresado es incorrecto o ha expirado."
-  already-linked-title: "❌ Ya vinculado"
-  already-linked-desc: "Esta cuenta Discord ya está vinculada."
-  success-title: "¡Cuenta vinculada exitosamente!"
-  success-desc: "Tu cuenta Minecraft **{player}** fue verificada. ✅"
-  confirm-desc: "Estás a punto de vincular tu cuenta con **{player}**.\n\n¿Estás seguro?"
-  confirm-expired: "❌ ¡Confirmación expirada!"
-  confirm-cancelled: "Vinculación cancelada."
-  cooldown-title: "⏳ Tiempo de espera"
-  cooldown-desc: "Debes esperar **{time}** después de desvincular."
-  relink-limit-title: "🚫 Límite alcanzado"
-  relink-limit-desc: "Has usado tu límite ({max})."
-  started: "✅ Bot de Discord conectado."
-  bot-stopped: "Bot desconectado."
-  disabled: "Discord bot integration is disabled."
-  no-token: "Discord bot token is missing or invalid. Please configure it in config.yml."
-  failed: "❌ Failed to start Discord Bot: {error}"
-  console-bridge-title: "🖥️ Command Executed Successfully"
-  console-bridge-field: "👤 Executed By"
-  auto-message-sent: "✅ Auto-mensaje enviado."
-  auto-message-exists: "ℹ Auto-mensaje ya existe."
-  log-linked: "🔗 **{player}** vinculó su cuenta."
-  log-unlinked: "🔓 **{player}** desvinculó su cuenta."
-
-reward:
-  first-reward: "&8[&a&l✓&8] &a🎉 &f¡Felicidades &b{player}&f! &a¡Primera recompensa &fobtenida!"
-  interval-reward: "&8[&a&l✓&8] &f💎 ¡Tu vinculación está activa! &aRecompensa diaria."
-
-storage:
-  sqlite: "📦 Almacenamiento SQLite activado."
-  mysql: "📦 Almacenamiento MySQL activado."
-  yaml: "📦 Almacenamiento YAML activado."
-  closed: "📦 Conexión cerrada."
-
-chat:
-  minecraft-format: "&7[&b&lDiscord&7] &f{player}&7: &f{message}"
-  discord-format: "**[MC]** {player}: {message}"
-  no-permission: "&8[&c&l✗&8] &fSin permiso para el chat cruzado."
-  not-linked: "&8[&c&l✗&8] &fVincula tu cuenta para usar el chat."
-
-security:
-  2fa-login-pending: "&c&l⚠ Verificación 2FA Requerida\n\n&fSe envió una solicitud a tu DM de Discord.\n&7Apruébala para entrar al servidor.\n\n&8Powered by CordSync"
-  2fa-approved: "&8[&a&l✓&8] &fInicio aprobado via Discord 2FA."
-  2fa-denied: "&8[&c&l✗&8] &fInicio denegado."
-
-system:
-  reload: "&8[&a&l✓&8] &aCordSync configuration and locales reloaded."
-  reload-detailed: "&8[&a&l✓&8] &aCordSync reloaded in &f{time}ms&a."
+gui:
+  title: "&b&l⚡ CordSync &8— &7Administrar Cuenta"
+  head-name: "&b&l{player}"
+  status-linked: "&7Estado: &a&l✓ Vinculado"
+  status-not-linked: "&7Estado: &c&l✗ No Vinculado"
+  discord-id: "&7Discord ID: &f{id}"
+  version-footer: "&8CordSync v{version}"
+  
+  btn-status-name: "&a&l✓ Cuenta Vinculada"
+  btn-status-lore:
+    - ""
+    - "&7¡Tu cuenta está conectada de forma segura!"
+    - "&7Ahora recibes todas las recompensas."
+    - ""
+    - "&a► Clic para detalles en el chat"
+    
+  btn-unlink-name: "&c&lDesenlazar Cuenta"
+  btn-unlink-lore:
+    - ""
+    - "&7Quitar la vinculación con Discord."
+    - "&c⚠ ¡Perderás los beneficios!"
+    - ""
+    - "&c► Clic para remover"
+    
+  booster:
+    info-title: "🚀 Información de Booster"
+    info-desc: "Información sobre las recompensas de boost"
 
 discord-embeds:
   commands:
-    link-modal-title: "🔗 Vincula tu cuenta"
-    link-modal-label: "Código de enlace"
-    link-modal-placeholder: "Introduce el código del juego"
+    link-modal-title: "🔗 Vincula tu Cuenta"
+    link-modal-label: "Código Corto"
+    link-modal-placeholder: "Usa /link en Minecraft"
     link-modal-error-empty: "El código no puede estar vacío"
     
   buttons:
     link: "🔗 Vincular Cuenta"
     how-to: "📖 Cómo Vincular"
-    status: "📊 Estado de la Cuenta"
+    status: "📊 Ver Estado"
     confirm: "✅ Confirmar"
     cancel: "❌ Cancelar"
+    view-rewards: "🎁 Recompensas"
     
   auto-message:
-    field-title: "✨ Cómo Funciona"
-    field-desc: "• 🎮 **Paso 1:** Escribe `/link` en Minecraft\n• 🖱️ **Paso 2:** Haz clic en el botón de abajo\n• 🔑 **Paso 3:** Introduce tu código\n• ✅ **Paso 4:** ¡Confirmar!"
-    footer: "CordSync • Sistema de Vinculación"
+    field-title: "✨ Pasos Simples"
+    field-desc: "• 🎮 **Paso 1:** Usa `/link` en el servidor\n• 🖱️ **Paso 2:** Haz clic abajo\n• 🔑 **Paso 3:** Introduce tu código\n• ✅ **Paso 4:** ¡Confirma!"
+    footer: "CordSync • Sistema Seguro"
     
   booster-message:
-    footer: "CordSync • Recompensas Booster"
+    footer: "CordSync • Recompensas VIP"
     
   ui:
-    status-title: "📊 Estado de la Cuenta"
-    status-linked-desc: "✅ ¡Tu cuenta está **vinculada de forma segura**!"
-    status-not-linked-desc: "❌ Tu cuenta **no está vinculada** a ninguna cuenta de Minecraft."
+    status-title: "📊 Estado de tu Cuenta"
+    status-linked-desc: "✅ ¡Tu cuenta está **conectada de forma segura**!"
+    status-not-linked-desc: "❌ Tu cuenta **no está conectada** al servidor."
     status-field-mc: "🎮 Minecraft"
     status-field-dc: "💬 Discord"
-    status-field-relink: "🔄 Revinculaciones"
-    status-field-booster: "🚀 Mejorador"
+    status-field-relink: "🔄 Reconexiones"
+    status-field-booster: "🚀 Booster"
     status-field-status: "Estado"
-    status-val-linked: "🟢 Vinculada"
-    status-val-not-linked: "🔴 No Vinculada"
+    status-val-linked: "🟢 Vinculado"
+    status-val-not-linked: "🔴 No Vinculado"
     status-val-yes: "✅ Sí"
     status-val-no: "❌ No"
     
-    confirm-title: "🔐 Verificación Requerida"
-    confirm-desc: "¿Estás seguro de que deseas vincularte con la cuenta de Minecraft **{player}**?"
-    confirm-expired: "❌ ¡La solicitud de confirmación ha caducado!"
-    confirm-cancelled: "La vinculación de la cuenta ha sido cancelada."
-    confirm-title-cancelled: "❌ Cancelado"
+    confirm-title: "🔐 Verificación requerida"
+    confirm-desc: "¿Confirmas enlazar tu cuenta de Discord con **{player}** de Minecraft?"
+    confirm-expired: "❌ ¡Esta tarjeta expiró!"
+    confirm-cancelled: "La sesión de vinculación fue abortada."
+    confirm-title-cancelled: "❌ Abortado"
     
-    success-title: "Cuenta Vinculada ✅"
-    success-desc: "¡Verificado y vinculado con éxito a **{player}**!"
+    success-title: "Cuenta Verificada ✅"
+    success-desc: "¡Se vinculó a tu perfil **{player}**!"
+    
+  btn-rewards-name: "&6&l🎁 Tus Recompensas"
+  btn-rewards-lore:
+    - ""
+    - "&7Comprueba lo que has ganado."
+    - "&7Las recompensas diarias son automáticas."
+    - ""
+    - "&e► Clic para detalles"
+    
+  btn-link-name: "&a&l🔗 Generar Vinculación"
+  btn-link-lore:
+    - ""
+    - "&7Protege tu cuenta generando"
+    - "&7un pin de acceso seguro."
+    - ""
+    - "&a► Clic para crear código"
+    
+  btn-info-name: "&e&l📖 Instrucciones"
+  btn-info-lore:
+    - ""
+    - "&71. Haz clic aquí"
+    - "&72. Copia tu código"
+    - "&73. Abre nuestro Discord"
+    - "&74. Toca el botón de Enlazar"
+    - "&75. Fíjalo para verificar."
+    - ""
+    - "&e¡Así de simple!"
+    
+  btn-preview-name: "&6&l🎁 Premios Premium"
+  btn-preview-lore:
+    - ""
+    - "&7Vincula tu cuenta y obtén gratis:"
+    - "&a  • Rango especial en Discord"
+    - "&a  • 5,000 Monedas VIP"
+    - "&a  • 3 Bloques de Diamante"
+    - "&a  • Regalos todos los días"
+    - ""
+    - "&e¡Cobra ahora tus beneficios!"
+
+  status-chat-msg:
+    - "&8&m                                    "
+    - "&b&l⚡ CordSync &8— &7Datos de cuenta"
+    - "&8&m                                    "
+    - " &7Estado: &a&l✓ Acceso seguro concedido"
+    - " &7Discord: &f{id}"
+    - "&8&m                                    "
+  rewards-chat-msg: "&8[&a&l✓&8] &fLas recompensas se acreditan y procesan dinámicamente. Manten unida tu red social para disfrutar."
+
+discord:
+  auto-message-exists: "✅ El mensaje automático ya fue implementado acá."
+  code-missing-title: "❌ Código en vacío"
+  code-missing-desc: "Introduce la clave de 6 números proveída desde `/link` del juego."
+  invalid-title: "❌ Código falso o vencido"
+  invalid-desc: "La llave no sirve o le se ha agotado el tiempo. Renueva en Minecraft ejecutando `/link`."
+  already-linked-title: "❌ Discord ocupado"
+  already-linked-desc: "Este perfil de Discord ya se halla emparejado con otra identidad gráfica."
+  player-already-linked-title: "❌ El jugador cuenta de otro dueño"
+  player-already-linked-desc: "Ese perfil en el videojuego está adosado a alguien forastero."
+  success-title: "🎉 ¡Autenticado Concretado!"
+  success-desc: "Tu avatar virtual **{player}** consiguió asociarse en esta base. ✅\n\n¡Súper beneficios en camino!"
+  confirm-desc: "Ad portas de integrar a **{player}**.\n\n⚠️ **Acción retroactiva a través del comando `desenlazar`.**\n\n¿Firmes y seguros?"
+  confirm-expired: "❌ Finalizó el proceso validatorio."
+  confirm-cancelled: "Se rehusó la sincronización."
+  cooldown-title: "⏳ Recarga Incesante"
+  cooldown-desc: "Desvinculaste demasiado pronto, espera **{time}** y reintenta."
+  relink-limit-title: "🚫 Cierres Extremos"
+  relink-limit-desc: "Llevaste esto demasido lejos, limite superado ({max}). Contacto al moderador demandante."
+  
+  console-bridge-no-permission: "❌ Deficiencia de rangos supremos ausentes."
+  console-bridge-blocked: "🚫 Por motivos precautorios este comando particular sucumbe desactivado."
+  console-bridge-title: "🖥️ Transcripción Consolo Ejecutada"
+  console-bridge-field: "👤 Puesto por el alto mando"
+
+  disabled: "El ente virtual robótico yace marchando hacia su fin."
+  no-token: "La clave token en `config.yml` se halla corrupta o marchita."
+  started: "✅ Botón central conectado globalmente y óptimo."
+  bot-stopped: "Unidad desconectada, adiós."
+  failed: "❌ Rotura profunda bot-discord: {error}"
+  auto-message-sent: "✅ Transmisión en pantalla gráfica inyectada visualmente al canal."
+  log-linked: "🔗 **{player}** efectuó la aserción y se acopló."
+  log-unlinked: "🔓 **{player}** optó el divorcio virtual."
+  unlinked: "✅ Core Discord rol suprimido y reajustado."
+  role-remove-error: "❌ Trance denegado: {error}"
+  role-fail: "❌ Incompetencia grupal: {error}"
+  luckperms-role-removed: "✅ Removido rango dependiente LP de {player}: '{role}'."
+
+join-quit:
+  join-author: "⬆️ {role}{player} apareció y brilló"
+  quit-author: "⬇️ {role}{player} desapareció en los escombros"
+  field-player: "👤 Jugador MC"
+  field-discord: "💬 Persona DC"
+  field-online: "👥 Habitantes Local"
+
+reward:
+  first-reward: "&8[&a&l✓&8] &a🎉 &f¡Tú la llevas &b{player}&f! &aLa magna recompensa primaria&f te aguarda en custodia."
+  interval-reward: "&8[&a&l✓&8] &f💎 Gracias por la fidelidad en este gremio virtual, adosado con un premio y cuota de lealtad."
+
+storage:
+  sqlite: "📦 Almacén binario de agilidad SQLite activado."
+  mysql: "📦 Refugio transatlántico en base de datos MySQL consolidada."
+  yaml: "📦 Texturas literales y planas activas subida YAML."
+  closed: "📦 Aislamiento y candado cerrado post conexión."
+
+chat:
+  minecraft-format: "&7[&b&lDC&7] &e{player}&7: &f{message}"
+  discord-format: "**[MINECRAFT]** {player}: {message}"
+  no-permission: "&8[&c&l✗&8] &fTú persona es carente y carecerá autorización trans-mensajera."
+  not-linked: "&8[&c&l✗&8] &fLa conjunción sagrada falta, ¡Acóplate antes de gritar!"
+
+security:
+  2fa-login-pending: "&c&l⚠ Certifica tu Autoridad DM\n\n&fUna ráfaga enviada a los directos Discord.\n&7Apruébala porque esto se derrumba si eres atacante.\n\n&8Escudo CordSync en vivo."
+  2fa-approved: "&8[&a&l✓&8] &fPuertos reabridos. El Discord confía en ti."
+  2fa-denied: "&8[&c&l✗&8] &fRompiste y negaste. Falsa alarma a todos de invasión eminente."
+
+system:
+  reload: "&8[&a&l✓&8] &aRenovado CordSync configura localmente."
+  reload-detailed: "&8[&a&l✓&8] &aRenovado en un santiamén &f{time}ms&a y reiniciado."

@@ -1,0 +1,228 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  CordSync — Polish Language File                           ║
+# ║  Translated completely from the v1.4.0 master resource.    ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+plugin:
+  enabled: "&a&l⚡ CordSync &r&azostał włączony pomyślnie!"
+  disabled: "&c&l⚡ CordSync &r&czostał wyłączony."
+  prefix: "&b&l⚡ CordSync &r&7» &f"
+
+decorations:
+  prefix: "&8[&b&l⚡&8] &f"
+  success-prefix: "&8[&a&l✓&8] &f"
+  error-prefix: "&8[&c&l✗&8] &f"
+  warning-prefix: "&8[&e&l⚠&8] &f"
+  info-prefix: "&8[&9&lℹ&8] &f"
+  separator: "&8&m                                                    "
+  header: "\n&b&l⚡ CordSync &8— &7System Łączenia Kont\n&8&m                                                    "
+
+link:
+  usage: "&8[&b&l⚡&8] &fUżyj &b/link&f, aby wygenerować kod łączenia."
+  header: "&8&m                                                    "
+  title: "&b&l⚡ Kod Łączenia!"
+  code-new: "&7Wejdź na nasz serwer &bDiscord&7, wpisz &f/link&7 i podaj poniższy kod:"
+  code-active: "&7Masz już aktywny kod. Wpisz go na Discordzie:"
+  copied-hover: "&aKliknij, aby skopiować!"
+  code-generated: "&8[&a&l✓&8] &fTwój kod: &b&l{code} &7(Wygasa za &f{time}s&7)"
+  code-already: "&8[&e&l⚠&8] &fMasz już aktywny kod: &b&l{code}"
+  success: "&8[&a&l✓&8] &a&lSukces! &fTwoje konto zostało połączone! &7🎉"
+  already-linked: "&8[&c&l✗&8] &fTwoje konto jest już połączone na Discordzie."
+  not-online: "&8[&c&l✗&8] &fMusisz być online, aby użyć tej komendy."
+
+unlink:
+  success: "&8[&a&l✓&8] &fTwoje połączenie z Discordem zostało usunięte."
+  not-linked: "&8[&c&l✗&8] &fTwoje konto nie jest połączone z Discordem."
+  error: "&8[&c&l✗&8] &fWystąpił błąd podczas usuwania połączenia."
+  console-success: "&7{player} usunął swoje połączenie z Discordem."
+
+gui:
+  title: "&b&l⚡ CordSync &8— &7Menedżer Konta"
+  head-name: "&b&l{player}"
+  status-linked: "&7Status: &a&l✓ Połączono"
+  status-not-linked: "&7Status: &c&l✗ Brak połączenia"
+  discord-id: "&7Discord ID: &f{id}"
+  version-footer: "&8CordSync v{version}"
+  
+  btn-status-name: "&a&l✓ Konto Połączone"
+  btn-status-lore:
+    - ""
+    - "&7Twoje konto jest połączone!"
+    - "&7Otrzymujesz wszystkie nagrody."
+    - ""
+    - "&a► Kliknij, aby zobaczyć szczegóły"
+    
+  btn-unlink-name: "&c&lOdłącz Konto"
+  btn-unlink-lore:
+    - ""
+    - "&7Usuń połączenie z Discordem."
+    - "&c⚠ Stracisz dostęp do nagród!"
+    - ""
+    - "&c► Kliknij, aby usunąć"
+    
+  booster:
+    info-title: "🚀 Info o Boosterze"
+    info-desc: "Informacje o nagrodach za ulepszenie"
+
+discord-embeds:
+  commands:
+    link-modal-title: "🔗 Połącz Swoje Konto"
+    link-modal-label: "Kod Łączenia"
+    link-modal-placeholder: "Wpisz kod z komendy /link"
+    link-modal-error-empty: "Kod nie może być pusty"
+    
+  buttons:
+    link: "🔗 Połącz Konto"
+    how-to: "📖 Jak Połączyć"
+    status: "📊 Status Konta"
+    confirm: "✅ Potwierdź"
+    cancel: "❌ Anuluj"
+    view-rewards: "🎁 Nagrody"
+    
+  auto-message:
+    field-title: "✨ Jak to działa"
+    field-desc: "• 🎮 **Krok 1:** Wpisz `/link` w grze\n• 🖱️ **Krok 2:** Kliknij przycisk\n• 🔑 **Krok 3:** Podaj swój kod\n• ✅ **Krok 4:** Potwierdź!"
+    footer: "CordSync • Bezpieczne Łączenie"
+    
+  booster-message:
+    footer: "CordSync • Nagrody dla Boosterów"
+    
+  ui:
+    status-title: "📊 Status Konta"
+    status-linked-desc: "✅ Twoje konto jest **bezpiecznie połączone**!"
+    status-not-linked-desc: "❌ Twoje konto **nie jest połączone**."
+    status-field-mc: "🎮 Minecraft"
+    status-field-dc: "💬 Discord"
+    status-field-relink: "🔄 Ponowne"
+    status-field-booster: "🚀 Ulepszenia"
+    status-field-status: "Status"
+    status-val-linked: "🟢 Połączone"
+    status-val-not-linked: "🔴 Brak"
+    status-val-yes: "✅ Tak"
+    status-val-no: "❌ Nie"
+    
+    confirm-title: "🔐 Wymagana Weryfikacja"
+    confirm-desc: "Czy na pewno chcesz połączyć Discord z graczem **{player}**?"
+    confirm-expired: "❌ Ta prośba straciła ważność!"
+    confirm-cancelled: "Proces został przerwany przez użytkownika."
+    confirm-title-cancelled: "❌ Anulowano"
+    
+    success-title: "Połączone ✅"
+    success-desc: "Bezpiecznie połączono z kontem **{player}**!"
+    
+  btn-rewards-name: "&6&l🎁 Twoje Nagrody"
+  btn-rewards-lore:
+    - ""
+    - "&7Sprawdź swoje darmowe nagrody."
+    - "&7Dzienny bonus przydzielany jest automatycznie."
+    - ""
+    - "&e► Kliknij po szczegóły"
+    
+  btn-link-name: "&a&l🔗 Generuj Połączenie"
+  btn-link-lore:
+    - ""
+    - "&7Zdobądź klucz zabezpieczający,"
+    - "&7niezbędny na Discordzie."
+    - ""
+    - "&a► Stwórz kod"
+    
+  btn-info-name: "&e&l📖 Instrukcja"
+  btn-info-lore:
+    - ""
+    - "&71. Wciśnij Połącz"
+    - "&72. Zapisz wygenerowany kod"
+    - "&73. Wejdź na wskazany Discord"
+    - "&74. Kliknij na Integrację"
+    - "&75. Podaj pin i zgłoś!"
+    - ""
+    - "&eZabezpieczeni!"
+    
+  btn-preview-name: "&6&l🎁 Podgląd Łupów"
+  btn-preview-lore:
+    - ""
+    - "&7Każdy nowo-podłączony zyskuje:"
+    - "&a  • Specjalną Rangę VIP"
+    - "&a  • 5,000 Wirtualnych Monet"
+    - "&a  • Bloki Diamentów dla Startu"
+    - "&a  • Certyfikat Logowania"
+    - ""
+    - "&eAkceptuj i ciesz się bonusem!"
+
+  status-chat-msg:
+    - "&8&m                                    "
+    - "&b&l⚡ CordSync &8— &7Status Profilu"
+    - "&8&m                                    "
+    - " &7Status: &a&l✓ Węzeł Bezpieczeństwa Aktywny"
+    - " &7Discord: &f{id}"
+    - "&8&m                                    "
+  rewards-chat-msg: "&8[&a&l✓&8] &fNasza platforma zapewnia gwarancję na nagrody z tytułu utrzymywania sesji. "
+
+discord:
+  auto-message-exists: "✅ Moduł informacyjny jest rzucony."
+  code-missing-title: "❌ Brakujący Klucz"
+  code-missing-desc: "Musisz nam dostarczyć 6-elementowy pin przez komendę `/link`."
+  invalid-title: "❌ Komenda fałszywa / wygasła"
+  invalid-desc: "Ten łańcuch znaków uważa się za utylizowany. Rozpocznij `/link` natychmiast."
+  already-linked-title: "❌ Discord skolonizowany"
+  already-linked-desc: "Niestety konto Discord widnieje już w archiwach pod inną identyfikacją Minecraft."
+  player-already-linked-title: "❌ Klient jest połączony"
+  player-already-linked-desc: "Inny uczestnik sieci już zajmuje ten alias. Rejestruj nowe wartości."
+  success-title: "🎉 Synchronizacja Kompletna!"
+  success-desc: "Zawiadamiamy że **{player}** wszedł w erę bezpieczeństwa. ✅\n\nNiezapomnianych rozgrywek"
+  confirm-desc: "Zbliża się zderzenie i scalanie z **{player}**.\n\n⚠️ **Jeżeli chcesz zrezygnować, wpisz unlink do terminalu.**\n\nPotwierdzasz świadomie?"
+  confirm-expired: "❌ Próba uznana za nieważną i przedawnioną."
+  confirm-cancelled: "Odwołano prośbę łączenia"
+  cooldown-title: "⏳ Oczekuj na odnowienie"
+  cooldown-desc: "Rozłączyles bardzo wcześnie swoje zasoby, połączono blokadę na czas **{time}**."
+  relink-limit-title: "🚫 Przepustowość Limitów"
+  relink-limit-desc: "Twoje manipulowanie osiagneło ekstremum ({max}). Skontaktuj administratora."
+  
+  console-bridge-no-permission: "❌ Wykryto zaporę, brak uprawnień władcy."
+  console-bridge-blocked: "🚫 Kompresyjne polecenia stwarzają luki- dlatego to polecenie odrzucono."
+  console-bridge-title: "🖥️ Raport Konsoli Zrealizowany"
+  console-bridge-field: "👤 Nakaz przez"
+
+  disabled: "Platforma DC wyciszona w parametryzacji."
+  no-token: "Klucz bot-token nie istnieje w węzłach config.yml."
+  started: "✅ Bot jest gotowy. Otwarty protokół wszedł w fazę wiodącą."
+  bot-stopped: "Rozbój z maszyną - zatrzymany pomyślnie."
+  failed: "❌ Awaria i zwijanie protokołów: {error}"
+  auto-message-sent: "✅ Sektor informacji na DC wprowadzony uwieńczony pozytywnie."
+  log-linked: "🔗 **{player}** dokonał scalania z centralą."
+  log-unlinked: "🔓 **{player}** skruszył łańcuch dostępu i jest sam."
+  unlinked: "✅ Grupa bazowa Discord utylizowana."
+  role-remove-error: "❌ Przydział errora: {error}"
+  role-fail: "❌ Odstrzał ról zawiódł: {error}"
+  luckperms-role-removed: "✅ Odłączono koordynatora ról: '{role}' u gracza: {player}."
+
+join-quit:
+  join-author: "⬆️ {role}{player} przebił się przez bramkę wejścia"
+  quit-author: "⬇️ {role}{player} wycofał do pulpitu"
+  field-player: "👤 Avatar Sieci"
+  field-discord: "💬 Sieć DC"
+  field-online: "👥 Ruch Terenowy"
+
+reward:
+  first-reward: "&8[&a&l✓&8] &a🎉 &fWinszujemy Ci **{player}**! &aPaczka inaguracyjna&f opadła w Twoim portfelu."
+  interval-reward: "&8[&a&l✓&8] &f💎 Twoja obecność rodzi szczerą dumę. Plusujemy za zaangażowanie serwerem."
+
+storage:
+  sqlite: "📦 Agregacja SQLite osiadła pomyślnie na lokalsach."
+  mysql: "📦 Kominunikacja i przesył w port MySQL zabezpieczony."
+  yaml: "📦 Zwykły mechanizm Pliku YAML obsługuje zapisy."
+  closed: "📦 Końcówki gniazda pozamiatane, brak wycieku ram, dziękuje."
+
+chat:
+  minecraft-format: "&7[&b&lDiscord&7] &e{player}&7: &f{message}"
+  discord-format: "**[M-KRAFT]** {player}: {message}"
+  no-permission: "&8[&c&l✗&8] &fPrawa twojej jednostki milczą, kanał zablokowany."
+  not-linked: "&8[&c&l✗&8] &fWpierw zakotwicz swą postać przed wysyłem chatu na kanały społecznościwe."
+
+security:
+  2fa-login-pending: "&c&l⚠ Walidacja Twojej Persony (2FA)\n\n&fPowiadomienie wisi na DC, musisz je zatwierdzić.\n&7Jeśli tego nie pchniesz, gra cie nie przyjmie.\n\n&8CordSync strzeże integralności obwodu."
+  2fa-approved: "&8[&a&l✓&8] &fBilet zatwierdzony, zapraszamy w strefę lądowania."
+  2fa-denied: "&8[&c&l✗&8] &fDostęp zakazany kategorycznie! Ktoś obcy probował wędrować pod Twoją przykrywką."
+
+system:
+  reload: "&8[&a&l✓&8] &aPliki serwerowe zostały sprawnie zastąpione z zewnątrz."
+  reload-detailed: "&8[&a&l✓&8] &aSkala rewolucji pochłonęła ledwo &f{time}ms&a po restarcie."

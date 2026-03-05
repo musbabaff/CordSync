@@ -219,7 +219,7 @@ public class UnlinkCommand implements CommandExecutor {
             }
 
         } catch (Exception e) {
-            plugin.getLogger().warning("âš  LuckPerms rol kaldÄ±rma hatasÄ±: " + e.getMessage());
+            plugin.getLogger().warning("⚠ LuckPerms role removal error: " + e.getMessage());
         }
     }
 
@@ -233,7 +233,6 @@ public class UnlinkCommand implements CommandExecutor {
         String description = MessageUtil.format("discord.log-unlinked",
                 Map.of("player", playerName));
 
-        plugin.getDiscordBot().sendLogEmbed("ğŸ”“ Hesap BaÄŸlantÄ±sÄ± KaldÄ±rÄ±ldÄ±", description, new Color(244, 67, 54));
+        plugin.getDiscordBot().sendLogEmbed("🔓 Discord Account Unlinked", description, new Color(244, 67, 54));
     }
 }
-

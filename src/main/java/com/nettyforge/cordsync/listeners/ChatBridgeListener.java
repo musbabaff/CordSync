@@ -10,8 +10,6 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import com.nettyforge.cordsync.CordSync;
 
-import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-
 import club.minnced.discord.webhook.WebhookClient;
 import club.minnced.discord.webhook.send.WebhookMessageBuilder;
 
@@ -42,11 +40,7 @@ public class ChatBridgeListener implements Listener {
                 return;
         }
 
-        // Check permission node
-        if (!player.hasPermission("cordsync.chatbridge"))
-            return;
-
-        // Sanitize message (prevent @everyone)
+        // Sanitized message (prevent @everyone)
         String sanitized = message
                 .replace("@everyone", "@ everyone")
                 .replace("@here", "@ here");
@@ -78,14 +72,6 @@ public class ChatBridgeListener implements Listener {
 
             // Use JDA's webhook support
             if (plugin.getDiscordBot() != null && plugin.getDiscordBot().getJda() != null) {
-                String channelId = plugin.getConfig().getString("chat-bridge.channel-id", "");
-                if (channelId == null || channelId.isEmpty())
-                    return;
-
-                TextChannel channel = plugin.getDiscordBot().getJda().getTextChannelById(channelId);
-                if (channel == null)
-                    return;
-
                 // Use the webhook URL directly via HTTP
                 try (WebhookClient client = WebhookClient.withUrl(webhookUrl)) {
                     WebhookMessageBuilder builder = new WebhookMessageBuilder()

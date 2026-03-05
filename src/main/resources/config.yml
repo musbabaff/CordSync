@@ -225,9 +225,7 @@ rewards:
     commands:
       - "lp user {player} parent addtemp vip 7d"
       - "eco give {player} 5000"
-    items:
-      - "DIAMOND:3"
-      - { material: "GOLD_INGOT", amount: 8, name: "&6Golden Gift", lore: ["&7Discord Linking Reward"] }
+      - "eco give {player} 5000"
 
   # ── Interval Reward ─────────────────────────────────────────────────
   interval:
@@ -236,7 +234,7 @@ rewards:
     message: "&a[CordSync] &e💎 Your Discord link is active! Daily reward added!"
     commands:
       - "eco give {player} 1000"
-    items: []
+      - "eco give {player} 1000"
 
   # ── Booster Reward ──────────────────────────────────────────────────
   booster:
@@ -245,8 +243,7 @@ rewards:
     commands:
       - "lp user {player} parent addtemp booster 30d"
       - "eco give {player} 10000"
-    items:
-      - "NETHERITE_INGOT:1"
+      - "eco give {player} 10000"
 
 # ┌──────────────────────────────────────────────────────────────────────┐
 # │  REWARD LOGS                                                         │

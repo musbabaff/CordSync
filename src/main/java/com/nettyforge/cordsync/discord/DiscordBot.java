@@ -429,6 +429,22 @@ public class DiscordBot extends ListenerAdapter {
     // BOOSTER INFO MESSAGE
     // ===================================================================
 
+    public void sendJoinQuitEmbed(EmbedBuilder embed) {
+        if (jda == null)
+            return;
+        try {
+            String channelId = plugin.getConfig().getString("discord.join-quit-messages.channel-id", "");
+            if (channelId == null || channelId.isEmpty())
+                return;
+            net.dv8tion.jda.api.entities.channel.concrete.TextChannel channel = jda.getTextChannelById(channelId);
+            if (channel != null) {
+                channel.sendMessageEmbeds(embed.build()).queue();
+            }
+        } catch (Exception e) {
+            plugin.getLogger().warning("JoinQuit message failed: " + e.getMessage());
+        }
+    }
+
     private void sendBoosterInfoMessage() {
         if (jda == null)
             return;
@@ -478,8 +494,10 @@ public class DiscordBot extends ListenerAdapter {
                 }
             }
 
+            String btnViewRewards = MessageUtil.getRaw("discord-embeds.buttons.view-rewards");
             channel.sendMessageEmbeds(embed.build())
-                    .addActionRow(Button.secondary("cordsync_booster_info", "\uD83C\uDF81 View Rewards"))
+                    .addActionRow(Button.secondary("cordsync_booster_info",
+                            btnViewRewards != null ? btnViewRewards : "🎁 View Rewards"))
                     .queue(
                             success -> plugin.getLogger().info("\u2705 Booster info message sent."),
                             failure -> plugin.getLogger().warning("Booster message failed: " + failure.getMessage()));
