@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-@SuppressWarnings("null")
 public class TicketModule extends CordModule {
 
     private boolean isRunning = false;

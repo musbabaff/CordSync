@@ -21,7 +21,7 @@
 
 ---
 
-# 🚀 CordSync v1.4.4 — Code Quality Polish
+# 🚀 CordSync v1.5.1 — Code Quality Polish
 
 Minor code quality improvement — removed an unnecessary `@SuppressWarnings("unchecked")` annotation from `TPSMonitor.java` flagged by the IDE.
 

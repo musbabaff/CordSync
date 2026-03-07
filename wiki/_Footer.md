@@ -2,7 +2,7 @@
 
 ---
 
-**CordSync v1.4.4**  
+**CordSync v1.5.1**  
 Developed with ❤️ by [**NettyForge Studios**](https://nettyforge.com)
 
 [Discord Support](https://discord.nettyforge.com) • [Report a Bug](https://github.com/musbabaff/CordSync/issues) • [GitHub](https://github.com/musbabaff/CordSync)

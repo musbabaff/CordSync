@@ -16,7 +16,6 @@ import net.dv8tion.jda.api.entities.Member;
 public class ReverifyTask implements Runnable {
 
     private final CordSync plugin;
-    private boolean running = false;
 
     public ReverifyTask(CordSync plugin) {
         this.plugin = plugin;
@@ -27,12 +26,11 @@ public class ReverifyTask implements Runnable {
         if (interval <= 0)
             interval = 6;
         long ticks = interval * 60 * 60 * 20;
-        running = true;
         SchedulerUtil.runSyncTimer(plugin, this, ticks, ticks);
     }
 
     public void stop() {
-        running = false;
+        // Task cancellation is handled by SchedulerUtil.cancelAll() in CordSync.onDisable()
     }
 
     @Override
