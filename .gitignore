@@ -69,3 +69,9 @@ eula.txt
 *.env
 .env.*
 secrets.yml
+
+# Local build/debug logs
+compile_errors.txt
+debug_maven.txt
+errors_utf8.txt
+out.txt
